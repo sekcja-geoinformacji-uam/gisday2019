@@ -4,6 +4,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    
       .parallax {
         /* The image used */
         background-image: url("1.jpg");
@@ -57,6 +58,8 @@
         padding-top: 60px;
       }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -68,7 +71,21 @@
       <a href="javascript:void(0)">News</a>
       <a href="javascript:void(0)">Contact</a>
     </div>
+
     <div style="height:1000px;background-color:red;font-size:36px">
+      Scroll Up and Down this page to see the parallax scrolling effect.
+      This div is just here to enable scrolling.
+      Tip: Try to remove the background-attachment property to remove the scrolling effect.
+      <div data-aos="fade-right">
+          Scroll Up and Down this page to see the parallax scrolling effect.
+          This div is just here to enable scrolling.
+          Tip: Try to remove the background-attachment property to remove the scrolling effect.
+      </div>
+    </div>
+    
+    
+
+    <div style="height:1000px;background-color:#4caf50;font-size:36px">
       Scroll Up and Down this page to see the parallax scrolling effect.
       This div is just here to enable scrolling.
       Tip: Try to remove the background-attachment property to remove the scrolling effect.
