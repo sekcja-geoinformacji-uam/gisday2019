@@ -1,113 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .parallax {
+        /* The image used */
+        background-image: url("1.jpg");
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .parallax h1 {
+        margin: 0;
+      }
+
+      #navbar {
+        overflow: hidden;
+        background-color:#0c0c0c45;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        position: absolute;
+      }
+
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
+
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+      }
+
+      #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      #navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      #navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      .content {
+        padding: 16px;
+      }
+
+      .sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+      }
+
+      .sticky+.content {
+        padding-top: 60px;
+      }
+
+      .about {
+        background-image: url('2.jpg');
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .about__box {
+        background: #ddd;
+        height: 40%;
+        display: flex;
+        align-items: center;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="./aos.css" />
   </head>
-  <style>
-    html {
-      height: 100%;
-      overflow: hidden;
-    }
-
-    body {
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      perspective: 1px;
-      transform-style: preserve-3d;
-      height: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      font-family: "Luna";
-    }
-
-    header {
-      box-sizing: border-box;
-      min-height: 100vh;
-      padding: 30vw 0 5vw;
-      position: relative;
-      transform-style: inherit;
-      width: 100vw;
-    }
-
-    header h1 {
-      margin-top: -100px;
-    }
-
-    header,
-    header:before {
-      background: 50% 50% / cover;
-    }
-
-    header::before {
-      bottom: 0;
-      content: "";
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: block;
-      background-image: url(1.jpg);
-      background-size: cover;
-      transform-origin: center center 0;
-      transform: translateZ(-1px) scale(2);
-      z-index: -1;
-      min-height: 100vh;
-    }
-
-    header * {
-      font-weight: normal;
-      letter-spacing: 0.2em;
-      text-align: center;
-      margin: 0;
-      padding: 1em 0;
-    }
-
-    .about__section {
-      height: 90vh;
-      background-color: red;
-    }
-
-    .place__section {
-      height: 90vh;
-      background-color: blue;
-    }
-
-    .navbar {
-      height: 10vh;
-      position: sticky;
-      background-color: black;
-    }
-  </style>
 
   <body>
-    <div>
-      <header>
-        <h1>
-          GIS DAY 2019 && merge conflicts
-        </h1>
-        <p>
-          ps
-        </p>
-      </header>
+    <div class="parallax">
+      <h1>GISDAY</h1>
     </div>
-    <div style="position: relative; height: 100vh;">
-
-    <section class="navbar">
-      psy
-    </section>
+    <div id="navbar" class="navbar--invisible">
+      <a class="active" href="#">Aktualności</a>
+      <a href="javascript:void(0)">Zapisy</a>
+      <a href="./archive.html">Archiwum</a>
+      <a href="./contact.html">Kontakt</a>
     </div>
-
-    <section class="about__section">
-      psy
-    </section>
-    <section class="place__section">
-      psy
-    </section>
+    <div class="about">
+      <div data-aos="fade-right" data-aos-easing="ease-in-cubic" data-aos-mirror="true" data-aos-offset="50"
+        data-aos-delay="50" data-aos-duration="500" data-aos-once="false" class="about__box">
+        <span> Up and Down this page to see the parallax scrolling effect.
+          This div is just here to enable scrolling.
+          Tip: Try to remove the background-attachment property to remove the scrolling effect. </span>
+      </div>
+    </div>
+    <div style="height:1000px;background-color:#4caf50;font-size:36px">
+      Scroll Up and Down this page to see the parallax scrolling effect.
+      This div is just here to enable scrolling.
+      Tip: Try to remove the background-attachment property to remove the scrolling effect.
+    </div>
+    <script src="./aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
+  <script>
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function scrollHandler() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+
+        navbar.classList.add("navbar--visible")
+        navbar.classList.remove("navbar--invisible")
+      } else {
+        navbar.classList.remove("navbar--visible")
+        navbar.classList.add("navbar--invisible")
+        navbar.classList.remove("sticky");
+
+      }
+    }
+    window.addEventListener('scroll', scrollHandler)
+  </script>
 
 </html>
