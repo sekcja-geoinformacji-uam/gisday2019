@@ -7,6 +7,7 @@
       .parallax {
         /* The image used */
         background-image: url("1.jpg");
+        opacity: 0.9;
         /* Set a specific height */
         min-height: 100vh;
         /* Create the parallax scrolling effect */
@@ -14,6 +15,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        
       }
 
       .parallax h1 {
@@ -29,7 +31,7 @@
 
       #navbar {
         overflow: hidden;
-        background-color:#0c0c0c45;
+        background-color:#0c0c0ca8;
         display: flex;
         justify-content: space-evenly;
         z-index: 2;
@@ -46,6 +48,8 @@
         opacity: 1;
         /* margin-left: 0; */
         transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
       }
 
       #navbar a {
@@ -83,21 +87,31 @@
       }
 
       .about {
-        background-image: url('2.jpg');
+        background-image: white;
         height: 100vh;
         display: flex;
         align-items: center;
+
       }
 
       .about__box {
-        background: #ddd;
+        background: none;
         height: 40%;
         display: flex;
         align-items: center;
+        font-size: 1.2m;
+        width: 30%;
+        position: absolute;
+        font-family: 'Arapey';
+        left: 10%;
+      }
+
+      .about span {
+        font-size: 1.5em;
       }
 
       .where {
-        background-image: url('2.jpg');
+        background-image: white;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -105,16 +119,29 @@
       }
 
       .where__box {
-        background: #ddd;
+        background: none;
         height: 40%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        text-align: justify;
+        text-justify: inter-word;
+        width: 30%;
+        position: absolute;
+        font-family: 'Arapey';
+        right: 10%;
+
+      }
+
+      .where span {
+        font-size: 1.5em;
       }
 
       body {
         margin: 0;
       }
+
+    
+
     </style>
     <link rel="stylesheet" href="./aos.css" />
   </head>
@@ -152,6 +179,7 @@
     <script>
       AOS.init();
     </script>
+
   </body>
   <script>
     var navbar = document.getElementById("navbar");
@@ -160,17 +188,15 @@
     function scrollHandler() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
-
         navbar.classList.add("navbar--visible")
-        navbar.classList.remove("navbar--invisible")
       } else {
-        navbar.classList.remove("navbar--visible")
-        navbar.classList.add("navbar--invisible")
+        navbar.classList.add("navbar--visible")
         navbar.classList.remove("sticky");
 
       }
     }
     window.addEventListener('scroll', scrollHandler)
+
   </script>
 
 </html>
