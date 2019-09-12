@@ -15,7 +15,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        
+
       }
 
       .parallax h1 {
@@ -23,7 +23,7 @@
         margin: 0;
         display: flex;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
         font-size: 13vh;
         color: white;
         font-family: sans-serif;
@@ -31,10 +31,11 @@
 
       #navbar {
         overflow: hidden;
-        background-color:#0c0c0ca8;
+        background-color: #0c0c0ca8;
         display: flex;
         justify-content: space-evenly;
         z-index: 2;
+        width: 100%;
         position: absolute;
       }
 
@@ -139,9 +140,6 @@
       body {
         margin: 0;
       }
-
-    
-
     </style>
     <link rel="stylesheet" href="./aos.css" />
   </head>
@@ -150,9 +148,10 @@
     <div class="parallax">
       <h1>GISDAY</h1>
     </div>
-    <div id="navbar" class="navbar--invisible">
+    <div id="navbar">
       <a class="active" href="#">Aktualności</a>
-      <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank">Zapisy</a>
+      <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
+        target="_blank">Zapisy</a>
       <a href="./archive.html">Archiwum</a>
       <a href="./contact.html">Kontakt</a>
     </div>
@@ -175,28 +174,22 @@
 
 
     </div>
-    <script src="./aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
 
+    <script src="./aos.js"></script>
   </body>
   <script>
+    AOS.init();
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;
 
     function scrollHandler() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
-        navbar.classList.add("navbar--visible")
       } else {
-        navbar.classList.add("navbar--visible")
         navbar.classList.remove("sticky");
-
       }
     }
     window.addEventListener('scroll', scrollHandler)
-
   </script>
 
 </html>
