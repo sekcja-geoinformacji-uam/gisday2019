@@ -6,6 +6,7 @@
     <style>
 
 @import url('https://fonts.googleapis.com/css?family=Arapey');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
       .parallax {
         /* The image used */
@@ -27,9 +28,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 13vh;
+        font-size: 16vh;
         color: white;
-        font-family: sans-serif;
+        font-family: 'Raleway';
+        font-weight: 520;
+        letter-spacing: 3px;
+      }
+
+
+      .parallax h1 span {
+        border-top: 2.5px solid rgba(255, 255, 255, 0.5753);
+        border-bottom: 2.5px solid rgba(255, 255, 255, 0.575);
+        padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
       }
 
       #navbar {
@@ -136,7 +149,7 @@
 
       body {
         margin: 0;
-        font-family: 'Arapey'
+        font-family: 'Arapey';
       }
 
       section {
@@ -192,7 +205,7 @@
 
   <body>
     <div class="parallax">
-      <h1>GISDAY</h1>
+      <h1><span>GISDAY</span></h1>
     </div>
     <div id="navbar">
       <a class="active" href="#">Aktualności</a>
