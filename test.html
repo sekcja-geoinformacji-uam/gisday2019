@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faa</title>
+    <style>
+      html {
+        height: 100vh;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0px;
+      }
+
+      .section {
+        height: 100vh;
+      }
+
+      .section--main {
+        background-color: red;
+      }
+
+      .box--animated {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="section section--top">
+      fafa
+    </section>
+    <section class="section section--main">
+      <div class="box--animated">
+        aaaaaaa
+      </div>
+    </section>
+    <section class="section section--bottom">
+      dada
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  </body>
+  <script>
+    const tm1 = new TimelineMax({});
+    tm1.from('.box--animated', 1.5, {
+      opacity: 0,
+      x: 200,
+      'font-size': 30,
+    })
+    const control = new ScrollMagic.Controller({})
+
+    let scene = new ScrollMagic.Scene({
+      triggerElement: '.box--animated',
+      duration: 3000,
+    }).setTween(tm1).addTo(control)
+  </script>
+
+</html>
