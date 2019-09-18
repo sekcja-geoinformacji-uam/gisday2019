@@ -29,9 +29,9 @@
         }
 
         blockquote {
-            font-size: 2.3em;
-            width: 30%;
-            margin-top: 17%;
+            font-size: 1.5em;
+            width: 40%;
+            margin-top: 10%;
             position: absolute;
         }
 
@@ -48,18 +48,15 @@
             position: absolute;
         }
 
-        img:nth-of-type(1) {
-            width: 40%;
+        #logo{
             right: 0;
             top: 20%;
+            height: 40%;
+            width: 26%
+        
+        
         }
 
-        img:nth-of-type(2) {
-            width: 25%;
-            right: 40%;
-            top: 29%;
-            margin-top: 15%;
-        }
 
 
         section:nth-child(odd) {
@@ -74,18 +71,6 @@
             position: absolute;
             bottom: 10px;
             left: 10px;
-        }
-
-        #box {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            border: 5px solid lightgray;
-            margin: auto;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
         }
 
         #navbar {
@@ -131,6 +116,31 @@
             background-color: #4CAF50;
             color: white;
         }
+        
+
+        .web1{
+            height: 30px;
+            width: 30px;
+            position: relative
+        
+        }
+
+        .mail{
+            height: 30px;
+            width: 30px;
+            position: relative
+        
+        }
+
+        .facebook{
+            height: 30px;
+            width: 30px;
+            position: relative
+        
+        }
+
+
+        
     </style>
 </head>
 
@@ -146,10 +156,17 @@
     </div>
 
     <section class="sticky">
-        <blockquote>"You should totally subscribe to my channel now"<span></span></blockquote>
-        <img id="office" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/office1.png">
-        <img id="building" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/sky.jpg">
-        <div id="box"></div>
+        <blockquote>Studenckie Koło Naukowe Geografów
+                <br>Uniwersytet im. Adama Mickiewicza w Poznaniu
+                <br>Wydział Nauk Geograficznych i Geologicznych                
+                <br>ul. Krygowskiego 10
+                <br>60-101 Poznań
+                <div id="icons"><br><img class="web1" src="globe-solid.svg">
+                <img class="mail" src="envelope-solid.svg"> 
+                <img class="facebook" src="facebook-square-brands.svg"> </div>             
+                <span></span></blockquote>
+        <img id="logo" src="skng.jpg">
+        
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
@@ -165,11 +182,8 @@
 
     tl.from('blockquote', .5, { x: 200, opacity: 0 });
     tl.from('span', 1, { width: 0 }, "=-.5");
-    tl.from('#office', 1, { x: -200, opacity: 0, ease: Power4.easeInOut }, "=-1");
-    tl.from('#building', 1, { x: 200, opacity: 0, ease: Power4.easeInOut }, "=-.7");
-
-    tl2.from("#box", 1, { opacity: 0, scale: 0 });
-    tl2.to("#box", .5, { left: "20%", scale: 1.3, borderColor: 'white', borderWidth: 12, boxShadow: '1px 1px 0px 0px rgba(0,0,0,0.09)' })
+    tl.from('#logo', 1, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-1");
+    
 
     const scene = new ScrollMagic.Scene({
         triggerElement: ".sticky",
