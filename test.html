@@ -63,7 +63,7 @@
     let ctrl = new ScrollMagic.Controller();
     let scene = new ScrollMagic.Scene({
       trigger: '.section--main',
-      triggerHook: "onEnter",
+      triggerHook: "onCenter",
       duration: '100%'
     }).setTween(tlm).addIndicators().addTo(ctrl)
   </script>
