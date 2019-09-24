@@ -8,8 +8,19 @@
       @import url('https://fonts.googleapis.com/css?family=Raleway');
       @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-      html {
-        overflow-x: hidden;
+      @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      }
+
+      @font-face {
+        font-family: 'Avenir Next Bold';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
+      }
+
+      @font-face {
+        font-family: 'Avenir Next Demi';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
       }
 
       .parallax {
@@ -32,14 +43,14 @@
         justify-content: center;
         align-items: center;
         color: white;
-        font-family: soleil, sans-serif;
+        font-family: "Avenir Next Demi";
         letter-spacing: 3px;
         text-shadow: 3px 3px #4d4d4d42;
       }
 
       .gisday {
         font-size: 21vh;
-        font-family: "Raleway";
+        font-family: "Avenir Next Demi";
         padding-right: 6vh;
         padding-left: 6vh;
         padding-top: 2.5vh;
@@ -125,8 +136,8 @@
         padding: 14px 16px;
         text-decoration: none;
         font-size: calc(0.7rem + 0.5vw);
-        font-family: soleil, sans-serif;
-        font-weight: 500;
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.08334rem;
       }
@@ -171,7 +182,6 @@
         font-size: 1.8em;
         width: 40%;
         position: absolute;
-        font-family: 'Arapey';
         left: 10%;
         margin-top: 17%;
       }
@@ -193,7 +203,6 @@
         text-justify: inter-word;
         width: 30%;
         position: absolute;
-        font-family: 'Arapey';
         right: 10%;
       }
 
@@ -203,6 +212,7 @@
 
       body {
         margin: 0;
+        font-family: "Avenir Next Regular"
       }
 
       section {

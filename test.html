@@ -60,52 +60,52 @@
 
   </body>
   <script>
-  // Obiekt TimelineMaxa - tutaj piszę się całą animację 
+    // Obiekt TimelineMaxa - tutaj piszę się całą animację 
     let tlm = new TimelineMax({});
     // set oznacza ustawienie początkowej wartości atrybutów (równie dobrze można to zrobić normalnie w CSS, ale po co scrollować na górę :D)
     // tutaj podobnie jak poniżej z tym, że oczywiście nie podajemy czasu animacji
     tlm.set(
-      '.box--animated', {
-      'font-size': 500,
-    })
-    .to(
-      // pierwszy parametr to obiekt, który się ma animować 
-      '.box--animated', 
-      // czas animacji
-      .5
-      // animowane atrybuty 
-      , {
-      'font-size': 50
-    })
-     .to(
-      // pierwszy parametr to obiekt, który się ma animować 
-      '.box--animated', 
-      // czas animacji
-      .5
-      // animowane atrybuty 
-      , {
-      'font-size': 500
-    })
+        '.box--animated', {
+          'font-size': 500,
+        })
+      .to(
+        // pierwszy parametr to obiekt, który się ma animować 
+        '.box--animated',
+        // czas animacji
+        .5
+        // animowane atrybuty 
+        , {
+          'font-size': 50
+        })
+      .to(
+        // pierwszy parametr to obiekt, który się ma animować 
+        '.box--animated',
+        // czas animacji
+        .5
+        // animowane atrybuty 
+        , {
+          'font-size': 500
+        })
 
     // Obiekt, który kontroluje pozycje scrolla - zgodnie z dokumentacją wystarczy jeden na cały kontener (czyli chyba na całą stronkę, ale jeszcze przetestuje)
     let ctrl = new ScrollMagic.Controller();
 
     // Obiekt sceny
     let scene = new ScrollMagic.Scene({
-      // trigger - element, który wywołuje animacje
-      trigger: '.section--main',
-      // miejsce w viewporcie od którego zacznie się animacja (dostępne wartości to z 0-1 oraz onEnter, onCenter, onLeave)
-      // https://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor
-      triggerHook: "onEnter",
-      // czas trwania animacji - 100% oznacza, że animacja będzie trwała przez 'długośc całego .section--main'
-      duration: '100%'
-    })
-    // dodanie animacji, która ma się wykonywać na scroll
-    .setTween(tlm)
-    // dodanie wskaźników (tych po prawej stronie) - pomocne przy debugowaniu i w sumie całym procesie tworzenia
-    .addIndicators()
-    // przypisanie obiektu kontolera, który będzie kontrolował wykonywanie się animacji
-    .addTo(ctrl)
+        // trigger - element, który wywołuje animacje
+        trigger: '.section--main',
+        // miejsce w viewporcie od którego zacznie się animacja (dostępne wartości to z 0-1 oraz onEnter, onCenter, onLeave)
+        // https://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor
+        triggerHook: "onEnter",
+        // czas trwania animacji - 100% oznacza, że animacja będzie trwała przez 'długośc całego .section--main'
+        duration: '100%'
+      })
+      // dodanie animacji, która ma się wykonywać na scroll
+      .setTween(tlm)
+      // dodanie wskaźników (tych po prawej stronie) - pomocne przy debugowaniu i w sumie całym procesie tworzenia
+      .addIndicators()
+      // przypisanie obiektu kontolera, który będzie kontrolował wykonywanie się animacji
+      .addTo(ctrl)
 
     // Oczywiście odsyłam do dokumentacji :D
     // https://scrollmagic.io/docs/ScrollMagic.Scene.html
