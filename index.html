@@ -330,29 +330,14 @@
 
 
   let tlm = new TimelineMax({});
-  tlm.set(
-    'about_box', {
-    'font-size': 500,
-  })
-    .to(
-      '.about_box',
-      .5,
-      {
-        'font-size': 50
-      })
-    .to(
+  tlm.set('about__box', { 'opacity': 1, 'x': 10, })
+    .to('.about__box', .5, { 'opacity': 0, 'x': 200 })
+    .to('.about__box', .5, { 'opacity': 1, 'x': 10, })
 
-      '.box--animated',
-
-      .5
-
-      , {
-        'font-size': 500
-      })
   let ctrl = new ScrollMagic.Controller();
   let scene = new ScrollMagic.Scene({
     trigger: '.about',
-    triggerHook: "onEnter",
+    triggerHook: "onLeave",
     duration: '100%'
   })
     .setTween(tlm)
