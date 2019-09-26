@@ -1,348 +1,357 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Arapey');
-    @import url('https://fonts.googleapis.com/css?family=Raleway');
-    @import url('https://fonts.googleapis.com/css?family=Quicksand');
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Arapey');
+      @import url('https://fonts.googleapis.com/css?family=Raleway');
+      @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      }
 
-    @font-face {
-      font-family: 'Avenir Next Bold';
-      src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Bold';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
+      }
 
-    @font-face {
-      font-family: 'Avenir Next Demi';
-      src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Demi';
+        src: url('fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
+      }
 
-    .parallax {
-      /* The image used */
-      background-image: url("3.jpg");
-      opacity: 1;
-      /* Set a specific height */
-      min-height: 100vh;
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+      .parallax {
+        /* The image used */
+        background-image: url("3.jpg");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 
-    .parallax h1 {
-      padding-top: 23vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-family: "Avenir Next Demi";
-      letter-spacing: 3px;
-      text-shadow: 3px 3px #4d4d4d42;
-    }
+      .parallax h1 {
+        padding-top: 23vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px #4d4d4d42;
+      }
 
-    .gisday {
-      font-size: 21vh;
-      font-family: "Avenir Next Demi";
-      padding-right: 6vh;
-      padding-left: 6vh;
-      padding-top: 2.5vh;
-      padding-bottom: 2.5vh;
-      text-align: center;
-      color: #182e30e0;
-      font-weight: 600;
-    }
+      .gisday {
+        font-size: 21vh;
+        font-family: "Avenir Next Demi";
+        padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        text-align: center;
+        color: #182e30e0;
+        font-weight: 600;
+      }
 
-    .poznan {
-      font-size: 8vh;
-      font-weight: 500;
-      color: #182e30e0;
-    }
+      .poznan {
+        font-size: 8vh;
+        font-weight: 500;
+        color: #182e30e0;
+      }
 
-    .date {
-      font-size: 8vh;
-      font-weight: 500;
-      color: #182e30e0;
-    }
+      .date {
+        font-size: 8vh;
+        font-weight: 500;
+        color: #182e30e0;
+      }
 
-    .header {
-      text-align: center;
-    }
+      .header {
+        text-align: center;
+      }
 
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100%;
-      position: absolute;
-      border: 0.1vw solid rgba(126, 126, 126, 0.555);
-      position: absolute;
-    }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100%;
+        position: absolute;
+        border: 0.1vw solid rgba(126, 126, 126, 0.555);
+        position: absolute;
+      }
 
-    li {
-      display: inline-block;
-    }
+      li {
+        display: inline-block;
+      }
 
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
 
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
 
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
 
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
 
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
 
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
 
-    .content {
-      padding: 16px;
-    }
+      .content {
+        padding: 16px;
+      }
 
-    .sticky {
-      position: sticky !important;
-      top: 0;
-      width: 100%;
-    }
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+      }
 
-    .sticky+.content {
-      padding-top: 60px;
-    }
+      .sticky+.content {
+        padding-top: 60px;
+      }
 
-    .about {
-      background-image: white;
-    }
+      .about {
+        background-image: white;
+      }
 
-    .about__box {
-      background: none;
-      height: 40%;
-      display: flex;
-      align-items: center;
-      font-size: 1.6em;
-      width: 40%;
-      position: absolute;
-      left: 10%;
-      margin-top: 17%;
-    }
+      .about__box {
+        background: none;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        font-size: 1.8em;
+        width: 40%;
+        position: absolute;
+        left: 10%;
+        margin-top: 17%;
+      }
 
-    .where {
-      background-image: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
+      .where {
+        background-image: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
 
-    .where__box {
-      background: none;
-      height: 40%;
-      display: flex;
-      align-items: center;
-      text-align: justify;
-      text-justify: inter-word;
-      width: 30%;
-      position: absolute;
-      right: 10%;
-    }
+      .where__box {
+        background: none;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        text-justify: inter-word;
+        width: 30%;
+        position: absolute;
+        right: 10%;
+      }
 
-    .where span {
-      font-size: 1.5em;
-    }
+      .where span {
+        font-size: 1.5em;
+      }
 
-    body {
-      margin: 0;
-      font-family: "Avenir Next Regular"
-    }
+      body {
+        margin: 0;
+        font-family: "Avenir Next Regular"
+      }
 
-    section {
-      padding: 3em;
-      height: 100vh;
-      position: relative;
-      box-sizing: border-box;
-    }
+      section {
+        padding: 3em;
+        height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+      }
 
-    .line {
-      width: 100%;
-      background: #235538d8;
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
+      .line {
+        width: 100%;
+        background: #235538d8;
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
 
-    img {
-      position: absolute;
-    }
+      img {
+        position: absolute;
+      }
 
-    #globe {
-      width: 20%;
-      right: 20%;
-      top: 20%;
-    }
+      #globe {
+        width: 20%;
+        right: 20%;
+        top: 20%;
+      }
 
-    .percentage {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-    }
-  </style>
-</head>
+      .percentage {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
 
-<body>
-  <div class="parallax">
-    <h1>
-      <div class="header">
-        <div class="gisday">GISDAY </div>
-        <div class="poznan"> POZNAŃ</div>
-        <div class="date"> 2019</div>
-    </h1>
-  </div>
-  </div>
+      #box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border: 5px solid lightgray;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+  </head>
 
-  <div id="navbar">
-    <li><a class="active" href="#" class="cool-link">Aktualności</a></li>
-    <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-    <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
-        class="cool-link">Zapisy</a></li>
-    <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
-    <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
-  </div>
-
-
-  <section class="about">
-    <div class="about__box">
-      <blockquote>Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect.
-        <span class="line"></span></blockquote>
+  <body>
+    <div class="parallax">
+      <h1>
+        <div class="header">
+          <div class="gisday">GISDAY </div>
+          <div class="poznan"> POZNAŃ</div>
+          <div class="date"> 2019</div>
+      </h1>
+    </div>
     </div>
 
-    <img id="globe"
-      src="https://images.pexels.com/photos/326036/pexels-photo-326036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    <div id="box"></div>
-  </section>
-
-
-
-
-  <div class="where">
-    <div class="where__box">
-      <span>Scroll Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect. </span>
+    <div id="navbar">
+      <li><a class="active" href="#" class="cool-link">Aktualności</a></li>
+      <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
+      <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
+          target="_blank" class="cool-link">Zapisy</a></li>
+      <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
+      <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
     </div>
-  </div>
+
+
+    <section class="about">
+      <div class="about__box">
+        <blockquote>Up and Down this page to see the parallax scrolling effect.
+          This div is just here to enable scrolling.
+          Tip: Try to remove the background-attachment property to remove the scrolling effect.
+          <span class="line"></span></blockquote>
+      </div>
+
+      <img id="globe"
+        src="https://images.pexels.com/photos/326036/pexels-photo-326036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+      <div id="box"></div>
+    </section>
 
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  </script>
-</body>
-<script>
-  // AOS.init();
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;
+    <div class="where">
+      <div class="where__box">
+        <span>Scroll Up and Down this page to see the parallax scrolling effect.
+          This div is just here to enable scrolling.
+          Tip: Try to remove the background-attachment property to remove the scrolling effect. </span>
+      </div>
+    </div>
 
-  function scrollHandler() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    </script>
+  </body>
+  <script>
+    // AOS.init();
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function scrollHandler() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
     }
-  }
 
 
-  let tlm = new TimelineMax({});
-
-  tlm.from('.about__box', 1, {
-    opacity: 0,
-    x: 200
-  })
-
-  tlm.from('.line', 1, {
-    width: 0
-  }, -"5")
-
-  tlm.from('#globe', 2, {
-    opacity: 0,
-    x: -200
-  }, -"1")
+    let tlm = new TimelineMax({});
 
 
-  let ctrl = new ScrollMagic.Controller();
-  let scene = new ScrollMagic.Scene({
-    trigger: '.about',
-    triggerHook: "onEnter",
-    duration: '100%',
-  })
-    .setTween(tlm)
-    .addIndicators()
-    .addTo(ctrl)
+
+    tlm.from('#globe', .5, {
+      'opacity': 0,
+      'x': -200
+    }, "=+1")
+
+
+    tlm.from('.about__box', .5, {
+      opacity: 0
+    })
+
+    let ctrl = new ScrollMagic.Controller();
+    let scene = new ScrollMagic.Scene({
+        trigger: '.about',
+        triggerHook: "onEnter",
+        duration: '100%',
+      })
+      .setTween(tlm)
+      .addIndicators()
+      .addTo(ctrl)
 
 
 
@@ -397,6 +406,6 @@
     //   tl.progress();
     //   console.log(tl.progress());
     // }
-</script>
+  </script>
 
 </html>
