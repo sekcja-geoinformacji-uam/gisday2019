@@ -184,6 +184,7 @@
       position: absolute;
       left: 10%;
       margin-top: 17%;
+      opacity: 1;
     }
 
     .where {
@@ -330,14 +331,14 @@
 
 
   let tlm = new TimelineMax({});
-  tlm.set('about__box', { 'opacity': 1, 'x': 10, })
-    .to('.about__box', .5, { 'opacity': 0, 'x': 200 })
-    .to('.about__box', .5, { 'opacity': 1, 'x': 10, })
+  tlm.from('.about__box', .5, { 'opacity': 0 })
+  tlm.from('#globe', .5, { 'opacity': 0, 'x': -200 })
+
 
   let ctrl = new ScrollMagic.Controller();
   let scene = new ScrollMagic.Scene({
     trigger: '.about',
-    triggerHook: "onLeave",
+    triggerHook: "onEnter",
     duration: '100%'
   })
     .setTween(tlm)
