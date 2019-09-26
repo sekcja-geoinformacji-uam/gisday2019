@@ -161,7 +161,7 @@
     }
 
     .sticky {
-      position: fixed !important;
+      position: sticky !important;
       top: 0;
       width: 100%;
     }
@@ -179,7 +179,7 @@
       height: 40%;
       display: flex;
       align-items: center;
-      font-size: 1.8em;
+      font-size: 1.6em;
       width: 40%;
       position: absolute;
       left: 10%;
@@ -245,18 +245,6 @@
       bottom: 10px;
       left: 10px;
     }
-
-    #box {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      border: 5px solid lightgray;
-      margin: auto;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
   </style>
 </head>
 
@@ -319,7 +307,6 @@
   // AOS.init();
   var navbar = document.getElementById("navbar");
   var sticky = navbar.offsetTop;
-
   function scrollHandler() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
@@ -327,59 +314,27 @@
       navbar.classList.remove("sticky");
     }
   }
-
-
   let tlm = new TimelineMax({});
-  tlm.set('about__box', { 'opacity': 1, 'x': 10, })
-    .to('.about__box', .5, { 'opacity': 0, 'x': 200 })
-    .to('.about__box', .5, { 'opacity': 1, 'x': 10, })
-
+  tlm.from('.about__box', 1, {
+    opacity: 0,
+    x: 200
+  })
+  tlm.from('.line', 1, {
+    width: 0
+  }, -"5")
+  tlm.from('#globe', 2, {
+    opacity: 0,
+    x: -200
+  }, -"1")
   let ctrl = new ScrollMagic.Controller();
   let scene = new ScrollMagic.Scene({
     trigger: '.about',
-    triggerHook: "onLeave",
-    duration: '100%'
+    triggerHook: "onEnter",
+    duration: '100%',
   })
     .setTween(tlm)
     .addIndicators()
     .addTo(ctrl)
-
-
-
-
-
-
-<<<<<<< HEAD
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    </script>
-  </body>
-  <script>
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-
-    function scrollHandler() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-    let tlm = new TimelineMax({});
-    tlm.from('.header', .5, {
-      'transform': 'scale(1.15, 1.15)'
-    })
-    let ctrl = new ScrollMagic.Controller();
-    let scene = new ScrollMagic.Scene({
-      trigger: '.parallax',
-      triggerHook: "onEnter",
-      duration: '35%'
-    }).setTween(tlm).addIndicators().addTo(ctrl)
-=======
->>>>>>> feature_y
     // window.addEventListener('scroll', scrollHandler)
     // var tl = new TimelineMax({
     //   onUpdate: updatePercentage
@@ -422,7 +377,6 @@
     // })
     //   .setTween(tl2)
     //   .addTo(controller);
-
     // function updatePercentage() {
     //   //percent.innerHTML = (tl.progress() *100 ).toFixed();
     //   tl.progress();
