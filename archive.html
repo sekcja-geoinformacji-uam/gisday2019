@@ -1,120 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-<style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Arapey');
 
-@import url('https://fonts.googleapis.com/css?family=Arapey');
+    body {
+      margin: 0;
+      font-family: 'Arapey';
+      overflow: hidden;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Arapey';
-  overflow: hidden;
-}
+    .sticky {
+      background: white !important;
+    }
 
-.sticky {
-  background: white !important;
-}
+    #navbar {
+      overflow: hidden;
+      background-color: #ffffffdc;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 2;
+      width: 100%;
+      position: absolute;
+      border: 0.1vw solid rgba(126, 126, 126, 0.555);
+      position: absolute;
+    }
 
-#navbar {
-  overflow: hidden;
-  background-color: #ffffffdc;
-  display: flex;
-  justify-content: space-evenly;
-  z-index: 2;
-  width: 100%;
-  position: absolute;
-  border: 0.1vw solid rgba(126, 126, 126, 0.555);
-  position: absolute;
-}
+    li {
+      display: inline-block;
+    }
 
-li {
-  display: inline-block;
-}
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size: 20px;
+      padding: 0 20px;
+    }
 
-li a {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: lighter;
-  font-size: 20px;
-  padding: 0 20px;
-}
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-.cool-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: rgba(44, 44, 44, 0.616);
-  transition: width .3s;
-}
+    .cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
 
-.cool-link:hover::after {
-  width: 100%;
-  transition: width .3s;
-}
+    .navbar--invisible {
+      opacity: 0;
+      /* margin-left: 5000px; */
+      transition: 100ms;
+    }
 
-.navbar--invisible {
-  opacity: 0;
-  /* margin-left: 5000px; */
-  transition: 100ms;
-}
+    .navbar--visible {
+      opacity: 1;
+      /* margin-left: 0; */
+      transition: 100ms;
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
-.navbar--visible {
-  opacity: 1;
-  /* margin-left: 0; */
-  transition: 100ms;
-  justify-content: space-evenly;
-  width: 100%;
-}
+    #navbar a {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: soleil, sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+    }
 
-#navbar a {
-  float: left;
-  display: block;
-  color: #444444;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: calc(0.7rem + 0.5vw);
-  font-family: soleil, sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08334rem;
-}
+    #navbar a.active {
+      font-family: soleil, sans-serif;
+      font-weight: 500;
+    }
 
-#navbar a.active {
-  font-family: soleil, sans-serif;
-  font-weight: 500;
-}
+    #navbar a.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-#navbar a.active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: rgba(44, 44, 44, 0.616);
-  transition: width .3s;
-}
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
 
-</style>
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 
 
 
 </head>
+
 <body>
 
-    <div id="navbar">
-        <li><a href="./index.html" class="cool-link">Aktualności</a></li>
-        <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-        <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
-            class="cool-link">Zapisy</a></li>
-        <li><a class="active" href="#" class="cool-link">Archiwum</a></li>
-        <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
-      </div>
+  <div id="navbar">
+    <li><a href="./index.html" class="cool-link">Aktualności</a></li>
+    <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
+    <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+        class="cool-link">Zapisy</a></li>
+    <li><a class="active" href="#" class="cool-link">Archiwum</a></li>
+    <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
+  </div>
   
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+
 </body>
+
 </html>
