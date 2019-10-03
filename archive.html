@@ -1,217 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="swiper.min.css">
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Arapey');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="swiper.min.css">
+  <style>
+    @font-face {
+      font-family: 'Avenir Next Regular';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+    }
 
-      body {
-        margin: 0;
-        font-family: 'Arapey';
-        overflow: hidden;
-      }
+    body {
+      margin: 0;
+      font-family: "Avenir Next Regular";
+      overflow: hidden;
+    }
 
-      .sticky {
-        background: white !important;
-      }
+    .sticky {
+      background: white !important;
+    }
 
-      #navbar {
-        overflow: hidden;
-        background-color: #ffffffdc;
-        display: flex;
-        justify-content: space-evenly;
-        z-index: 2;
-        width: 100%;
-        position: absolute;
-        border: 0.1vw solid rgba(126, 126, 126, 0.555);
-        position: absolute;
-      }
+    #navbar {
+      overflow: hidden;
+      background-color: #ffffffdc;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 2;
+      width: 100%;
+      position: absolute;
+      border: 0.1vw solid rgba(126, 126, 126, 0.555);
+      position: absolute;
+    }
 
-      li {
-        display: inline-block;
-      }
+    li {
+      display: inline-block;
+    }
 
-      li a {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: lighter;
-        font-size: 20px;
-        padding: 0 20px;
-      }
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size: 20px;
+      padding: 0 20px;
+    }
 
-      .cool-link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-      .cool-link:hover::after {
-        width: 100%;
-        transition: width .3s;
-      }
+    .cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
 
-      .navbar--invisible {
-        opacity: 0;
-        /* margin-left: 5000px; */
-        transition: 100ms;
-      }
+    .navbar--invisible {
+      opacity: 0;
+      /* margin-left: 5000px; */
+      transition: 100ms;
+    }
 
-      .navbar--visible {
-        opacity: 1;
-        /* margin-left: 0; */
-        transition: 100ms;
-        justify-content: space-evenly;
-        width: 100%;
-      }
+    .navbar--visible {
+      opacity: 1;
+      /* margin-left: 0; */
+      transition: 100ms;
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
-      #navbar a {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: soleil, sans-serif;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-      }
+    #navbar a {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+    }
 
-      #navbar a.active {
-        font-family: soleil, sans-serif;
-        font-weight: 500;
-      }
+    #navbar a.active {
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+    }
 
-      #navbar a.active::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    #navbar a.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-      body {
-        background: #ffffff;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
+    body {
+      background: #ffffff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-      .swiper-container {
-        width: 100%;
-        padding-top: 150px;
-        padding-bottom: 50px;
-      }
+    .swiper-container {
+      width: 100%;
+      padding-top: 150px;
+      padding-bottom: 50px;
+    }
 
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-      }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
 
-      .swiper-pagination-bullet-active {
-        background: #777777c2;
-      }
+    .swiper-pagination-bullet-active {
+      background: #777777c2;
+    }
 
-      a {
-        height: 100%;
-        width: 100%;
-        display: block;
-      }
+    a {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
 
-      .test {
-        opacity: 0;
-        height: 100%;
-      }
+    .test {
+      opacity: 0;
+      height: 100%;
+    }
 
-      .test:hover {
-        opacity: 1;
-      }
-    </style>
+    .test:hover {
+      opacity: 1;
+    }
+  </style>
 
 
 
-  </head>
+</head>
 
-  <body>
-    <script type="text/javascript" src="swiper.min.js"></script>
-    <div id="navbar">
-      <li><a href="./index.html" class="cool-link">Aktualności</a></li>
-      <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-      <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
-          target="_blank" class="cool-link">Zapisy</a></li>
-      <li><a class="active" href="#" class="cool-link">Archiwum</a></li>
-      <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
-    </div>
+<body>
+  <script type="text/javascript" src="swiper.min.js"></script>
+  <div id="navbar">
+    <li><a href="./index.html" class="cool-link">Aktualności</a></li>
+    <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
+    <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+        class="cool-link">Zapisy</a></li>
+    <li><a class="active" href="#" class="cool-link">Archiwum</a></li>
+    <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
+  </div>
 
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <div class="test">
-            2016
-          </div>
-          <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <div class="test">
+          2016
         </div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/globe.jpg)">
-          <div class="test">
-            2016
-          </div>
-          <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8"></a>
-        </div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A"></a></div>
-        <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-          <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A"></a></div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
       </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/globe.jpg)">
+        <div class="test">
+          2016
+        </div>
+        <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8"></a>
+      </div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
+        <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A"></a></div>
     </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
 
 
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-        },
-      });
-    </script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
 
 
-  </body>
+</body>
 
 </html>
