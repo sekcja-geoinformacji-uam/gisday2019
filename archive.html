@@ -125,6 +125,21 @@
     .swiper-pagination-bullet-active {
       background: #777777c2;
     }
+
+    a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      
+      }
+
+      .swiper-slide:hover  {
+        filter: blur(2px);
+      }
+      .swiper-slide:hover::before  {
+        content: 'aaa';
+        filter: blur(0px) !important;
+      }
   </style>
 
 
@@ -144,16 +159,15 @@
 
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/globe.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A">aaaa</a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/globe.jpg)"><a href="https://photos.app.goo.gl/rPujez92feQfeyFg8"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/k19hVfy6e528QeB27"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A"></a></div>
+      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)"><a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A"></a></div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
