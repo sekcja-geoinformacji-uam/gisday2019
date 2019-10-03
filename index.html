@@ -176,6 +176,10 @@
       padding-top: 60px;
     }
 
+    .about {
+      height: 100vh;
+    }
+
 
     .about__box {
       background: none;
@@ -187,6 +191,22 @@
       position: absolute;
       left: 8%;
       margin-top: 17%;
+    }
+
+    .about2 {
+      height: 80vh;
+    }
+
+    .about2__box {
+      background: none;
+      height: 40%;
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      width: 45%;
+      position: absolute;
+      right: 8%;
+      top: 30%;
     }
 
     .where {
@@ -206,7 +226,7 @@
       text-justify: inter-word;
       width: 45%;
       position: absolute;
-      right: 8%;
+      left: 8%;
       font-size: 1.5em;
     }
 
@@ -234,6 +254,14 @@
       margin-top: 20px;
     }
 
+    .line__about2 {
+      width: 100%;
+      background: #235538d8;
+      display: block;
+      height: 5px;
+      margin-top: 20px;
+    }
+
     img {
       position: absolute;
     }
@@ -245,6 +273,13 @@
     }
 
     #img__where {
+      width: 27%;
+      right: 12%;
+      top: 20%;
+      box-shadow: 8px 8px 5px rgba(148, 148, 148, 0.774);
+    }
+
+    #img__about2 {
       width: 25%;
       left: 12%;
       top: 20%;
@@ -289,8 +324,17 @@
     </div>
 
     <img id="globe" src="http://gisday.knhevelius.pl/wp-content/uploads/2011/04/GISday_C.jpg">
-
   </section>
+
+  <section class="about2">
+    <div class="about2__box">
+      <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różne rodzaju
+        konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w jego
+        obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
+    </div>
+    <img id="img__about2" src="https://pbs.twimg.com/profile_images/479487015621111809/53mx3P5l.jpeg">
+  </section>
+
 
   <section class="where">
     <div class="where__box">
@@ -298,7 +342,8 @@
 
         <span class="line__where"></span></blockquote>
     </div>
-    <img id="img__where" src="https://pbs.twimg.com/profile_images/479487015621111809/53mx3P5l.jpeg">
+    <img id="img__where"
+      src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wydzia%C5%82_Nauk_Geograficznych_i_Geologicznych.jpg">
 
   </section>
 
@@ -361,19 +406,44 @@
     .addIndicators()
     .addTo(controller)
 
+  // animacja about2
+
+  let about2TM = new TimelineMax({});
+  about2TM.from('.about2__box', 1, {
+    opacity: 0,
+    x: -200
+  })
+  about2TM.from('.line__about2', 1, {
+    width: 0
+  }, -"5")
+  about2TM.from('#img__about2', 2, {
+    opacity: 0,
+    x: 200
+  }, -"1")
+
+  let about2Scene = new ScrollMagic.Scene({
+    triggerElement: '.about2',
+    triggerHook: 1,
+    duration: '100%',
+  })
+    .setTween(about2TM)
+    .addIndicators()
+    .addTo(controller)
+
+
   // animacja .where
 
   let whereTM = new TimelineMax({});
   whereTM.from('.where__box', 1, {
     opacity: 0,
-    x: -200
+    x: 200
   })
   whereTM.from('.line__where', 1, {
     width: 0
   }, -"5")
   whereTM.from('#img__where', 2, {
     opacity: 0,
-    x: 200
+    x: -200
   }, -"1")
 
   let whereScene = new ScrollMagic.Scene({
