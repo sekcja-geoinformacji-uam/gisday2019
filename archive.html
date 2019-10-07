@@ -112,22 +112,6 @@
       padding: 0;
     }
 
-    .swiper-container {
-      width: 100%;
-      padding-top: 150px;
-      padding-bottom: 50px;
-    }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #777777c2;
-    }
 
     a {
       height: 100%;
@@ -135,13 +119,76 @@
       display: block;
     }
 
-    .test {
-      opacity: 0;
-      height: 100%;
+    .container {
+      width: 1280px;
+      margin: 0 auto 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .test:hover {
-      opacity: 1;
+    .container .box {
+      position: relative;
+      width: 280px;
+      height: 250px;
+      margin: 20px;
+      top: 60px;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+    .container .box .imgBox {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container .box .imgBox img {
+      max-width: 100%;
+      transition: transform 1s;
+    }
+
+    .container .box:hover .imgBox img {
+      transform: scale(1.2);
+    }
+
+    .container .box .details {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      max-width: 280px;
+      max-height: 215px;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, .9);
+      transform: scaleY(0);
+      transition: transform .5s;
+    }
+
+    .container .box:hover .details {
+      transform: scaleY(1);
+    }
+
+    .container .box .details .content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      padding: 15px;
+      color: #fff;
+      font-weight: 300;
+      border-top: solid 1px #fff;
+      border-bottom: solid 1px #fff;
+    }
+
+    .container .box .details .content h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 40px;
+      font-family: "Avenir Next Regular";
+      opacity: 0.85;
     }
   </style>
 
@@ -150,7 +197,6 @@
 </head>
 
 <body>
-  <script type="text/javascript" src="swiper.min.js"></script>
   <div id="navbar">
     <li><a href="./index.html" class="cool-link">Aktualności</a></li>
     <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
@@ -160,59 +206,82 @@
     <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
   </div>
 
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <div class="test">
-          2016
-        </div>
-        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+
+  <div class="container">
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg">
       </div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/globe.jpg)">
-        <div class="test">
-          2016
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
         </div>
-        <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8"></a>
       </div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A"></a></div>
-      <div class="swiper-slide" style="background-image:url(assets/static/pictures/3.jpg)">
-        <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A"></a></div>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox">
+        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="details">
+        <div class="content">
+          <h2>2013</h2>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-  </script>
 
 
 </body>
