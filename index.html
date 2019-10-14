@@ -260,12 +260,12 @@
       position: absolute;
       left: 8%;
       font-size: 1.5em;
-      top: 30%;
+      top: 5%;
     }
 
     .where__box h1 {
       position: absolute;
-      top: 15%;
+      top: 7%;
       width: 100%;
       left: 7%;
       font-family: "Avenir Next Demi";
@@ -275,7 +275,7 @@
 
     .where__box blockquote {
       left: 8%;
-      margin-top: 25%;
+      margin-top: 15%;
       text-align: justify;
     }
 
@@ -320,10 +320,11 @@
       top: 33%;
     }
 
+
     #img__where {
       width: 33%;
       right: 8%;
-      top: 30%;
+      top: 10%;
       box-shadow: 8px 8px 5px rgba(148, 148, 148, 0.774);
     }
 
@@ -332,7 +333,7 @@
     #img__about2 {
       width: 25%;
       left: 12%;
-      top: 27%;
+      top: 22%;
     }
 
     .percentage {
@@ -405,7 +406,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  </script>
+
 </body>
 <script>
   var navbar = document.getElementById("navbar");
@@ -419,6 +420,7 @@
       navbar.classList.remove("sticky");
     }
   }
+  // animacja header
 
   let headerTM = new TimelineMax({});
 
@@ -434,6 +436,8 @@
     .setTween(headerTM)
     .addIndicators()
     .addTo(controller)
+
+
 
   // animacja about_box
 
@@ -452,7 +456,7 @@
 
   let aboutScene = new ScrollMagic.Scene({
     triggerElement: '.parallax',
-    triggerHook: .5,
+    triggerHook: .3,
     duration: '125%',
   })
     .setTween(aboutTM)
@@ -475,8 +479,8 @@
   }, -"1")
 
   let about2Scene = new ScrollMagic.Scene({
-    triggerElement: '.about2',
-    triggerHook: 1,
+    triggerElement: '.about',
+    triggerHook: .3,
     duration: '100%',
   })
     .setTween(about2TM)
@@ -500,8 +504,8 @@
   }, -"1")
 
   let whereScene = new ScrollMagic.Scene({
-    triggerElement: '.where',
-    triggerHook: 1,
+    triggerElement: '.about2',
+    triggerHook: .3,
     duration: '100%',
   })
     .setTween(whereTM)
@@ -511,56 +515,7 @@
 
 
   window.addEventListener('scroll', scrollHandler)
-    // var tl = new TimelineMax({
-    //   onUpdate: updatePercentage
-    // });
-    // var tl2 = new TimelineMax();
-    // const controller = new ScrollMagic.Controller();
-    // tl.from('.about__box', .5, {
-    //   x: 200,
-    //   opacity: 0
-    // });
-    // tl.from('.line', 1, {
-    //   width: 0
-    // }, "=-.5");
-    // tl.from('#globe', 1, {
-    //   x: -200,
-    //   opacity: 0,
-    //   ease: Power4.easeInOut
-    // }, "=-1");
-    // tl2.from("#box", 1, {
-    //   opacity: 0,
-    //   scale: 0
-    // });
-    // tl2.to("#box", .5, {
-    //   left: "20%",
-    //   scale: 1,
-    //   borderColor: 'white',
-    //   borderWidth: 12,
-    //   boxShadow: '1px 1px 0px 0px rgba(0,0,0,0.09)'
-    // })
-    // const scene = new ScrollMagic.Scene({
-    //     triggerElement: ".about",
-    //     triggerHook: "onLeave",
-    //     duration: "100%"
-    //   })
-    //   .setPin(".about")
-    //   .setTween(tl)
-    //   .addTo(controller);
-    // const scene2 = new ScrollMagic.Scene({
-    //     triggerElement: ".about__box"
-    //   })
-    //   .setTween(tl2)
-    //   .addTo(controller);
 
-    // function updatePercentage() {
-    //   //percent.innerHTML = (tl.progress() *100 ).toFixed();
-    //   tl.progress();
-    //   console.log(tl.progress());
-    // }
-
-    // http://gisday.knhevelius.pl/wp-content/uploads/2011/04/GISday_C.jpg
-    // https://www.pwste.edu.pl/wp-content/uploads/2018/11/GISDAY-LOGO.jpg
 </script>
 
 </html>
