@@ -8,6 +8,10 @@
     @import url('https://fonts.googleapis.com/css?family=Raleway');
     @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
+    @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
+
+
+
     @font-face {
       font-family: 'Avenir Next Regular';
       src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
@@ -26,7 +30,9 @@
     body {
       overflow-x: hidden;
       margin: 0;
-      font-family: "Avenir Next Regular"
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1em;
     }
 
     .parallax {
@@ -178,133 +184,231 @@
 
     .about {
       height: 100vh;
+      padding: 3em;
+      position: relative;
+      box-sizing: border-box;
     }
 
 
     .about__box {
       background: none;
-      height: 40%;
+      top: 30vh;
+      height: 50vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       font-size: 1.5em;
-      width: 45%;
+      width: 45vw;
       position: absolute;
       left: 8%;
-      margin-top: 7%;
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
     }
+
 
     .about__box h1 {
       position: absolute;
-      top: 20%;
+      top: 3vh;
       width: 100%;
-      left: 8%;
-      font-family: "Avenir Next Demi";
-      font-size: 1.7em;
-
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      margin: 0;
+      left: 1vw;
     }
 
     .about__box blockquote {
-      margin-top: 48%;
-      left: 8%;
+      top: 16vh;
       text-align: justify;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1em;
+      width: 43vw;
+      margin: 0;
+      position: absolute;
     }
 
     .about2 {
       height: 100vh;
-    }
-
-    .about2__box {
-      background: none;
-      height: 40%;
-      display: flex;
-      align-items: center;
-      font-size: 1.5em;
-      width: 45%;
-      position: absolute;
-      right: 8%;
-      top: 8%;
-    }
-
-    .about2__box h1 {
-      position: absolute;
-      top: 15%;
-      width: 100%;
-      right: 8%;
-      font-family: "Avenir Next Demi";
-      font-size: 1.7em;
-      text-align: right;
-    }
-
-    .about2__box blockquote {
-      right: 8%;
-      margin-top: 50%;
-      text-align: justify;
-    }
-
-    .where {
-      background-image: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .where__box {
-      background: none;
-      height: 40%;
-      display: flex;
-      align-items: center;
-      text-align: justify;
-      text-justify: inter-word;
-      width: 45%;
-      position: absolute;
-      left: 8%;
-      font-size: 1.5em;
-      top: 5%;
-    }
-
-    .where__box h1 {
-      position: absolute;
-      top: 7%;
-      width: 100%;
-      left: 7%;
-      font-family: "Avenir Next Demi";
-      font-size: 1.7em;
-      text-align: left;
-    }
-
-    .where__box blockquote {
-      left: 8%;
-      margin-top: 15%;
-      text-align: justify;
-    }
-
-    section {
       padding: 3em;
-      height: 100vh;
       position: relative;
       box-sizing: border-box;
     }
 
-    .line__about {
+    .about2__box {
+      background: none;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      width: 45vw;
+      position: absolute;
+      right: 8%;
+      top: 15vh;
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+    }
+
+    .about2__box h1 {
+      position: absolute;
+      top: 5vh;
       width: 100%;
-      background: #235538d8;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      text-align: right;
+      margin: 0;
+    }
+
+    .about2__box blockquote {
+      text-align: justify;
+      margin: 0;
+      top: 20vh;
+      width: 100%;
+      position: absolute;
+    }
+
+    .where {
+      background-image: white;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1em;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .where__box {
+      background: none;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      width: 45vw;
+      position: absolute;
+      left: 8%;
+      font-size: 1.5em;
+      top: 15vh;
+      margin: 0;
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+    }
+
+    .where__box h1 {
+      position: absolute;
+      top: 5vh;
+      width: 100%;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      text-align: left;
+      margin: 0;
+    }
+
+    .where__box blockquote {
+      text-align: justify;
+      margin: 0;
+      width: 45vw;
+      top: 20vh;
+      position: absolute;
+    }
+
+    .organizers {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-sizing: border-box
+    }
+
+    .organizers__box {
+      background: none;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      top: 20vh;
+      font-size: 1.5em;
+      width: 60%;
+      position: absolute;
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      opacity: 0;
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      transform: scale(0.9);
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -ms-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
+
+    .organizers__box.visible {
+      opacity: 1;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+
+    }
+
+    .organizers__box h1 {
+      position: absolute;
+      width: 100%;
+      top: 8vh;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      text-align: center;
+    }
+
+    .organizers__box blockquote {
+      margin-top: 20vh;
+      text-align: justify;
+    }
+
+    .welcome {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-sizing: border-box;
+      top: 90vh;
+    }
+
+    .welcome__text {
+      text-align: justify;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 3px 3px #4d4d4d42;
+      color: #121420;
+      top: -10vh;
+      position: relative;
+
+    }
+
+    .line__about {
+      width: 0%;
       display: block;
       height: 5px;
       margin-top: 20px;
     }
 
     .line__where {
-      width: 100%;
-      background: #235538d8;
       display: block;
       height: 5px;
       margin-top: 20px;
     }
 
     .line__about2 {
-      width: 100%;
-      background: #235538d8;
       display: block;
       height: 5px;
       margin-top: 20px;
@@ -316,15 +420,15 @@
 
     #globe {
       width: 20%;
-      right: 15%;
-      top: 33%;
+      right: 10vw;
+      top: 30vh;
     }
 
 
     #img__where {
       width: 33%;
-      right: 8%;
-      top: 10%;
+      right: 3vw;
+      top: 22%;
       box-shadow: 8px 8px 5px rgba(148, 148, 148, 0.774);
     }
 
@@ -332,8 +436,8 @@
 
     #img__about2 {
       width: 25%;
-      left: 12%;
-      top: 22%;
+      left: 8vw;
+      top: 16vh;
     }
 
     .percentage {
@@ -349,7 +453,7 @@
     <span class="headerScroll--trigger"></span>
     <h1>
       <div class="header">
-        <div class="gisday">GISDAY </div>
+        <div class="gisday">GIS DAY </div>
         <div class="poznan"> POZNAŃ</div>
         <div class="date"> 2019</div>
     </h1>
@@ -365,9 +469,9 @@
     <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
   </div>
 
-  <section class="about">
+  <div class="about">
     <div class="about__box">
-      <h1>GisDay 2019</h1>
+      <h1>Gis Day 2019</h1>
       <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
         w
         praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
@@ -376,30 +480,50 @@
     </div>
 
     <img id="globe" src="http://gisday.knhevelius.pl/wp-content/uploads/2011/04/GISday_C.jpg">
-  </section>
+  </div>
 
-  <section class="about2">
+  <div class="about2">
     <div class="about2__box">
-      <h1>Czym jest GisDay?</h1>
+      <h1>Czym jest Gis Day?</h1>
       <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różne rodzaju
         konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w jego
         obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
     </div>
     <img id="img__about2" src="https://pbs.twimg.com/profile_images/479487015621111809/53mx3P5l.jpeg">
-  </section>
+  </div>
 
 
-  <section class="where">
+  <div class="where">
     <div class="where__box">
       <h1>Gdzie i kiedy?</h1>
-      <blockquote>GDZIE I KIEDY
+      <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
+        Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
+        Krygowskiego 10.
+
 
         <span class="line__where"></span></blockquote>
     </div>
     <img id="img__where"
       src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wydzia%C5%82_Nauk_Geograficznych_i_Geologicznych.jpg">
 
-  </section>
+  </div>
+
+
+  <div class="organizers">
+    <div class="organizers__box">
+      <h1>Organizatorzy</h1>
+      <blockquote>GIS Day organizowany jest przez studentów należących do sekcji geoinformacji Studenckiego Koła
+        Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa Zwolińskiego,
+        w ramach działaności popularno-naukowej.
+      </blockquote>
+    </div>
+
+    <div class="welcome">
+      <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+    </div>
+
+
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
@@ -434,7 +558,6 @@
     duration: '100%',
   })
     .setTween(headerTM)
-    .addIndicators()
     .addTo(controller)
 
 
@@ -460,7 +583,6 @@
     duration: '125%',
   })
     .setTween(aboutTM)
-    .addIndicators()
     .addTo(controller)
 
   // animacja about2
@@ -484,7 +606,6 @@
     duration: '100%',
   })
     .setTween(about2TM)
-    .addIndicators()
     .addTo(controller)
 
 
@@ -509,13 +630,37 @@
     duration: '100%',
   })
     .setTween(whereTM)
-    .addIndicators()
     .addTo(controller)
 
 
 
-  window.addEventListener('scroll', scrollHandler)
+  // animacja organizers
+  new ScrollMagic.Scene({
+    triggerElement: ".where",
+    triggerHook: 0.1, // show, when scrolled 10% into view
+    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+    offset: 80 // move trigger to center of element
+  })
+    .setClassToggle(".organizers__box", "visible") // add class to reveal
+    .addTo(controller);
 
+
+  // animacja welcome
+
+  let welcomeTM = new TimelineMax({});
+  welcomeTM.to('.welcome__text', 0.5, {
+    'font-size': '4.5em'
+  })
+
+  let welcomeScene = new ScrollMagic.Scene({
+    triggerElement: '.welcome',
+    triggerHook: "onEnter",
+    duration: '100%',
+  })
+    .setTween(welcomeTM)
+    .addTo(controller)
+
+  window.addEventListener('scroll', scrollHandler)
 </script>
 
 </html>
