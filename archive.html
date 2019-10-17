@@ -148,6 +148,7 @@
     .container .box .imgBox {
       position: relative;
       overflow: hidden;
+      clip-path: ellipse(44% 48% at 50% 50%);
     }
 
     .container .box .imgBox img {
@@ -156,58 +157,11 @@
     }
 
     .container .box:hover .imgBox img {
-      transform: scale(1.2);
+      transform: scale(1.18);
     }
 
-    .container .box .details {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      right: 0px;
-      max-width: 280px;
-      max-height: 220px;
-      display: flex;
-      justify-content: center;
-      background: rgba(0, 0, 0, .9);
-      transform: scaleY(0);
-      transition: transform .5s;
-    }
-
-    .container .box:hover .details {
-      transform: scaleY(1);
-    }
-
-    .container .box .details .content {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      padding: 15px;
-      color: #fff;
-      font-weight: 300;
-      border-top: solid 1px #fff;
-      border-bottom: solid 1px #fff;
-    }
-
-    .container .box .details .content h2 {
-      margin: 0;
-      padding: 0;
-      font-size: 40px;
-      font-family: "Avenir Next Regular";
-      opacity: 0, 85;
-
-    }
-
-    a {
-      display: block;
-      max-width: 100%;
-      height: 100%;
-      width: 100%;
-
-
-
-
+    .container .box .imgBox-wrap {
+      filter: drop-shadow(6px 6px 3px rgba(58, 58, 58, 0.747));
     }
   </style>
 
@@ -228,87 +182,105 @@
 
   <div class="container">
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details"> <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
-        <div class="content">
-          <h2>2013</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2018.png"> </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2017.png"> </div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2016.png"> </div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+
       </div>
-      <div class="details">
-        <div class="content">
-          <h2>2012</h2>
+    </div>
+    <div class="box">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2015.png"> </div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2014.png"> </div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2013.png"> </div>
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2012.png">
         </div>
       </div>
       <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A"></a>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2011</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2011.png"> </div>
+
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2010</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2010.png"> </div>
+
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2009</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2009.png"> </div>
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2008</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2008.png"> </div>
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2007</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2007.png"> </div>
       </div>
     </div>
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
-      <div class="details">
-        <div class="content">
-          <h2>2006</h2>
-        </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2006.png"> </div>
       </div>
     </div>
 
     <div class="box">
-      <div class="imgBox">
-        <img src="assets/static/pictures/globe.jpg"> </div>
+      <div class="imgBox-wrap">
+        <div class="imgBox">
+          <img src="assets/static/pictures/archive/2005.png"> </div>
+      </div>
       <div class="details">
-        <div class="content">
-          <h2>2005</h2>
-        </div>
+
       </div>
     </div>
   </div>
