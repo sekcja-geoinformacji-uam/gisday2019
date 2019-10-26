@@ -237,43 +237,46 @@
       }
 
       .about2 {
-        height: 100vh;
-        padding: 3em;
-        position: relative;
-        box-sizing: border-box;
+       height: 100vh;
+       padding: 3em;
+       position: relative;
+       box-sizing: border-box;
+       display: flex;
+       align-items: center;
       }
 
       .about2__box {
-        background: none;
-        height: 50vh;
-        display: flex;
-        align-items: center;
-        font-size: 1.5em;
-        width: 45vw;
-        position: absolute;
-        right: 8%;
-        top: 15vh;
-        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+ background: none;
+ height: auto;
+ width: 100%;
+
+ border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+ border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+
+
+     
       }
 
       .about2__box h1 {
-        position: absolute;
-        top: 5vh;
+        /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
         width: 100%;
         font-family: "Rajdhani", sans-serif;
         font-weight: 600;
         font-size: 2.2em;
-        text-align: right;
-        margin: 0;
+        margin: 20px 0;
       }
 
       .about2__box blockquote {
-        text-align: right;
-        margin: 0;
-        top: 20vh;
-        width: 100%;
-        position: absolute;
+       /* position: absolute;
+       top: 16vh; */
+       text-align: left;
+       font-family: "Roboto", sans-serif;
+       font-weight: 400;
+       font-size: 1.4em;
+       width: 100%;
+       margin: 0;
       }
 
       .where {
@@ -450,7 +453,7 @@
 
       #img__about2 {
         width: 25%;
-        left: 8vw;
+        left: 4vw;
         top: 16vh;
       }
 
@@ -479,6 +482,23 @@
         
       }
 
+         @media (min-width: 1200px) {
+         .gisday {
+          font-size: 250px;
+         }
+         .poznan {
+   font-size: 140px;
+         }
+         .date {
+   font-size: 100px;
+         }
+         .about2__box {
+            position: absolute;
+            right: 8%;
+            top: 15vh;
+         }
+         }
+
 @media (min-width: 630px) {
   #navbar i {
   display: none;
@@ -489,6 +509,9 @@
    .about__box {
    width: 60%;
    }
+    .about2__box {
+    width: 60%;
+    }
 }
     
     </style>
@@ -671,7 +694,6 @@
           triggerHook: 1,
           duration: '75%',
         })
-        .addIndicators()
         .setTween(aboutTM)
         .addTo(controller)
 
@@ -691,10 +713,12 @@
       }, -"1")
 
       let about2Scene = new ScrollMagic.Scene({
-          triggerElement: '.about',
-          triggerHook: .3,
-          duration: '100%',
+          triggerElement: '.about2',
+          triggerHook: 1,
+          duration: '75%',
         })
+        .addIndicators()
+
         .setTween(about2TM)
         .addTo(controller)
 
