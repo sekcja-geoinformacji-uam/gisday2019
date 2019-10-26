@@ -237,24 +237,24 @@
       }
 
       .about2 {
-       height: 100vh;
-       padding: 3em;
-       position: relative;
-       box-sizing: border-box;
-       display: flex;
-       align-items: center;
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
       }
 
       .about2__box {
- background: none;
- height: auto;
- width: 100%;
+        background: none;
+        height: auto;
+        width: 100%;
 
- border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
- border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
 
 
-     
+
       }
 
       .about2__box h1 {
@@ -269,61 +269,72 @@
       }
 
       .about2__box blockquote {
-       /* position: absolute;
+        /* position: absolute;
        top: 16vh; */
-       text-align: left;
-       font-family: "Roboto", sans-serif;
-       font-weight: 400;
-       font-size: 1.4em;
-       width: 100%;
-       margin: 0;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
       }
 
       .where {
-        background-image: white;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 1em;
+        height: 100vh;
+        padding: 3em;
         position: relative;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
       }
 
       .where__box {
         background: none;
-        height: 50vh;
-        display: flex;
-        align-items: center;
-        text-align: justify;
-        width: 45vw;
-        position: absolute;
-        left: 8%;
-        font-size: 1.5em;
-        top: 15vh;
-        margin: 0;
+        top: 30vh;
+        height: auto;
+        /* display: flex;
+      align-items: center;
+      justify-content: center; */
+        font-size: 1em;
+        width: 100%;
+        max-width: 800px;
+        /* position: absolute; */
+        /* left: 8%; */
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
         border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
       }
 
       .where__box h1 {
-        position: absolute;
-        top: 5vh;
+        /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
         width: 100%;
         font-family: "Rajdhani", sans-serif;
         font-weight: 600;
         font-size: 2.2em;
-        text-align: left;
-        margin: 0;
+        margin: 20px 0;
       }
 
       .where__box blockquote {
+        /* position: absolute;
+      top: 16vh; */
         text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
         margin: 0;
-        width: 45vw;
-        top: 20vh;
-        position: absolute;
       }
+
+      #img__where {
+        width: 33%;
+        right: 3vw;
+        top: 22%;
+        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+      }
+
 
       .organizers {
         height: 100vh;
@@ -440,14 +451,6 @@
       }
 
 
-      #img__where {
-        width: 33%;
-        right: 3vw;
-        top: 22%;
-        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-      }
 
 
 
@@ -474,46 +477,46 @@
         display: none;
       }
 
-      
+      @media (min-width: 1200px) {
+        .gisday {
+          font-size: 250px;
+        }
+        .poznan {
+          font-size: 140px;
+        }
+        .date {
+          font-size: 100px;
+        }
+      }
+
+
       @media (max-width: 630px) {
         .section__img {
           display: none;
         }
-        
       }
 
-         @media (min-width: 1200px) {
-         .gisday {
-          font-size: 250px;
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
+        }
+        #navbar span {
+          display: block;
+        }
+        .about__box {
+          width: 60%;
+        }
+         .where__box {
+         width: 60%;
          }
-         .poznan {
-   font-size: 140px;
-         }
-         .date {
-   font-size: 100px;
-         }
-         .about2__box {
-            position: absolute;
-            right: 8%;
-            top: 15vh;
-         }
-         }
-
-@media (min-width: 630px) {
-  #navbar i {
-  display: none;
-  }
-   #navbar span {
-   display: block;
-   }
-   .about__box {
-   width: 60%;
-   }
-    .about2__box {
-    width: 60%;
-    }
-}
-    
+        .about2__box {
+          position: absolute;
+          right: 8%;
+          top: 15vh;
+          width: 60%;
+        }
+      }
+      
     </style>
   </head>
 
@@ -700,7 +703,7 @@
       // animacja about2
 
       let about2TM = new TimelineMax({});
-      about2TM.from('.about2__box', 1, {
+      about2TM.from('.about2__box', 8, {
         opacity: 0,
         x: -200
       })
@@ -710,7 +713,7 @@
       about2TM.from('#img__about2', 2, {
         opacity: 0,
         x: 200
-      }, -"1")
+      }, +"3")
 
       let about2Scene = new ScrollMagic.Scene({
           triggerElement: '.about2',
@@ -726,7 +729,7 @@
       // animacja .where
 
       let whereTM = new TimelineMax({});
-      whereTM.from('.where__box', 1, {
+      whereTM.from('.where__box', 8, {
         opacity: 0,
         x: 200
       })
@@ -736,12 +739,12 @@
       whereTM.from('#img__where', 2, {
         opacity: 0,
         x: -200
-      }, -"1")
+      }, +"1")
 
       let whereScene = new ScrollMagic.Scene({
-          triggerElement: '.about2',
-          triggerHook: .3,
-          duration: '100%',
+          triggerElement: '.where',
+          triggerHook: 1,
+          duration: '75%',
         })
         .setTween(whereTM)
         .addTo(controller)
@@ -761,7 +764,7 @@
 
       let welcomeTM = new TimelineMax({});
       welcomeTM.to('.welcome__text', 0.5, {
-        'font-size': '4.7em'
+        'font-size': '3em'
       })
 
       let welcomeScene = new ScrollMagic.Scene({
