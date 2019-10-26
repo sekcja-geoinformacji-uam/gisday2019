@@ -1,677 +1,685 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Arapey');
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js">
+    </script>
+    <style>
+      /* @import url('https://fonts.googleapis.com/css?family=Arapey');
     @import url('https://fonts.googleapis.com/css?family=Raleway');
     @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
     @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
 
 
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      }
 
-    @font-face {
-      font-family: 'Avenir Next Bold';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Bold';
+        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
+      }
 
-    @font-face {
-      font-family: 'Avenir Next Demi';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
-    }
+      @font-face {
+        font-family: 'Avenir Next Demi';
+        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
+      }
 
-    body {
-      overflow-x: hidden;
-      margin: 0;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      font-size: 1em;
-    }
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+      }
 
-    .parallax {
-      /* The image used */
-      background-image: url("assets/static/pictures/tlo2.png");
-      opacity: 1;
-      /* Set a specific height */
-      min-height: 100vh;
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+      .parallax {
+        /* The image used */
+        background-image: url("assets/static/pictures/tlo2.png");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 
-    .parallax h1 {
-      padding-top: 23vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-family: "Avenir Next Demi";
-      letter-spacing: 3px;
-      text-shadow: 3px 3px 3px #000000;
-    }
+      .parallax h1 {
+        padding-top: 23vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 3px #000000;
+      }
 
-    .gisday {
-      font-size: 24vh;
-      font-family: "Avenir Next Demi";
-      padding-right: 6vh;
-      padding-left: 6vh;
-      padding-top: 2.5vh;
-      padding-bottom: 2.5vh;
-      text-align: center;
-      font-weight: 600;
-    }
+      .gisday {
+        font-size: 24vh;
+        font-family: "Avenir Next Demi";
+        padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        text-align: center;
+        font-weight: 600;
+      }
 
-    .poznan {
-      font-size: 8vh;
-      font-weight: 500;
-    }
+      .poznan {
+        font-size: 8vh;
+        font-weight: 500;
+      }
 
-    .date {
-      font-size: 8vh;
-      font-weight: 500;
-    }
+      .date {
+        font-size: 8vh;
+        font-weight: 500;
+      }
 
-    .header {
-      text-align: center;
-    }
+      .header {
+        text-align: center;
+      }
 
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100%;
-      position: absolute;
-      border: 0.1vw solid rgba(126, 126, 126, 0.555);
-      position: absolute;
-    }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100%;
+        position: absolute;
+        border: 0.1vw solid rgba(126, 126, 126, 0.555);
+        position: absolute;
+      }
 
-    li {
-      display: inline-block;
-    }
+      li {
+        display: inline-block;
+      }
 
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
 
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
 
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
 
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
 
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
 
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
 
-    .content {
-      padding: 16px;
-    }
+      .content {
+        padding: 16px;
+      }
 
-    .sticky {
-      position: fixed !important;
-      top: 0;
-      width: 100%;
-    }
+      .sticky {
+        position: fixed !important;
+        top: 0;
+        width: 100%;
+      }
 
-    .sticky+.content {
-      padding-top: 60px;
-    }
+      .sticky+.content {
+        padding-top: 60px;
+      }
 
-    .about {
-      height: 100vh;
-      padding: 3em;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-
-    .about__box {
-      background: none;
-      top: 30vh;
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      width: 45vw;
-      position: absolute;
-      left: 8%;
-      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-    }
+      .about {
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+      }
 
 
-    .about__box h1 {
-      position: absolute;
-      top: 3vh;
-      width: 100%;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 600;
-      font-size: 2.2em;
-      margin: 0;
-      left: 1vw;
-    }
-
-    .about__box blockquote {
-      top: 16vh;
-      text-align: left;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      font-size: 1em;
-      width: 43vw;
-      margin: 0;
-      position: absolute;
-    }
-
-    .about2 {
-      height: 100vh;
-      padding: 3em;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    .about2__box {
-      background: none;
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      font-size: 1.5em;
-      width: 45vw;
-      position: absolute;
-      right: 8%;
-      top: 15vh;
-      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-    }
-
-    .about2__box h1 {
-      position: absolute;
-      top: 5vh;
-      width: 100%;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 600;
-      font-size: 2.2em;
-      text-align: right;
-      margin: 0;
-    }
-
-    .about2__box blockquote {
-      text-align: right;
-      margin: 0;
-      top: 20vh;
-      width: 100%;
-      position: absolute;
-    }
-
-    .where {
-      background-image: white;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 1em;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    .where__box {
-      background: none;
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      text-align: justify;
-      width: 45vw;
-      position: absolute;
-      left: 8%;
-      font-size: 1.5em;
-      top: 15vh;
-      margin: 0;
-      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-    }
-
-    .where__box h1 {
-      position: absolute;
-      top: 5vh;
-      width: 100%;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 600;
-      font-size: 2.2em;
-      text-align: left;
-      margin: 0;
-    }
-
-    .where__box blockquote {
-      text-align: left;
-      margin: 0;
-      width: 45vw;
-      top: 20vh;
-      position: absolute;
-    }
-
-    .organizers {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-sizing: border-box
-    }
-
-    .organizers__box {
-      background: none;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      top: 20vh;
-      font-size: 1.5em;
-      width: 60%;
-      position: absolute;
-      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-      opacity: 0;
-      -webkit-transform: scale(0.9);
-      -moz-transform: scale(0.9);
-      -ms-transform: scale(0.9);
-      -o-transform: scale(0.9);
-      transform: scale(0.9);
-      -webkit-transition: all 1s ease-in-out;
-      -moz-transition: all 1s ease-in-out;
-      -ms-transition: all 1s ease-in-out;
-      -o-transition: all 1s ease-in-out;
-      transition: all 1s ease-in-out;
-    }
-
-    .organizers__box.visible {
-      opacity: 1;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
-      transform: none;
-
-    }
-
-    .organizers__box h1 {
-      top: 10vh;
-      margin-top: 0;
-      position: absolute;
-      width: 100%;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 600;
-      font-size: 2.5em;
-      text-align: left;
-      left: 3.1vw;
-    }
-
-    .organizers__box blockquote {
-      margin-top: 25vh;
-      text-align: inherit;
-      margin-bottom: 0;
-    }
-
-    .welcome {
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-sizing: border-box;
-      top: 90vh;
-      width: 100%;
-    }
-
-    .welcome__text {
-      text-align: justify;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 700;
-      font-size: 2em;
-      text-align: center;
-      text-shadow: 3px 3px #4d4d4d42;
-      color: #121420;
-      top: -10vh;
-      position: relative;
-
-    }
-
-    .line__about {
-      width: 0%;
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
-
-    .line__where {
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
-
-    .line__about2 {
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
-
-    img {
-      position: absolute;
-    }
-
-    #globe {
-      width: 20%;
-      right: 10vw;
-      top: 30vh;
-    }
+      .about__box {
+        background: none;
+        top: 30vh;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        width: 45vw;
+        position: absolute;
+        left: 8%;
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
 
 
-    #img__where {
-      width: 33%;
-      right: 3vw;
-      top: 22%;
-      -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-      -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-      box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-    }
+      .about__box h1 {
+        position: absolute;
+        top: 3vh;
+        width: 100%;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 2.2em;
+        margin: 0;
+        left: 1vw;
+      }
+
+      .about__box blockquote {
+        top: 16vh;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        width: 43vw;
+        margin: 0;
+        position: absolute;
+      }
+
+      .about2 {
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .about2__box {
+        background: none;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        width: 45vw;
+        position: absolute;
+        right: 8%;
+        top: 15vh;
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
+
+      .about2__box h1 {
+        position: absolute;
+        top: 5vh;
+        width: 100%;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 2.2em;
+        text-align: right;
+        margin: 0;
+      }
+
+      .about2__box blockquote {
+        text-align: right;
+        margin: 0;
+        top: 20vh;
+        width: 100%;
+        position: absolute;
+      }
+
+      .where {
+        background-image: white;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 1em;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .where__box {
+        background: none;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        width: 45vw;
+        position: absolute;
+        left: 8%;
+        font-size: 1.5em;
+        top: 15vh;
+        margin: 0;
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
+
+      .where__box h1 {
+        position: absolute;
+        top: 5vh;
+        width: 100%;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 2.2em;
+        text-align: left;
+        margin: 0;
+      }
+
+      .where__box blockquote {
+        text-align: left;
+        margin: 0;
+        width: 45vw;
+        top: 20vh;
+        position: absolute;
+      }
+
+      .organizers {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box
+      }
+
+      .organizers__box {
+        background: none;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        top: 20vh;
+        font-size: 1.5em;
+        width: 60%;
+        position: absolute;
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+        opacity: 0;
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        transform: scale(0.9);
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+      }
+
+      .organizers__box.visible {
+        opacity: 1;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+
+      }
+
+      .organizers__box h1 {
+        top: 10vh;
+        margin-top: 0;
+        position: absolute;
+        width: 100%;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 2.5em;
+        text-align: left;
+        left: 3.1vw;
+      }
+
+      .organizers__box blockquote {
+        margin-top: 25vh;
+        text-align: inherit;
+        margin-bottom: 0;
+      }
+
+      .welcome {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        top: 90vh;
+        width: 100%;
+      }
+
+      .welcome__text {
+        text-align: justify;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 700;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: 3px 3px #4d4d4d42;
+        color: #121420;
+        top: -10vh;
+        position: relative;
+
+      }
+
+      .line__about {
+        width: 0%;
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
+
+      .line__where {
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
+
+      .line__about2 {
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
+
+      img {
+        position: absolute;
+      }
+
+      #globe {
+        width: 20%;
+        right: 10vw;
+        top: 30vh;
+      }
+
+
+      #img__where {
+        width: 33%;
+        right: 3vw;
+        top: 22%;
+        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+      }
 
 
 
-    #img__about2 {
-      width: 25%;
-      left: 8vw;
-      top: 16vh;
-    }
+      #img__about2 {
+        width: 25%;
+        left: 8vw;
+        top: 16vh;
+      }
 
-    #logo_org {
-      width: 18%;
-      position: absolute;
-      right: 10vw;
-      top: 3vh;
-    }
+      #logo_org {
+        width: 18%;
+        position: absolute;
+        right: 10vw;
+        top: 3vh;
+      }
 
-    .percentage {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-    }
-  </style>
-</head>
+      .percentage {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="parallax">
-    <span class="headerScroll--trigger"></span>
-    <h1>
-      <div class="header">
-        <div class="gisday">GIS DAY </div>
-        <div class="poznan"> POZNAŃ</div>
-        <div class="date"> 2019</div>
-    </h1>
-  </div>
-  </div>
+  <body>
+    <div class="parallax">
+      <span class="headerScroll--trigger"></span>
 
-  <div id="navbar">
-    <li><a class="active" href="#" class="cool-link">Aktualności</a></li>
-    <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-    <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
-        class="cool-link">Zapisy</a></li>
-    <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
-    <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
-  </div>
+      <!-- <img src="smiley.gif" alt="Smiley face" height="42" width="42"> -->
 
-  <div class="about">
-    <div class="about__box">
-      <h1>Gis Day 2019</h1>
-      <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
-        w
-        praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
-        Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
-        <span class="line__about"></span></blockquote>
+      <h1>
+        <div class="header">
+          <div class="gisday">GIS DAY </div>
+          <div class="poznan"> POZNAŃ</div>
+          <div class="date"> 2019</div>
+      </h1>
+    </div>
     </div>
 
-    <img id="globe" src="http://gisday.knhevelius.pl/wp-content/uploads/2011/04/GISday_C.jpg">
-  </div>
-
-  <div class="about2">
-    <div class="about2__box">
-      <h1>Czym jest Gis Day?</h1>
-      <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różnego
-        rodzaju
-        konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w jego
-        obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
-    </div>
-    <img id="img__about2" src="https://pbs.twimg.com/profile_images/479487015621111809/53mx3P5l.jpeg">
-  </div>
-
-
-  <div class="where">
-    <div class="where__box">
-      <h1>Gdzie i kiedy?</h1>
-      <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
-        Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
-        Krygowskiego 10.
-
-
-        <span class="line__where"></span></blockquote>
-    </div>
-    <img id="img__where"
-      src="https://upload.wikimedia.org/wikipedia/commons/9/94/Wydzia%C5%82_Nauk_Geograficznych_i_Geologicznych.jpg">
-
-  </div>
-
-
-  <div class="organizers">
-    <div class="organizers__box">
-      <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png">
-      <blockquote>GIS Day organizowany jest przez studentów należących do sekcji geoinformacji Studenckiego Koła
-        Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa Zwolińskiego,
-        w ramach działaności popularno-naukowej.
-      </blockquote>
+    <div id="navbar">
+      <li><a class="active" href="#" class="cool-link">Aktualności</a></li>
+      <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
+      <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
+          target="_blank" class="cool-link">Zapisy</a></li>
+      <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
+      <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
     </div>
 
-    <div class="welcome">
-      <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+    <div class="about">
+      <div class="about__box">
+        <h1>Gis Day 2019</h1>
+        <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
+          w
+          praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
+          Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
+          <span class="line__about"></span></blockquote>
+      </div>
+
+      <img id="globe" src="assets/static/pictures/funart.png">
+    </div>
+
+    <div class="about2">
+      <div class="about2__box">
+        <h1>Czym jest Gis Day?</h1>
+        <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różnego
+          rodzaju
+          konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w
+          jego
+          obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
+      </div>
+      <img id="img__about2" src="assets/static/pictures/globe.png">
     </div>
 
 
-  </div>
+    <div class="where">
+      <div class="where__box">
+        <h1>Gdzie i kiedy?</h1>
+        <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
+          Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
+          Krygowskiego 10.
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
-</body>
-<script>
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;
-  let controller = new ScrollMagic.Controller();
+          <span class="line__where"></span></blockquote>
+      </div>
+      <img id="img__where" src="assets/static/pictures/wngig.png">
 
-  function scrollHandler() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-  // animacja header
+    </div>
 
-  let headerTM = new TimelineMax({});
 
-  headerTM.to('.header', .5, {
-    'transform': 'scale(0.7, 0.7)'
-  })
+    <div class="organizers">
+      <div class="organizers__box">
+        <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png">
+        <blockquote>GIS Day organizowany jest przez studentów należących do sekcji geoinformacji Studenckiego Koła
+          Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa
+          Zwolińskiego,
+          w ramach działaności popularno-naukowej.
+        </blockquote>
+      </div>
 
-  let headerScene = new ScrollMagic.Scene({
-    triggerElement: '.about',
-    triggerHook: .9,
-    duration: '100%',
-  })
-    .setTween(headerTM)
-    .addTo(controller)
+      <div class="welcome">
+        <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+      </div>
+
+
+    </div>
 
 
 
-  // animacja about_box
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      let controller = new ScrollMagic.Controller();
 
-  let aboutTM = new TimelineMax({});
-  aboutTM.from('.about__box', 1, {
-    opacity: 0,
-    x: 200
-  })
-  aboutTM.from('.line__about', 1, {
-    width: 0
-  }, -"5")
-  aboutTM.from('#globe', 2, {
-    opacity: 0,
-    x: -200
-  }, -"1")
+      function scrollHandler() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      // animacja header
 
-  let aboutScene = new ScrollMagic.Scene({
-    triggerElement: '.parallax',
-    triggerHook: .3,
-    duration: '125%',
-  })
-    .setTween(aboutTM)
-    .addTo(controller)
+      let headerTM = new TimelineMax({});
 
-  // animacja about2
+      headerTM.to('.header', .5, {
+        'transform': 'scale(0.7, 0.7)'
+      })
 
-  let about2TM = new TimelineMax({});
-  about2TM.from('.about2__box', 1, {
-    opacity: 0,
-    x: -200
-  })
-  about2TM.from('.line__about2', 1, {
-    width: 0
-  }, -"5")
-  about2TM.from('#img__about2', 2, {
-    opacity: 0,
-    x: 200
-  }, -"1")
-
-  let about2Scene = new ScrollMagic.Scene({
-    triggerElement: '.about',
-    triggerHook: .3,
-    duration: '100%',
-  })
-    .setTween(about2TM)
-    .addTo(controller)
-
-
-  // animacja .where
-
-  let whereTM = new TimelineMax({});
-  whereTM.from('.where__box', 1, {
-    opacity: 0,
-    x: 200
-  })
-  whereTM.from('.line__where', 1, {
-    width: 0
-  }, -"5")
-  whereTM.from('#img__where', 2, {
-    opacity: 0,
-    x: -200
-  }, -"1")
-
-  let whereScene = new ScrollMagic.Scene({
-    triggerElement: '.about2',
-    triggerHook: .3,
-    duration: '100%',
-  })
-    .setTween(whereTM)
-    .addTo(controller)
+      let headerScene = new ScrollMagic.Scene({
+          triggerElement: '.about',
+          triggerHook: .9,
+          duration: '100%',
+        })
+        .setTween(headerTM)
+        .addTo(controller)
 
 
 
-  // animacja organizers
-  new ScrollMagic.Scene({
-    triggerElement: ".where",
-    triggerHook: 0.1, // show, when scrolled 10% into view
-    duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 80 // move trigger to center of element
-  })
-    .setClassToggle(".organizers__box", "visible") // add class to reveal
-    .addTo(controller);
+      // animacja about_box
+
+      let aboutTM = new TimelineMax({});
+      aboutTM.from('.about__box', 1, {
+        opacity: 0,
+        x: 200
+      })
+      aboutTM.from('.line__about', 1, {
+        width: 0
+      }, -"5")
+      aboutTM.from('#globe', 2, {
+        opacity: 0,
+        x: -200
+      }, -"1")
+
+      let aboutScene = new ScrollMagic.Scene({
+          triggerElement: '.parallax',
+          triggerHook: .3,
+          duration: '125%',
+        })
+        .setTween(aboutTM)
+        .addTo(controller)
+
+      // animacja about2
+
+      let about2TM = new TimelineMax({});
+      about2TM.from('.about2__box', 1, {
+        opacity: 0,
+        x: -200
+      })
+      about2TM.from('.line__about2', 1, {
+        width: 0
+      }, -"5")
+      about2TM.from('#img__about2', 2, {
+        opacity: 0,
+        x: 200
+      }, -"1")
+
+      let about2Scene = new ScrollMagic.Scene({
+          triggerElement: '.about',
+          triggerHook: .3,
+          duration: '100%',
+        })
+        .setTween(about2TM)
+        .addTo(controller)
 
 
-  // animacja welcome
+      // animacja .where
 
-  let welcomeTM = new TimelineMax({});
-  welcomeTM.to('.welcome__text', 0.5, {
-    'font-size': '4.7em'
-  })
+      let whereTM = new TimelineMax({});
+      whereTM.from('.where__box', 1, {
+        opacity: 0,
+        x: 200
+      })
+      whereTM.from('.line__where', 1, {
+        width: 0
+      }, -"5")
+      whereTM.from('#img__where', 2, {
+        opacity: 0,
+        x: -200
+      }, -"1")
 
-  let welcomeScene = new ScrollMagic.Scene({
-    triggerElement: '.welcome',
-    triggerHook: "onEnter",
-    duration: '100%',
-  })
-    .setTween(welcomeTM)
-    .addTo(controller)
+      let whereScene = new ScrollMagic.Scene({
+          triggerElement: '.about2',
+          triggerHook: .3,
+          duration: '100%',
+        })
+        .setTween(whereTM)
+        .addTo(controller)
 
-  window.addEventListener('scroll', scrollHandler)
-</script>
+
+
+      // animacja organizers
+      new ScrollMagic.Scene({
+          triggerElement: ".where",
+          triggerHook: 0.1, // show, when scrolled 10% into view
+          duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+          offset: 80 // move trigger to center of element
+        })
+        .setClassToggle(".organizers__box", "visible") // add class to reveal
+        .addTo(controller);
+
+
+      // animacja welcome
+
+      let welcomeTM = new TimelineMax({});
+      welcomeTM.to('.welcome__text', 0.5, {
+        'font-size': '4.7em'
+      })
+
+      let welcomeScene = new ScrollMagic.Scene({
+          triggerElement: '.welcome',
+          triggerHook: "onEnter",
+          duration: '100%',
+        })
+        .setTween(welcomeTM)
+        .addTo(controller)
+
+      window.addEventListener('scroll', scrollHandler)
+    })
+  </script>
 
 </html>
