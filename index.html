@@ -243,6 +243,7 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        justify-content: space-between;
       }
 
       .about2__box {
@@ -346,14 +347,16 @@
       }
 
       .organizers__box {
+        padding: 20px 0;
+        position: relative;
         background: none;
-        height: 60vh;
-        display: flex;
-        align-items: center;
-        top: 20vh;
-        font-size: 1.5em;
-        width: 60%;
-        position: absolute;
+        /* height: 60vh; */
+        /* display: flex; */
+        /* align-items: center; */
+        /* top: 20vh; */
+        font-size: 1.3em;
+        width: 90%;
+        /* position: absolute; */
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
         border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
         opacity: 0;
@@ -380,21 +383,19 @@
       }
 
       .organizers__box h1 {
-        top: 10vh;
-        margin-top: 0;
-        position: absolute;
+        /* top: 10vh; */
+        /* margin-top: 0; */
+        /* position: relative; */
         width: 100%;
         font-family: "Rajdhani", sans-serif;
         font-weight: 600;
-        font-size: 2.5em;
-        text-align: left;
-        left: 3.1vw;
+        font-size: 1.7em;
+        text-align: center;
       }
 
       .organizers__box blockquote {
-        margin-top: 25vh;
+        /* margin-top: 25vh; */
         text-align: inherit;
-        margin-bottom: 0;
       }
 
       .welcome {
@@ -402,9 +403,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
+        /* position: relative; */
         box-sizing: border-box;
-        top: 90vh;
+        /* top: 90vh; */
         width: 100%;
       }
 
@@ -447,25 +448,23 @@
       #globe {
         width: 20%;
         right: 10vw;
-        top: 30vh;
+        bottom: 50vh;
       }
-
-
-
 
 
       #img__about2 {
+        position: relative;
         width: 25%;
-        left: 4vw;
-        top: 16vh;
+        bottom: 10vh;
       }
 
-      #logo_org {
-        width: 18%;
-        position: absolute;
-        right: 10vw;
-        top: 3vh;
-      }
+    #logo_org {
+    width: 80px;
+    position: absolute;
+
+    right: 0vw;
+    top: 6px;
+    }
 
       .percentage {
         position: absolute;
@@ -481,9 +480,11 @@
         .gisday {
           font-size: 250px;
         }
+
         .poznan {
           font-size: 140px;
         }
+
         .date {
           font-size: 100px;
         }
@@ -500,23 +501,25 @@
         #navbar i {
           display: none;
         }
+
         #navbar span {
           display: block;
         }
+
         .about__box {
           width: 60%;
         }
-         .where__box {
-         width: 60%;
-         }
+
+        .where__box {
+          width: 60%;
+        }
+
         .about2__box {
-          position: absolute;
-          right: 8%;
-          top: 15vh;
+          position: relative;
+          /* right: 8%; */
           width: 60%;
         }
       }
-      
     </style>
   </head>
 
@@ -555,7 +558,6 @@
       <li>
         <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
           class="cool-link">
-
           <i class="material-icons">
             assignment
           </i>
@@ -599,6 +601,8 @@
     </div>
 
     <div class="about2">
+      <img id="img__about2" src="assets/static/pictures/globe.png" class="section__img">
+
       <div class="about2__box">
         <h1>Czym jest Gis Day?</h1>
         <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różnego
@@ -607,7 +611,6 @@
           jego
           obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
       </div>
-      <img id="img__about2" src="assets/static/pictures/globe.png" class="section__img">
     </div>
 
 
@@ -628,7 +631,7 @@
 
     <div class="organizers">
       <div class="organizers__box">
-        <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png">
+        <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png" class="section__img">
         <blockquote>GIS Day organizowany jest przez studentów należących do sekcji geoinformacji Studenckiego Koła
           Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa
           Zwolińskiego,
@@ -636,11 +639,12 @@
         </blockquote>
       </div>
 
-      <div class="welcome">
-        <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
-      </div>
 
 
+
+    </div>
+    <div class="welcome">
+      <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
     </div>
 
 
@@ -720,8 +724,6 @@
           triggerHook: 1,
           duration: '75%',
         })
-        .addIndicators()
-
         .setTween(about2TM)
         .addTo(controller)
 
@@ -746,17 +748,20 @@
           triggerHook: 1,
           duration: '75%',
         })
+        .addIndicators()
         .setTween(whereTM)
         .addTo(controller)
 
       // animacja organizers
       new ScrollMagic.Scene({
-          triggerElement: ".where",
+          triggerElement: ".organizers",
           triggerHook: 0.1, // show, when scrolled 10% into view
-          duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-          offset: 80 // move trigger to center of element
+          duration: "75%", // hide 10% before exiting view (80% + 10% from bottom)
+          offset: -200
         })
         .setClassToggle(".organizers__box", "visible") // add class to reveal
+        // .addIndicators()
+
         .addTo(controller);
 
 
