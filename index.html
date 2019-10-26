@@ -3,6 +3,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer></script>
@@ -99,10 +100,9 @@
         display: flex;
         justify-content: space-evenly;
         z-index: 2;
-        width: 100%;
-        position: absolute;
-        border: 0.1vw solid rgba(126, 126, 126, 0.555);
-        position: absolute;
+        width: 100vw;
+        position: relative;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
       }
 
       li {
@@ -178,7 +178,7 @@
       }
 
       .sticky {
-        position: fixed !important;
+        position: sticky !important;
         top: 0;
         width: 100%;
       }
@@ -192,45 +192,48 @@
         padding: 3em;
         position: relative;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
       }
 
 
       .about__box {
         background: none;
         top: 30vh;
-        height: 50vh;
-        display: flex;
+        height: auto;
+        /* display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 1.5em;
-        width: 45vw;
-        position: absolute;
-        left: 8%;
+        justify-content: center; */
+        font-size: 1em;
+        width: 100%;
+        max-width: 800px;
+        /* position: absolute; */
+        /* left: 8%; */
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
         border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
       }
 
 
       .about__box h1 {
-        position: absolute;
-        top: 3vh;
+        /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
         width: 100%;
         font-family: "Rajdhani", sans-serif;
         font-weight: 600;
         font-size: 2.2em;
-        margin: 0;
-        left: 1vw;
+        margin: 20px 0;
       }
 
       .about__box blockquote {
-        top: 16vh;
+        /* position: absolute;
+        top: 16vh; */
         text-align: left;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        font-size: 1em;
-        width: 43vw;
+        font-size: 1.4em;
+        width: 100%;
         margin: 0;
-        position: absolute;
       }
 
       .about2 {
@@ -463,6 +466,31 @@
         bottom: 10px;
         left: 10px;
       }
+
+      #navbar span {
+        display: none;
+      }
+
+      
+      @media (max-width: 630px) {
+        .section__img {
+          display: none;
+        }
+        
+      }
+
+@media (min-width: 630px) {
+  #navbar i {
+  display: none;
+  }
+   #navbar span {
+   display: block;
+   }
+   .about__box {
+   width: 60%;
+   }
+}
+    
     </style>
   </head>
 
@@ -479,12 +507,57 @@
     </div>
 
     <div id="navbar">
-      <li><a class="active" href="#" class="cool-link">Aktualności</a></li>
-      <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-      <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
-          target="_blank" class="cool-link">Zapisy</a></li>
-      <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
-      <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
+      <li>
+        <a class="active" href="#" class="cool-link">
+          <i class="material-icons">
+            home
+          </i>
+          <span>Aktualności</span>
+        </a>
+      </li>
+      <li>
+        <a href="./schedule.html" class="cool-link">
+          <i class="material-icons">
+            schedule
+          </i>
+          <span>
+            Harmonogram
+          </span>
+
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+          class="cool-link">
+
+          <i class="material-icons">
+            assignment
+          </i>
+          <span>
+            Zapisy
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="./archive.html" class="cool-link">
+          <i class="material-icons">
+            photo_library
+          </i>
+          <span>
+            Galeria
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="./contact.html" class="cool-link">
+          <i class="material-icons">
+            contact_support
+          </i>
+          <span>
+            Kontakt
+          </span>
+        </a>
+      </li>
     </div>
 
     <div class="about">
@@ -496,8 +569,7 @@
           Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
           <span class="line__about"></span></blockquote>
       </div>
-
-      <img id="globe" src="assets/static/pictures/funart.png">
+      <img id="globe" src="assets/static/pictures/funart.png" class="section__img">
     </div>
 
     <div class="about2">
@@ -509,7 +581,7 @@
           jego
           obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
       </div>
-      <img id="img__about2" src="assets/static/pictures/globe.png">
+      <img id="img__about2" src="assets/static/pictures/globe.png" class="section__img">
     </div>
 
 
@@ -523,7 +595,7 @@
 
           <span class="line__where"></span></blockquote>
       </div>
-      <img id="img__where" src="assets/static/pictures/wngig.png">
+      <img id="img__where" src="assets/static/pictures/wngig.png" class="section__img">
 
     </div>
 
@@ -571,8 +643,8 @@
 
       let headerScene = new ScrollMagic.Scene({
           triggerElement: '.about',
-          triggerHook: .9,
-          duration: '100%',
+          triggerHook: 1,
+          duration: '50%',
         })
         .setTween(headerTM)
         .addTo(controller)
@@ -582,23 +654,24 @@
       // animacja about_box
 
       let aboutTM = new TimelineMax({});
-      aboutTM.from('.about__box', 1, {
+      aboutTM.from('.about__box', 8, {
         opacity: 0,
         x: 200
       })
       aboutTM.from('.line__about', 1, {
         width: 0
       }, -"5")
-      aboutTM.from('#globe', 2, {
+      aboutTM.from('#globe', 8, {
         opacity: 0,
         x: -200
-      }, -"1")
+      }, +"1")
 
       let aboutScene = new ScrollMagic.Scene({
-          triggerElement: '.parallax',
-          triggerHook: .3,
-          duration: '125%',
+          triggerElement: '.about',
+          triggerHook: 1,
+          duration: '75%',
         })
+        .addIndicators()
         .setTween(aboutTM)
         .addTo(controller)
 
