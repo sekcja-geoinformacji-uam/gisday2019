@@ -1,265 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GIS Day Poznań</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      }
+
+
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        font-size: 2em;
+        text-align: center;
+        margin-top: 30%;
+      }
+
+
+      section {
+        /* padding: 3em; */
+        height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+      }
+
+      blockquote {
+        font-size: 2em;
+        width: 60vw;
+        margin-top: 17%;
+        position: absolute;
+        margin: 0;
+        padding: 20px;
+        margin-left: 20px;
+      }
+
+      blockquote span {
+        width: 100%;
+        background: rgb(219, 219, 219);
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
+
+
+      img {
+        position: absolute;
+      }
+
+      #logo {
+        right: 5%;
+        top: 22%;
+        width: 23%
+      }
+
+
+
+      section:nth-child(odd) {
+        background: #f1f1f1;
+      }
+
+      .sticky {
+        background: white !important;
+      }
+
+      .percentage {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+
+
+      li {
+        display: inline-block;
+      }
+
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
+
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
+
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
+
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
+
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
+
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
+
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
+
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
+
+      #navbar span {
+        display: none;
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
+        }
+
+        #navbar span {
+          display: block;
+        }
+      }
+
+      @media (max-width: 630px) {
+        blockquote {
+          width: 100vw;
+        }
+
+        #logo {
+          display: none;
+        }
+      }
+
+
+      .web1 {
+        height: 30px;
+        width: 30px;
+        position: relative
+      }
+
+      .mail {
+        height: 30px;
+        width: 30px;
+        position: relative
+      }
+
+      .facebook {
+        height: 30px;
+        width: 30px;
+        position: relative
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    </style>
+  </head>
+
+
+  <body>
+
+    <div id="navbar">
+      <li>
+        <a class="active" href="./index.html" class="cool-link">
+          <i class="material-icons">
+            home
+          </i>
+          <span>Aktualności</span>
+        </a>
+      </li>
+      <li>
+        <a href="./schedule.html" class="cool-link">
+          <i class="material-icons">
+            schedule
+          </i>
+          <span>
+            Harmonogram
+          </span>
+
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+          class="cool-link">
+          <i class="material-icons">
+            assignment
+          </i>
+          <span>
+            Zapisy
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="./archive.html" class="cool-link">
+          <i class="material-icons">
+            photo_library
+          </i>
+          <span>
+            Galeria
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="cool-link">
+          <i class="material-icons">
+            contact_support
+          </i>
+          <span>
+            Kontakt
+          </span>
+        </a>
+      </li>
+    </div>
+
+
+    <section class="sticky">
+      <blockquote>
+        <div>
+
+          Studenckie Koło Naukowe Geografów
+        </div>
+        <div>
+          Uniwersytet im. Adama Mickiewicza w Poznaniu
+        </div>
+        <div>
+          Wydział Nauk Geograficznych i Geologicznych
+        </div>
+        ul. Krygowskiego 10
+        <br>60-101 Poznań
+        <div id="icons"><br><a href="https://gi.amu.edu.pl" target="_blank"><img class="web1"
+              src="assets/static/icons/globe-solid.svg"></a>
+          <a href="mailto:gisday.uam@gmail.com" target="_top"><img class="mail"
+              src="assets/static/icons/envelope-solid.svg"></a>
+          <a href="https://www.facebook.com/events/403385857039531/" target="_blank"><img class="facebook"
+              src="assets/static/icons/facebook-square-brands.svg"></a> </div>
+        <span>
+        </span>
+      </blockquote>
+      <img id="logo" src="assets/static/pictures/logo_skng.png">
+
+    </section>
+
+    <script src="assets/lib/TweenMax.min.js"></script>
+    <script src="assets/lib/TimelineMax.min.js"></script>
+    <script src="assets/lib/ScrollMagic.min.js"></script>
+    <script src="assets/lib/debug.addIndicators.min.js">
+    </script>
+  </body>
+  <script>
+    var tl = new TimelineMax({
+      onUpdate: updatePercentage
+    });
+    var tl2 = new TimelineMax();
+
+    tl.from('blockquote', .5, {
+      x: 200,
+      opacity: 0
+    });
+    tl.from('span', 1, {
+      width: 0
+    }, "=-.5");
+    tl.from('#logo', 1, {
+      x: -100,
+      opacity: 0,
+      ease: Power4.easeInOut
+    }, "=-1");
+
+
+
+    function updatePercentage() {
+      //percent.innerHTML = (tl.progress() *100 ).toFixed();
+      tl.progress();
     }
-
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 2em;
-      text-align: center;
-      margin-top: 30%;
-    }
-
-
-    section {
-      padding: 3em;
-      height: 100vh;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    blockquote {
-      font-size: 1.7em;
-      width: 45%;
-      margin-top: 17%;
-      position: absolute;
-    }
-
-    span {
-      width: 100%;
-      background: rgb(67, 101, 76);
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
-
-
-    img {
-      position: absolute;
-    }
-
-    #logo {
-      right: 5%;
-      top: 22%;
-      width: 23%
-    }
-
-
-
-    section:nth-child(odd) {
-      background: #f1f1f1;
-    }
-
-    .sticky {
-      background: white !important;
-    }
-
-    .percentage {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-    }
-
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100%;
-      position: absolute;
-      border: 0.1vw solid rgba(126, 126, 126, 0.555);
-      position: absolute;
-    }
-
-    li {
-      display: inline-block;
-    }
-
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
-
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
-
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
-
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
-
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
-
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
-
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-
-
-    .web1 {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
-
-    .mail {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
-
-    .facebook {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
-  </style>
-</head>
-
-
-<body>
-
-  <div id="navbar">
-    <li><a href="./index.html" class="cool-link">Aktualności</a></li>
-    <li><a href="./schedule.html" class="cool-link">Harmonogram</a></li>
-    <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
-        class="cool-link">Zapisy</a></li>
-    <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
-    <li><a class="active" href="#" class="cool-link">Kontakt</a></li>
-  </div>
-
-  <section class="sticky">
-    <blockquote>Studenckie Koło Naukowe Geografów
-      <br>Uniwersytet im. Adama Mickiewicza w Poznaniu
-      <br>Wydział Nauk Geograficznych i Geologicznych
-      <br>ul. Krygowskiego 10
-      <br>60-101 Poznań
-      <div id="icons"><br><a href="https://gi.amu.edu.pl" target="_blank"><img class="web1"
-            src="assets/static/icons/globe-solid.svg"></a>
-        <a href="mailto:gisday.uam@gmail.com" target="_top"><img class="mail"
-            src="assets/static/icons/envelope-solid.svg"></a>
-        <a href="https://www.facebook.com/events/403385857039531/" target="_blank"><img class="facebook"
-            src="assets/static/icons/facebook-square-brands.svg"></a> </div>
-      <span></span></blockquote>
-    <img id="logo" src="assets/static/pictures/logo_skng.png">
-
-  </section>
-
-  <script src="assets/lib/TweenMax.min.js"></script>
-  <script src="assets/lib/TimelineMax.min.js"></script>
-  <script src="assets/lib/ScrollMagic.min.js"></script>
-  <script src="assets/lib/debug.addIndicators.min.js">
   </script>
-</body>
-<script>
-  var tl = new TimelineMax({
-    onUpdate: updatePercentage
-  });
-  var tl2 = new TimelineMax();
-  const controller = new ScrollMagic.Controller();
-
-  tl.from('blockquote', .5, {
-    x: 200,
-    opacity: 0
-  });
-  tl.from('span', 1, {
-    width: 0
-  }, "=-.5");
-  tl.from('#logo', 1, {
-    x: -100,
-    opacity: 0,
-    ease: Power4.easeInOut
-  }, "=-1");
-
-
-  const scene = new ScrollMagic.Scene({
-    triggerElement: ".sticky",
-    triggerHook: "onLeave",
-    duration: "100%"
-  })
-    .setPin(".sticky")
-    .setTween(tl)
-    .addTo(controller);
-
-  const scene2 = new ScrollMagic.Scene({
-    triggerElement: "blockquote"
-  })
-    .setTween(tl2)
-    .addTo(controller);
-
-
-  function updatePercentage() {
-    //percent.innerHTML = (tl.progress() *100 ).toFixed();
-    tl.progress();
-    console.log(tl.progress());
-  }
-</script>
 
 
 
 
-</script>
+  </script>
 
 </html>
