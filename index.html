@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GIS Day Poznań</title>
-<link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -544,6 +544,7 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
+
       .header__scroll {
         position: absolute;
         bottom: 10px;
@@ -551,83 +552,87 @@
       }
 
       .arrows {
-      /* position: absolute; */
-      width: 50px;
-      height: 50px;
-      bottom: 20px;
-      color: white;
-          display: flex;
-          justify-content: center;
+        /* position: absolute; */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
       }
 
       .arrows__wrapper {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
 
       .chevron {
-      position: absolute;
-      width: 28px;
-      height: 8px;
-      opacity: 0;
-      transform: scale3d(0.5, 0.5, 0.5);
-      animation: move 3s ease-out infinite;
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
       }
 
       .chevron:first-child {
-      animation: move 3s ease-out 1s infinite;
+        animation: move 3s ease-out 1s infinite;
       }
 
       .chevron:nth-child(2) {
-      animation: move 3s ease-out 2s infinite;
+        animation: move 3s ease-out 2s infinite;
       }
 
       .chevron:before,
       .chevron:after {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 51%;
-      background: #fff;
+        content: ' ';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
       }
 
       .chevron:before {
-      left: 0;
-      transform: skew(0deg, 30deg);
+        left: 0;
+        transform: skew(0deg, 30deg);
       }
 
       .chevron:after {
-      right: 0;
-      width: 50%;
-      transform: skew(0deg, -30deg);
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
       }
 
       @keyframes move {
-      25% {
-      opacity: 1;
+        25% {
+          opacity: 1;
 
+        }
+
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
+        }
+
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
       }
-      33% {
-      opacity: 1;
-      transform: translateY(30px);
-      }
-      67% {
-      opacity: 1;
-      transform: translateY(40px);
-      }
-      100% {
-      opacity: 0;
-      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-      }
-      }
+
       @keyframes pulse {
-      to {
-      opacity: 1;
-      }
+        to {
+          opacity: 1;
+        }
       }
     </style>
   </head>
@@ -640,16 +645,16 @@
           <div class="gisday">GIS DAY </div>
           <div class="poznan"> POZNAŃ</div>
           <div class="date"> 2019</div>
-    </div>
+        </div>
       </h1>
-    <div class="arrows__wrapper">
+      <div class="arrows__wrapper">
 
-     <div class="arrows">
-       <div class="chevron"></div>
-       <div class="chevron"></div>
-       <div class="chevron"></div>
-     </div>
-    </div>
+        <div class="arrows">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
+      </div>
     </div>
 
     <div id="navbar">
