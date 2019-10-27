@@ -871,19 +871,18 @@
           duration: '90%',
         })
         .setTween(whereTM)
-        .addIndicators()
-
         .addTo(controller)
 
       // animacja organizers
       new ScrollMagic.Scene({
           triggerElement: ".organizers",
-          triggerHook: 0.1, // show, when scrolled 10% into view
-          duration: "90%", // hide 10% before exiting view (80% + 10% from bottom)
-          offset: -300
+          triggerHook: 1, // show, when scrolled 10% into view
+          duration: "130%", // hide 10% before exiting view (80% + 10% from bottom)
+          offset: 50
         })
         .setClassToggle(".organizers__box", "visible") // add class to reveal
-        .addTo(controller);
+        .addTo(controller)
+
 
 
       // animacja welcome
