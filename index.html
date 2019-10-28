@@ -1,907 +1,906 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>GIS Day Poznań</title>
-    <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>GIS Day Poznań</title>
+  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
 
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" defer>
-    </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Arapey');
-      @import url('https://fonts.googleapis.com/css?family=Raleway');
-      @import url('https://fonts.googleapis.com/css?family=Quicksand');
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" defer>
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Arapey');
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+    @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-      @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
-      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
-      @font-face {
-        font-family: 'Avenir Next Regular';
-        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-      }
+    @font-face {
+      font-family: 'Avenir Next Regular';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+    }
 
-      @font-face {
-        font-family: 'Avenir Next Bold';
-        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
-      }
+    @font-face {
+      font-family: 'Avenir Next Bold';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
+    }
 
-      @font-face {
-        font-family: 'Avenir Next Demi';
-        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
-      }
+    @font-face {
+      font-family: 'Avenir Next Demi';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
+    }
 
-      body {
-        overflow-x: hidden;
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1em;
-      }
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1em;
+    }
 
-      .parallax {
-        /* The image used */
-        background-image: url("assets/static/pictures/tlo.jpg");
-        opacity: 1;
-        /* Set a specific height */
-        min-height: 100vh;
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .parallax {
+      /* The image used */
+      background-image: url("assets/static/pictures/tlo.jpg");
+      opacity: 1;
+      /* Set a specific height */
+      min-height: 100vh;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .parallax h1 {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-family: "Avenir Next Demi";
-        letter-spacing: 3px;
-        text-shadow: 3px 3px 3px #000000;
-      }
+    .parallax h1 {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: "Avenir Next Demi";
+      letter-spacing: 3px;
+      text-shadow: 3px 3px 3px #000000;
+    }
 
-      .gisday {
-        font-size: 14vw;
-        font-family: "Avenir Next Demi";
-        /* padding-right: 6vh;
+    .gisday {
+      font-size: 14vw;
+      font-family: "Avenir Next Demi";
+      /* padding-right: 6vh;
         padding-left: 6vh;
         padding-top: 2.5vh;
         padding-bottom: 2.5vh; */
-        text-align: center;
-        font-weight: 600;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .poznan {
+      font-size: 8vw;
+      font-weight: 500;
+    }
+
+    .date {
+      font-size: 6vw;
+      font-weight: 500;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    #navbar {
+      overflow: hidden;
+      background-color: #ffffffdc;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 2;
+      width: 100vw;
+      position: relative;
+      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size: 20px;
+      padding: 0 20px;
+    }
+
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
+
+    .cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    .navbar--invisible {
+      opacity: 0;
+      /* margin-left: 5000px; */
+      transition: 100ms;
+    }
+
+    .navbar--visible {
+      opacity: 1;
+      /* margin-left: 0; */
+      transition: 100ms;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+    }
+
+    #navbar a.active {
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+    }
+
+    #navbar a.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .sticky {
+      position: sticky !important;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky+.content {
+      padding-top: 60px;
+    }
+
+    .about {
+      height: 100vh;
+      padding: 3em;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+
+    .about__box {
+      background: none;
+      top: 30vh;
+      height: auto;
+      /* display: flex;
+        align-items: center;
+        justify-content: center; */
+      font-size: 1em;
+      width: 100%;
+      max-width: 800px;
+      /* position: absolute; */
+      /* left: 8%; */
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+    }
+
+
+    .about__box h1 {
+      /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
+      width: 100%;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      margin: 20px 0;
+    }
+
+    .about__box blockquote {
+      /* position: absolute;
+        top: 16vh; */
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1.4em;
+      width: 100%;
+      margin: 0;
+    }
+
+    .about2 {
+      height: 100vh;
+      padding: 3em;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about2__box {
+      background: none;
+      height: auto;
+      width: 100%;
+
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+
+
+
+    }
+
+    .about2__box h1 {
+      /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
+      width: 100%;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      margin: 20px 0;
+    }
+
+    .about2__box blockquote {
+      /* position: absolute;
+       top: 16vh; */
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1.4em;
+      width: 100%;
+      margin: 0;
+    }
+
+    .where {
+      height: 100vh;
+      padding: 3em;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+    .where__box {
+      background: none;
+      top: 30vh;
+      height: auto;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+      font-size: 1em;
+      width: 100%;
+      max-width: 800px;
+      /* position: absolute; */
+      /* left: 8%; */
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+    }
+
+    .where__box h1 {
+      /* position: absolute;
+        left: 1vw;
+        top: 3vh; */
+      width: 100%;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 2.2em;
+      margin: 20px 0;
+    }
+
+    .where__box blockquote {
+      /* position: absolute;
+      top: 16vh; */
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 1.4em;
+      width: 100%;
+      margin: 0;
+    }
+
+    #img__where {
+      width: 33%;
+      right: 3vw;
+      top: 22%;
+      -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+      -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+      box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+    }
+
+
+    .organizers {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-sizing: border-box
+    }
+
+    .organizers__box {
+      padding: 20px 0;
+      position: relative;
+      background: none;
+      /* height: 60vh; */
+      /* display: flex; */
+      /* align-items: center; */
+      /* top: 20vh; */
+      font-size: 1.3em;
+      width: 60%;
+      /* position: absolute; */
+      border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+      border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      opacity: 0;
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      transform: scale(0.9);
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -ms-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
+
+    .organizers__box.visible {
+      opacity: 1;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+
+    }
+
+    .organizers__box h1 {
+      /* top: 10vh; */
+      /* margin-top: 0; */
+      /* position: relative; */
+      width: 100%;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 600;
+      font-size: 1.7em;
+      text-align: center;
+    }
+
+    .organizers__box blockquote {
+      /* margin-top: 25vh; */
+      text-align: inherit;
+    }
+
+    .welcome {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* position: relative; */
+      box-sizing: border-box;
+      /* top: 90vh; */
+      width: 100%;
+    }
+
+    .welcome__text {
+      text-align: justify;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 700;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 3px 3px #4d4d4d42;
+      color: #121420;
+      top: -10vh;
+      position: relative;
+
+    }
+
+    .line__about {
+      width: 0%;
+      display: block;
+      height: 5px;
+      margin-top: 20px;
+    }
+
+    .line__where {
+      display: block;
+      height: 5px;
+      margin-top: 20px;
+    }
+
+    .line__about2 {
+      display: block;
+      height: 5px;
+      margin-top: 20px;
+    }
+
+    img {
+      position: absolute;
+    }
+
+    #globe {
+      width: 20%;
+      right: 10vw;
+      bottom: 50vh;
+    }
+
+
+    #img__about2 {
+      position: relative;
+      width: 25%;
+      bottom: 10vh;
+    }
+
+    #logo_org {
+      width: 80px;
+      position: absolute;
+      right: 1.2vw;
+      top: 15px;
+    }
+
+    .percentage {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+
+
+
+    @media (min-width: 1200px) {
+      .gisday {
+        font-size: 250px;
       }
 
       .poznan {
-        font-size: 8vw;
-        font-weight: 500;
+        font-size: 140px;
       }
 
       .date {
-        font-size: 6vw;
-        font-weight: 500;
+        font-size: 100px;
+      }
+    }
+
+
+    @media (max-width: 630px) {
+      .section__img {
+        display: none;
       }
 
-      .header {
-        text-align: center;
+      #navbar span {
+        display: none;
+      }
+    }
+
+    @media (min-width: 630px) {
+      #navbar i {
+        display: none;
       }
 
-      #navbar {
-        overflow: hidden;
-        background-color: #ffffffdc;
-        display: flex;
-        justify-content: space-evenly;
-        z-index: 2;
-        width: 100vw;
-        position: relative;
-        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-      }
-
-      li {
-        display: inline-block;
-      }
-
-      li a {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: lighter;
-        font-size: 20px;
-        padding: 0 20px;
-      }
-
-      .cool-link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
-
-      .cool-link:hover::after {
-        width: 100%;
-        transition: width .3s;
-      }
-
-      .navbar--invisible {
-        opacity: 0;
-        /* margin-left: 5000px; */
-        transition: 100ms;
-      }
-
-      .navbar--visible {
-        opacity: 1;
-        /* margin-left: 0; */
-        transition: 100ms;
-        justify-content: space-evenly;
-        width: 100%;
-      }
-
-      #navbar a {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-      }
-
-      #navbar a.active {
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-      }
-
-      #navbar a.active::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
-
-      .content {
-        padding: 16px;
-      }
-
-      .sticky {
-        position: sticky !important;
-        top: 0;
-        width: 100%;
-      }
-
-      .sticky+.content {
-        padding-top: 60px;
-      }
-
-      .about {
-        height: 100vh;
-        padding: 3em;
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-      }
 
 
       .about__box {
-        background: none;
-        top: 30vh;
-        height: auto;
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-        font-size: 1em;
-        width: 100%;
-        max-width: 800px;
-        /* position: absolute; */
-        /* left: 8%; */
-        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-      }
-
-
-      .about__box h1 {
-        /* position: absolute;
-        left: 1vw;
-        top: 3vh; */
-        width: 100%;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 600;
-        font-size: 2.2em;
-        margin: 20px 0;
-      }
-
-      .about__box blockquote {
-        /* position: absolute;
-        top: 16vh; */
-        text-align: left;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1.4em;
-        width: 100%;
-        margin: 0;
-      }
-
-      .about2 {
-        height: 100vh;
-        padding: 3em;
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .about2__box {
-        background: none;
-        height: auto;
-        width: 100%;
-
-        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-
-
-
-      }
-
-      .about2__box h1 {
-        /* position: absolute;
-        left: 1vw;
-        top: 3vh; */
-        width: 100%;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 600;
-        font-size: 2.2em;
-        margin: 20px 0;
-      }
-
-      .about2__box blockquote {
-        /* position: absolute;
-       top: 16vh; */
-        text-align: left;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1.4em;
-        width: 100%;
-        margin: 0;
-      }
-
-      .where {
-        height: 100vh;
-        padding: 3em;
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
+        width: 60%;
       }
 
       .where__box {
-        background: none;
-        top: 30vh;
-        height: auto;
-        /* display: flex;
-      align-items: center;
-      justify-content: center; */
-        font-size: 1em;
-        width: 100%;
-        max-width: 800px;
-        /* position: absolute; */
-        /* left: 8%; */
-        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+        width: 60%;
       }
 
-      .where__box h1 {
-        /* position: absolute;
-        left: 1vw;
-        top: 3vh; */
-        width: 100%;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 600;
-        font-size: 2.2em;
-        margin: 20px 0;
-      }
-
-      .where__box blockquote {
-        /* position: absolute;
-      top: 16vh; */
-        text-align: left;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 1.4em;
-        width: 100%;
-        margin: 0;
-      }
-
-      #img__where {
-        width: 33%;
-        right: 3vw;
-        top: 22%;
-        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-      }
-
-
-      .organizers {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .about2__box {
         position: relative;
-        box-sizing: border-box
+        /* right: 8%; */
+        width: 60%;
       }
+    }
 
-      .organizers__box {
-        padding: 20px 0;
-        position: relative;
-        background: none;
-        /* height: 60vh; */
-        /* display: flex; */
-        /* align-items: center; */
-        /* top: 20vh; */
-        font-size: 1.3em;
-        width: 90%;
-        /* position: absolute; */
-        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-        opacity: 0;
-        -webkit-transform: scale(0.9);
-        -moz-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-        -o-transform: scale(0.9);
-        transform: scale(0.9);
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -ms-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
-        transition: all 1s ease-in-out;
-      }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-      .organizers__box.visible {
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .header__scroll {
+      position: absolute;
+      bottom: 10px;
+      color: white;
+    }
+
+    .arrows {
+      /* position: absolute; */
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .arrows__wrapper {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .chevron {
+      position: absolute;
+      width: 28px;
+      height: 8px;
+      opacity: 0;
+      transform: scale3d(0.5, 0.5, 0.5);
+      animation: move 3s ease-out infinite;
+    }
+
+    .chevron:first-child {
+      animation: move 3s ease-out 1s infinite;
+    }
+
+    .chevron:nth-child(2) {
+      animation: move 3s ease-out 2s infinite;
+    }
+
+    .chevron:before,
+    .chevron:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: #fff;
+    }
+
+    .chevron:before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+
+    .chevron:after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+
+    @keyframes move {
+      25% {
         opacity: 1;
-        -webkit-transform: none;
-        -moz-transform: none;
-        -ms-transform: none;
-        -o-transform: none;
-        transform: none;
 
       }
 
-      .organizers__box h1 {
-        /* top: 10vh; */
-        /* margin-top: 0; */
-        /* position: relative; */
-        width: 100%;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 600;
-        font-size: 1.7em;
-        text-align: center;
+      33% {
+        opacity: 1;
+        transform: translateY(30px);
       }
 
-      .organizers__box blockquote {
-        /* margin-top: 25vh; */
-        text-align: inherit;
+      67% {
+        opacity: 1;
+        transform: translateY(40px);
       }
 
-      .welcome {
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* position: relative; */
-        box-sizing: border-box;
-        /* top: 90vh; */
-        width: 100%;
-      }
-
-      .welcome__text {
-        text-align: justify;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 700;
-        font-size: 2em;
-        text-align: center;
-        text-shadow: 3px 3px #4d4d4d42;
-        color: #121420;
-        top: -10vh;
-        position: relative;
-
-      }
-
-      .line__about {
-        width: 0%;
-        display: block;
-        height: 5px;
-        margin-top: 20px;
-      }
-
-      .line__where {
-        display: block;
-        height: 5px;
-        margin-top: 20px;
-      }
-
-      .line__about2 {
-        display: block;
-        height: 5px;
-        margin-top: 20px;
-      }
-
-      img {
-        position: absolute;
-      }
-
-      #globe {
-        width: 20%;
-        right: 10vw;
-        bottom: 50vh;
-      }
-
-
-      #img__about2 {
-        position: relative;
-        width: 25%;
-        bottom: 10vh;
-      }
-
-      #logo_org {
-        width: 80px;
-        position: absolute;
-
-        right: 0vw;
-        top: 6px;
-      }
-
-      .percentage {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-      }
-
-
-
-      @media (min-width: 1200px) {
-        .gisday {
-          font-size: 250px;
-        }
-
-        .poznan {
-          font-size: 140px;
-        }
-
-        .date {
-          font-size: 100px;
-        }
-      }
-
-
-      @media (max-width: 630px) {
-        .section__img {
-          display: none;
-        }
-
-        #navbar span {
-          display: none;
-        }
-      }
-
-      @media (min-width: 630px) {
-        #navbar i {
-          display: none;
-        }
-
-
-
-        .about__box {
-          width: 60%;
-        }
-
-        .where__box {
-          width: 60%;
-        }
-
-        .about2__box {
-          position: relative;
-          /* right: 8%; */
-          width: 60%;
-        }
-      }
-
-      /* width */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      /* Track */
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #888;
-      }
-
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-
-      .header__scroll {
-        position: absolute;
-        bottom: 10px;
-        color: white;
-      }
-
-      .arrows {
-        /* position: absolute; */
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        color: white;
-        display: flex;
-        justify-content: center;
-      }
-
-      .arrows__wrapper {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      .chevron {
-        position: absolute;
-        width: 28px;
-        height: 8px;
+      100% {
         opacity: 0;
-        transform: scale3d(0.5, 0.5, 0.5);
-        animation: move 3s ease-out infinite;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
       }
+    }
 
-      .chevron:first-child {
-        animation: move 3s ease-out 1s infinite;
+    @keyframes pulse {
+      to {
+        opacity: 1;
       }
+    }
+  </style>
+</head>
 
-      .chevron:nth-child(2) {
-        animation: move 3s ease-out 2s infinite;
-      }
+<body>
+  <div class="parallax">
 
-      .chevron:before,
-      .chevron:after {
-        content: ' ';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 51%;
-        background: #fff;
-      }
+    <h1>
+      <div class="header">
+        <div class="gisday">GIS DAY </div>
+        <div class="poznan"> POZNAŃ</div>
+        <div class="date"> 2019</div>
+      </div>
+    </h1>
+    <div class="arrows__wrapper">
 
-      .chevron:before {
-        left: 0;
-        transform: skew(0deg, 30deg);
-      }
-
-      .chevron:after {
-        right: 0;
-        width: 50%;
-        transform: skew(0deg, -30deg);
-      }
-
-      @keyframes move {
-        25% {
-          opacity: 1;
-
-        }
-
-        33% {
-          opacity: 1;
-          transform: translateY(30px);
-        }
-
-        67% {
-          opacity: 1;
-          transform: translateY(40px);
-        }
-
-        100% {
-          opacity: 0;
-          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-        }
-      }
-
-      @keyframes pulse {
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="parallax">
-
-      <h1>
-        <div class="header">
-          <div class="gisday">GIS DAY </div>
-          <div class="poznan"> POZNAŃ</div>
-          <div class="date"> 2019</div>
-        </div>
-      </h1>
-      <div class="arrows__wrapper">
-
-        <div class="arrows">
-          <div class="chevron"></div>
-          <div class="chevron"></div>
-          <div class="chevron"></div>
-        </div>
+      <div class="arrows">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
       </div>
     </div>
+  </div>
 
-    <div id="navbar">
-      <li>
-        <a class="active" href="#" class="cool-link">
-          <i class="material-icons">
-            home
-          </i>
-          <span>Aktualności</span>
-        </a>
-      </li>
-      <li>
-        <a href="./schedule.html" class="cool-link">
-          <i class="material-icons">
-            schedule
-          </i>
-          <span>
-            Harmonogram
-          </span>
+  <div id="navbar">
+    <li>
+      <a class="active" href="#" class="cool-link">
+        <i class="material-icons">
+          home
+        </i>
+        <span>Aktualności</span>
+      </a>
+    </li>
+    <li>
+      <a href="./schedule.html" class="cool-link">
+        <i class="material-icons">
+          schedule
+        </i>
+        <span>
+          Harmonogram
+        </span>
 
-        </a>
-      </li>
-      <li>
-        <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
-          class="cool-link">
-          <i class="material-icons">
-            assignment
-          </i>
-          <span>
-            Zapisy
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./archive.html" class="cool-link">
-          <i class="material-icons">
-            photo_library
-          </i>
-          <span>
-            Galeria
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./contact.html" class="cool-link">
-          <i class="material-icons">
-            contact_support
-          </i>
-          <span>
-            Kontakt
-          </span>
-        </a>
-      </li>
+      </a>
+    </li>
+    <li>
+      <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+        class="cool-link">
+        <i class="material-icons">
+          assignment
+        </i>
+        <span>
+          Zapisy
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./archive.html" class="cool-link">
+        <i class="material-icons">
+          photo_library
+        </i>
+        <span>
+          Galeria
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./contact.html" class="cool-link">
+        <i class="material-icons">
+          contact_support
+        </i>
+        <span>
+          Kontakt
+        </span>
+      </a>
+    </li>
+  </div>
+
+  <div class="about">
+    <div class="about__box">
+      <h1>Gis Day 2019</h1>
+      <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
+        w
+        praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
+        Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
+        <span class="line__about"></span></blockquote>
     </div>
+    <img id="globe" src="assets/static/pictures/funart.png" class="section__img">
+  </div>
 
-    <div class="about">
-      <div class="about__box">
-        <h1>Gis Day 2019</h1>
-        <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
-          w
-          praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
-          Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
-          <span class="line__about"></span></blockquote>
-      </div>
-      <img id="globe" src="assets/static/pictures/funart.png" class="section__img">
+  <div class="about2">
+    <img id="img__about2" src="assets/static/pictures/globe.png" class="section__img">
+
+    <div class="about2__box">
+      <h1>Czym jest Gis Day?</h1>
+      <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różnego
+        rodzaju
+        konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w
+        jego
+        obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
     </div>
+  </div>
 
-    <div class="about2">
-      <img id="img__about2" src="assets/static/pictures/globe.png" class="section__img">
 
-      <div class="about2__box">
-        <h1>Czym jest Gis Day?</h1>
-        <blockquote>GIS Day to coroczne święto geoinformacji, podczas którego na całym świecie odbywają się różnego
-          rodzaju
-          konferencje i spotkania, mające propagować nowoczesne rozwiązania w zakresie geografii. Już od wielu lat w
-          jego
-          obchodach bierze udział WNGiG.<span class="line__about2"></span> </blockquote>
-      </div>
+  <div class="where">
+    <div class="where__box">
+      <h1>Gdzie i kiedy?</h1>
+      <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
+        Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
+        Krygowskiego 10.
+
+
+        <span class="line__where"></span></blockquote>
     </div>
+    <img id="img__where" src="assets/static/pictures/wngig.png" class="section__img">
+
+  </div>
 
 
-    <div class="where">
-      <div class="where__box">
-        <h1>Gdzie i kiedy?</h1>
-        <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
-          Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
-          Krygowskiego 10.
-
-
-          <span class="line__where"></span></blockquote>
-      </div>
-      <img id="img__where" src="assets/static/pictures/wngig.png" class="section__img">
-
-    </div>
-
-
-    <div class="organizers">
-      <div class="organizers__box">
-        <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png" class="section__img">
-        <blockquote>GIS Day organizowany jest przez studentów należących do Sekcji Geoinformacji Studenckiego Koła
-          Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa
-          Zwolińskiego, w ramach działaności popularno-naukowej.
-        </blockquote>
-      </div>
-
-
-
-
-    </div>
-    <div class="welcome">
-      <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+  <div class="organizers">
+    <div class="organizers__box">
+      <h1>Organizatorzy</h1> <img id="logo_org" src="assets/static/pictures/logo_skng.png" class="section__img">
+      <blockquote>GIS Day organizowany jest przez studentów należących do Sekcji Geoinformacji Studenckiego Koła
+        Naukowego im. Stanisława Pawłowskiego, wspomaganych przez opiekuna sekcji, prof. dr hab. Zbigniewa
+        Zwolińskiego, w ramach działaności popularno-naukowej.
+      </blockquote>
     </div>
 
 
 
-  </body>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-      let controller = new ScrollMagic.Controller();
 
-      function scrollHandler() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
+  </div>
+  <div class="welcome">
+    <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+  </div>
+
+
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    let controller = new ScrollMagic.Controller();
+
+    function scrollHandler() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
       }
-      // animacja header
+    }
+    // animacja header
 
-      let headerTM = new TimelineMax({});
+    let headerTM = new TimelineMax({});
 
-      headerTM.to('.header', .5, {
-        'transform': 'scale(0.7, 0.7)'
-      })
-
-      let headerScene = new ScrollMagic.Scene({
-          triggerElement: '.about',
-          triggerHook: 1,
-          duration: '50%',
-        })
-        .setTween(headerTM)
-        .addTo(controller)
-
-
-
-      // animacja about_box
-
-      let aboutTM = new TimelineMax({});
-      aboutTM.from('.about__box', 8, {
-        opacity: 0,
-        x: 200
-      })
-      aboutTM.from('.line__about', 1, {
-        width: 0
-      }, -"5")
-      aboutTM.from('#globe', 8, {
-        opacity: 0,
-        x: -200
-      }, +"1")
-
-      let aboutScene = new ScrollMagic.Scene({
-          triggerElement: '.about',
-          triggerHook: 1,
-          duration: '75%',
-        })
-        .setTween(aboutTM)
-        .addTo(controller)
-
-      // animacja about2
-
-      let about2TM = new TimelineMax({});
-      about2TM.from('.about2__box', 5, {
-        opacity: 0,
-        x: -200
-      })
-      about2TM.from('.line__about2', 1, {
-        width: 0
-      }, -"5")
-      about2TM.from('#img__about2', 2, {
-        opacity: 0,
-        x: 200
-      }, +"3")
-
-      let about2Scene = new ScrollMagic.Scene({
-          triggerElement: '.about2',
-          triggerHook: 1,
-          duration: '90%',
-        })
-        .setTween(about2TM)
-        .addTo(controller)
-
-
-      // animacja .where
-
-      let whereTM = new TimelineMax({});
-      whereTM.from('.where__box', 8, {
-        opacity: 0,
-        x: 200
-      })
-      whereTM.from('.line__where', 1, {
-        width: 0
-      }, -"5")
-      whereTM.from('#img__where', 2, {
-        opacity: 0,
-        x: -200
-      }, +"1")
-
-      let whereScene = new ScrollMagic.Scene({
-          triggerElement: '.where',
-          triggerHook: 1,
-          duration: '90%',
-        })
-        .setTween(whereTM)
-        .addTo(controller)
-
-      // animacja organizers
-      new ScrollMagic.Scene({
-          triggerElement: ".organizers",
-          triggerHook: 1, // show, when scrolled 10% into view
-          duration: "130%", // hide 10% before exiting view (80% + 10% from bottom)
-          offset: 50
-        })
-        .setClassToggle(".organizers__box", "visible") // add class to reveal
-        .addTo(controller)
-
-
-
-      // animacja welcome
-
-      let welcomeTM = new TimelineMax({});
-      welcomeTM.to('.welcome__text', 0.5, {
-        'font-size': '3em'
-      })
-
-      let welcomeScene = new ScrollMagic.Scene({
-          triggerElement: '.welcome',
-          triggerHook: "onEnter",
-          duration: '100%',
-        })
-        .setTween(welcomeTM)
-        .addTo(controller)
-
-      window.addEventListener('scroll', scrollHandler)
+    headerTM.to('.header', .5, {
+      'transform': 'scale(0.7, 0.7)'
     })
-  </script>
+
+    let headerScene = new ScrollMagic.Scene({
+      triggerElement: '.about',
+      triggerHook: 1,
+      duration: '50%',
+    })
+      .setTween(headerTM)
+      .addTo(controller)
+
+
+
+    // animacja about_box
+
+    let aboutTM = new TimelineMax({});
+    aboutTM.from('.about__box', 8, {
+      opacity: 0,
+      x: 200
+    })
+    aboutTM.from('.line__about', 1, {
+      width: 0
+    }, -"5")
+    aboutTM.from('#globe', 8, {
+      opacity: 0,
+      x: -200
+    }, +"1")
+
+    let aboutScene = new ScrollMagic.Scene({
+      triggerElement: '.about',
+      triggerHook: 1,
+      duration: '75%',
+    })
+      .setTween(aboutTM)
+      .addTo(controller)
+
+    // animacja about2
+
+    let about2TM = new TimelineMax({});
+    about2TM.from('.about2__box', 5, {
+      opacity: 0,
+      x: -200
+    })
+    about2TM.from('.line__about2', 1, {
+      width: 0
+    }, -"5")
+    about2TM.from('#img__about2', 2, {
+      opacity: 0,
+      x: 200
+    }, +"3")
+
+    let about2Scene = new ScrollMagic.Scene({
+      triggerElement: '.about2',
+      triggerHook: 1,
+      duration: '90%',
+    })
+      .setTween(about2TM)
+      .addTo(controller)
+
+
+    // animacja .where
+
+    let whereTM = new TimelineMax({});
+    whereTM.from('.where__box', 8, {
+      opacity: 0,
+      x: 200
+    })
+    whereTM.from('.line__where', 1, {
+      width: 0
+    }, -"5")
+    whereTM.from('#img__where', 2, {
+      opacity: 0,
+      x: -200
+    }, +"1")
+
+    let whereScene = new ScrollMagic.Scene({
+      triggerElement: '.where',
+      triggerHook: 1,
+      duration: '90%',
+    })
+      .setTween(whereTM)
+      .addTo(controller)
+
+    // animacja organizers
+    new ScrollMagic.Scene({
+      triggerElement: ".organizers",
+      triggerHook: 1, // show, when scrolled 10% into view
+      duration: "130%", // hide 10% before exiting view (80% + 10% from bottom)
+      offset: 50
+    })
+      .setClassToggle(".organizers__box", "visible") // add class to reveal
+      .addTo(controller)
+
+
+
+    // animacja welcome
+
+    let welcomeTM = new TimelineMax({});
+    welcomeTM.to('.welcome__text', 0.5, {
+      'font-size': '3em'
+    })
+
+    let welcomeScene = new ScrollMagic.Scene({
+      triggerElement: '.welcome',
+      triggerHook: "onEnter",
+      duration: '100%',
+    })
+      .setTween(welcomeTM)
+      .addTo(controller)
+
+    window.addEventListener('scroll', scrollHandler)
+  })
+</script>
 
 </html>
