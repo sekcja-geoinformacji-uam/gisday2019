@@ -384,7 +384,6 @@
         -ms-transform: none;
         -o-transform: none;
         transform: none;
-
       }
 
       .organizers__box h1 {
@@ -869,9 +868,10 @@
           triggerElement: ".organizers",
           triggerHook: 1, // show, when scrolled 10% into view
           duration: "130%", // hide 10% before exiting view (80% + 10% from bottom)
-          offset: 50
+          offset: -50
         })
         .setClassToggle(".organizers__box", "visible") // add class to reveal
+        .addIndicators()
         .addTo(controller)
 
 
