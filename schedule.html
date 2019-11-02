@@ -1,113 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Avenir Next Regular';
-            src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-        }
+      @font-face {
+        font-family: 'Avenir Next Regular';
+        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+      }
 
-        body {
-            margin: 0;
-            font-family: "Avenir Next Regular";
-        }
 
-        #navbar {
-            overflow: hidden;
-            background-color: #ffffffdc;
-            display: flex;
-            justify-content: space-evenly;
-            z-index: 2;
-            width: 100%;
-            position: absolute;
-            border: 0.1vw solid rgba(126, 126, 126, 0.555);
-            position: absolute;
-        }
 
-        li {
-            display: inline-block;
-        }
+      html,
+      body {
+        margin: 0;
+        font-family: "Avenir Next Regular";
+        height: 100%;
+      }
 
-        li a {
-            display: inline-block;
-            text-decoration: none;
-            font-weight: lighter;
-            font-size: 20px;
-            padding: 0 20px;
-        }
+      li {
+        display: inline-block;
+      }
 
-        .cool-link::after {
-            content: "";
-            display: block;
-            width: 0;
-            height: 2px;
-            background: rgba(44, 44, 44, 0.616);
-            transition: width .3s;
-        }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-        .cool-link:hover::after {
-            width: 100%;
-            transition: width .3s;
-        }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
 
-        .navbar--invisible {
-            opacity: 0;
-            /* margin-left: 5000px; */
-            transition: 100ms;
-        }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
 
-        .navbar--visible {
-            opacity: 1;
-            /* margin-left: 0; */
-            transition: 100ms;
-            justify-content: space-evenly;
-            width: 100%;
-        }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
 
-        #navbar a {
-            float: left;
-            display: block;
-            color: #444444;
-            text-align: center;
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
+
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
         padding: 12px;
-            text-decoration: none;
-            font-size: calc(0.7rem + 0.5vw);
-            font-family: "Avenir Next Regular";
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08334rem;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
+
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
+
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width .3s;
+      }
+
+
+      #navbar span {
+        display: none;
+      }
+
+      .schedule {
+        display: flex;
+        height: calc(100% - 50px);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .schedule__box {
+        text-align: center;
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
         }
 
-        #navbar a.active {
-            font-family: "Avenir Next Regular";
-            font-weight: 600;
+        #navbar span {
+          display: block;
+        }
+      }
+
+      @media (max-width: 630px) {
+        blockquote {
+          width: 100vw;
         }
 
-        #navbar a.active::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: rgba(44, 44, 44, 0.616);
-            transition: width .3s;
+        #logo {
+          display: none;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="navbar">
-        <li><a href="./index.html" class="cool-link">Aktualności</a></li>
-        <li><a class="active" href="#" class="cool-link">Harmonogram</a></li>
-        <li><a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform"
-                target="_blank" class="cool-link">Zapisy</a></li>
-        <li><a href="./archive.html" class="cool-link">Archiwum</a></li>
-        <li><a href="./contact.html" class="cool-link">Kontakt</a></li>
+      <li>
+        <a href="./index.html" class="cool-link">
+          <i class="material-icons">
+            home
+          </i>
+          <span>Aktualności</span>
+        </a>
+      </li>
+      <li>
+        <a class="active" href="#" class="cool-link">
+          <i class="material-icons">
+            schedule
+          </i>
+          <span>
+            Harmonogram
+          </span>
+
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+          class="cool-link">
+          <i class="material-icons">
+            assignment
+          </i>
+          <span>
+            Zapisy
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="./archive.html" class="cool-link">
+          <i class="material-icons">
+            photo_library
+          </i>
+          <span>
+            Galeria
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="./contact.html" class="cool-link">
+          <i class="material-icons">
+            contact_support
+          </i>
+          <span>
+            Kontakt
+          </span>
+        </a>
+      </li>
     </div>
 
-</body>
+
+    <div class="schedule">
+      <div class="schedule__box">
+        <h1 style="margin: 0;">RAMOWY HARMONOGRAM POJAWI SIĘ WKRÓTCE</h1>
+
+      </div>
+    </div>
+
+  </body>
 
 </html>
