@@ -1,211 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-      @font-face {
-        font-family: 'Avenir Next Regular';
-        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Avenir Next Regular';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
+    html,
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      height: 100%;
+      overflow: hidden;
 
-      html,
-      body {
-        margin: 0;
-        font-family: "Avenir Next Regular";
-        height: 100%;
-        overflow: hidden;
+    }
 
-      }
+    li {
+      display: inline-block;
+    }
 
-      li {
-        display: inline-block;
-      }
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size: 20px;
+      padding: 0 20px;
+    }
 
-      li a {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: lighter;
-        font-size: 20px;
-        padding: 0 20px;
-      }
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-      .cool-link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    .cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
 
-      .cool-link:hover::after {
-        width: 100%;
-        transition: width .3s;
-      }
+    #navbar {
+      overflow: hidden;
+      background-color: #ffffffdc;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 2;
+      width: 100vw;
+      position: sticky;
+      top: 0;
+      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+    }
 
-      #navbar {
-        overflow: hidden;
-        background-color: #ffffffdc;
-        display: flex;
-        justify-content: space-evenly;
-        z-index: 2;
-        width: 100vw;
-        position: sticky;
-        top: 0;
-        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-      }
+    .navbar--invisible {
+      opacity: 0;
+      /* margin-left: 5000px; */
+      transition: 100ms;
+    }
 
-      .navbar--invisible {
-        opacity: 0;
-        /* margin-left: 5000px; */
-        transition: 100ms;
-      }
+    .navbar--visible {
+      opacity: 1;
+      /* margin-left: 0; */
+      transition: 100ms;
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
-      .navbar--visible {
-        opacity: 1;
-        /* margin-left: 0; */
-        transition: 100ms;
-        justify-content: space-evenly;
-        width: 100%;
-      }
+    #navbar a {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+    }
 
-      #navbar a {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-      }
+    #navbar a.active {
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+    }
 
-      #navbar a.active {
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-      }
-
-      #navbar a.active::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    #navbar a.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
 
-      #navbar span {
+    #navbar span {
+      display: none;
+    }
+
+    .schedule {
+      display: flex;
+      height: calc(100% - 50px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .schedule__box {
+      text-align: center;
+    }
+
+    @media (min-width: 630px) {
+      #navbar i {
         display: none;
       }
 
-      .schedule {
-        display: flex;
-        height: calc(100% - 50px);
-        justify-content: center;
-        align-items: center;
+      #navbar span {
+        display: block;
+      }
+    }
+
+    @media (max-width: 630px) {
+      blockquote {
+        width: 100vw;
       }
 
-      .schedule__box {
-        text-align: center;
+      #logo {
+        display: none;
       }
+    }
+  </style>
+</head>
 
-      @media (min-width: 630px) {
-        #navbar i {
-          display: none;
-        }
+<body>
+  <div id="navbar">
+    <li>
+      <a href="./index.html" class="cool-link">
+        <i class="material-icons">
+          home
+        </i>
+        <span>Aktualności</span>
+      </a>
+    </li>
+    <li>
+      <a href="./schedule.html" class="cool-link">
+        <i class="material-icons">
+          schedule
+        </i>
+        <span>
+          Harmonogram
+        </span>
 
-        #navbar span {
-          display: block;
-        }
-      }
-
-      @media (max-width: 630px) {
-        blockquote {
-          width: 100vw;
-        }
-
-        #logo {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="navbar">
-      <li>
-        <a href="./index.html" class="cool-link">
-          <i class="material-icons">
-            home
-          </i>
-          <span>Aktualności</span>
-        </a>
-      </li>
-      <li>
-        <a href="./schedule.html" class="cool-link">
-          <i class="material-icons">
-            schedule
-          </i>
-          <span>
-            Harmonogram
-          </span>
-
-        </a>
-      </li>
-      <li>
-        <!-- <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+      </a>
+    </li>
+    <li>
+      <!-- <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
           class="cool-link"> -->
-           <a class="active" href="#"
-             target="_blank" class="cool-link">
-          <i class="material-icons">
-            assignment
-          </i>
-          <span>
-            Zapisy
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./archive.html" class="cool-link">
-          <i class="material-icons">
-            photo_library
-          </i>
-          <span>
-            Galeria
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./contact.html" class="cool-link">
-          <i class="material-icons">
-            contact_support
-          </i>
-          <span>
-            Kontakt
-          </span>
-        </a>
-      </li>
+      <a class="active" href="#" target="_blank" class="cool-link">
+        <i class="material-icons">
+          assignment
+        </i>
+        <span>
+          Zapisy
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./archive.html" class="cool-link">
+        <i class="material-icons">
+          photo_library
+        </i>
+        <span>
+          Galeria
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./contact.html" class="cool-link">
+        <i class="material-icons">
+          contact_support
+        </i>
+        <span>
+          Kontakt
+        </span>
+      </a>
+    </li>
+  </div>
+
+
+  <div class="schedule">
+    <div class="schedule__box">
+      <h1 style="margin: 0;">ZAPISY WKRÓTCE SIĘ ROZPOCZNĄ</h1>
+      <!-- <img src="./assets/static/pictures/harmonogram1.png"> -->
     </div>
+  </div>
 
 
-    <div class="schedule">
-      <div class="schedule__box">
-        <h1 style="margin: 0;">ZAPISY WKRÓTCE SIĘ ROZPOCZNĄ</h1>
-        <!-- <img src="./assets/static/pictures/harmonogram1.png"> -->
-      </div>
-    </div>
-
-  </body>
+</body>
 
 </html>
