@@ -89,6 +89,40 @@
         letter-spacing: 0.08334rem;
       }
 
+      .workshops__button{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+      }
+
+      .workshops__link {
+         float: left;
+         display: block;
+         color: #444444;
+         text-align: center;
+         padding: 12px;
+         text-decoration: none;
+         font-size: calc(0.7rem + 0.5vw);
+         font-family: "Avenir Next Regular";
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 0.08334rem;
+      }
+
+      .workshops__link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+      }
+
+      .workshops__link:hover::after {
+      width: 100%;
+      transition: width .3s;
+      }
+
       #navbar a.active {
         font-family: "Avenir Next Regular";
         font-weight: 600;
@@ -314,6 +348,10 @@
               </tr>
             </body>
           </table>
+        </div>
+        <div class="workshops__button">
+          <a class="workshops__link"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScjgT8eyFMIs8xcCdvjyA39BDjMmeXdsL4nHNa1e9Ck5nJ6qw/viewform?fbclid=IwAR2paemLHXtDIMrSPj6Am7qWdaLynawwuW8RdTj08Hl75DZMFbOmRQ0ujmU" target="_blank">ZAPISY</a>
         </div>
       </div>
     </div>
