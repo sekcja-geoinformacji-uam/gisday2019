@@ -147,7 +147,7 @@
         height: calc(100% - 50px);
         justify-content: center;
         align-items: center;
-        margin-top: 1%;
+        margin-top: 50px;
       }
 
       .schedule__box {
@@ -224,7 +224,9 @@
       .one {
         background-color: #7491A4;
       }
-
+ .two {
+ background-color: #98AFBD;
+ }
 
       .three {
         background-color: #dde8ef;
@@ -427,7 +429,7 @@
       const fragment = document.createDocumentFragment();
       scheduleArray.forEach(function (element, index) {
         let html = document.createElement('tr');
-        let className = (index + 1) % 2 ? 'one' : 'three';
+        let className = (index + 1) % 2 ? 'two' : 'three';
         html.innerHTML = `
           <th>${element.start}</th>
           <td class="${className}">
