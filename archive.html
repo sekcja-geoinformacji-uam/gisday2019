@@ -125,52 +125,53 @@
         padding: 0;
       }
 
-      .container .box {
+
+      .container .button-year {
         position: relative;
         box-sizing: border-box;
-        display: inline-block;
-        padding: 25px;
-      }
-
-      .container .box .imgBox {
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* padding: 80px; */
         transition: transform 1s;
+        color: black;
+        width: 143px;
+        height: 50px;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid rgba(44, 44, 44, 0.616);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
       }
 
-      .container .box .imgBox img {
-        max-width: 100%;
-        height: 100%;
-        width: 100%;
-      }
-
-
-      .container .box:hover .imgBox {
+      .container .button-year:hover {
         transform: scale(1.1);
       }
 
 
       .container {
         display: grid;
-        /* grid-gap: 60px; */
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         grid-template-rows: repeat(2, 1fr);
+        margin: auto;
+        width: 60vw;
+        margin-bottom: 50px;
       }
 
-      .date {
-        position: absolute;
-        font-size: 7em;
-        font-family: "Rajdhani", sans-serif;
-        opacity: 1;
-        margin: 0;
-        color: white;
+     .date {
+        position: relative;
+        font-size: 31px;
+        font-family: "Avenir Next Regular";
+        margin: auto;
+        color: #2b2b2b;
         font-weight: 600;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.57);
+        width: fit-content;
+        text-align: center;
+        top: 3px;
       }
+
 
       a {
         display: block;
@@ -178,6 +179,8 @@
         height: 100%;
         width: 100%;
         position: relative;
+        text-decoration: none;
+        font-size: ;
       }
 
       #navbar span {
@@ -213,6 +216,121 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+
+/* slider */
+.slider-container {
+  height: fit-content;
+  position: relative;
+  margin: auto;
+  width: 50vw;
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.mySlides {
+  display: none;
+
+}
+
+
+.imgsld1, .imgsld2, .imgsld3 {
+  height: 70vh;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+} */
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dots {
+  text-align: center;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+
+.dot:active {
+  background-color: #717171;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: .5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
     </style>
   </head>
 
@@ -238,7 +356,7 @@
         </a>
       </li>
       <li>
-        <a href="./zapisy.html" class="cool-link">
+        <a href="./lectures.html" class="cool-link">
           <i class="material-icons">
             assignment
           </i>
@@ -268,154 +386,168 @@
         </a>
       </li>
     </div>
+
+
+  <!-- slider -->
+<div class="slider-container"> 
+  
+  <!-- Next and previous buttons -->
+  <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+  <div class="next" onclick="plusSlides(1)">&#10095;</div>
+
+  <br>
+
+<!-- The dots/circles -->
+<div class="dots">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
+
+<!-- slider -->
+
+
     <div class="container">
-      <div class="box">
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/782DniD3qBwDu3QZA" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2018</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/WE1xzht5cKVsyY7F6" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2017</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/TxCmToiS63PZSBbR9" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2016</div>
-          </div>
-        </a>
-      </div>
-      <div class="box">
+          </a>
+          </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/ANfWzPYCbw64wJUWA" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2015</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2013</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2012</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2011</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2010</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2009</div>
-          </div>
         </a>
-      </div>
-
-
-
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2008</div>
-          </div>
         </a>
-      </div>
-
-
-
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2007</div>
-          </div>
         </a>
-      </div>
-
-
-
-
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2006</div>
-          </div>
         </a>
-      </div>
-
-
-
-
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2005</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/7hhtnr7iuuJUB6UWA" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2004</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/4TGn99X9ZCVFhrWw8" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2003</div>
-          </div>
         </a>
-      </div>
-      <div class="box">
+      </button>
+      <button class="button-year">
         <a href="https://photos.app.goo.gl/RV7fn9mMgWpLA2rb9" target="_blank">
-          <div class="imgBox">
-            <img src="assets/static/pictures/archiwum.jpg">
             <div class="date">2002</div>
-          </div>
         </a>
-      </div>
+      </button>
+    </div>
 
 
 
   </body>
   <script>
+
+const sliderContainer = document.getElementsByClassName("slider-container")[0]
+const emptyFragment = document.createDocumentFragment()
+const photos = ["P1010159", "P1010161", "P1010169", "P1010174", "P1010176", "P1010179",
+"P1010181", "P1010183", "P1010184", "P1010201", "P1010203", "P1010204", "P1010206",
+"P1010214", "P1010223", "P1010224", "P1010225", "P1010230", "P1010231", "P1010237", 
+"P1010259", "P1010269", "P1010273", "P1010286", "P1010288", "P1010289"]
+
+
+photos.forEach((element,index) => {
+  const photosEl = document.createElement("div")
+  photosEl.className = "mySlides fade"
+  photosEl.innerHTML = `<div class="numbertext">${index + 1} / ${photos.length} </div>
+    <img src="./assets/static/pictures/gisday2019_photos/${element}.JPG" class="imgsld${index + 1}" style="width:100%">`
+  emptyFragment.appendChild(photosEl)
+});
+
+sliderContainer.appendChild(emptyFragment)
+
+
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(".dot:active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += ".dot:active";
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
 
   </script>
 
