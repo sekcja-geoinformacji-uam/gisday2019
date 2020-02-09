@@ -141,7 +141,7 @@
         justify-content: center;
         background-color: white;
         border: 2px solid rgba(44, 44, 44, 0.616);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
+        box-shadow: 3px 3px 3px #0000009e;
       }
 
       .container .button-year:hover {
@@ -180,7 +180,7 @@
         width: 100%;
         position: relative;
         text-decoration: none;
-        font-size: ;
+        font-size: calc(0.7rem + 0.5vw);
       }
 
       #navbar span {
@@ -228,7 +228,6 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
   width: 50vw;
-  margin-top: 6%;
   margin-bottom: 6%;
 }
 
@@ -247,10 +246,11 @@ img {vertical-align: middle;}
   cursor: pointer;
   position: absolute;
   top: 45%;
-  width: auto;
+  width: 30px;
+  height: 40px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -260,57 +260,31 @@ img {vertical-align: middle;}
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
+
+.prev {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-} */
 
 .numbertext {
   color: #f2f2f2;
-  font-size: 12px;
+  font-size: 13px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  top: 16px;
+  font-family: "Avenir Next Regular";
 }
-
-/* The dots/bullets/indicators */
-.dots {
-  text-align: center;
-}
-
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.dot:hover {
-  background-color: #717171;
-}
-
-
-.dot:active {
-  background-color: #717171;
-}
-
 
 /* Fading animation */
 .fade {
@@ -318,6 +292,38 @@ img {vertical-align: middle;}
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: .5s;
+}
+
+.gisday2019__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.gisday2019 {
+  font-family: "Avenir Next Regular";
+  color: #444444;
+  display: block;
+  font-size: 3.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08334rem;
+  float: left;
+  text-align: center;
+}
+
+.gisday2019:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+.gisday2019::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgba(44, 44, 44, 0.616);
+  transition: width .3s;
 }
 
 @-webkit-keyframes fade {
@@ -387,9 +393,12 @@ img {vertical-align: middle;}
       </li>
     </div>
 
+    <div class="gisday2019__button">
+    <span class="gisday2019">GIS Day 2019</span>
+    </div>
 
-  <!-- slider -->
-<div class="slider-container"> 
+    <!-- slider -->
+<div class="slider-container">
   
   <!-- Next and previous buttons -->
   <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
@@ -397,14 +406,7 @@ img {vertical-align: middle;}
 
   <br>
 
-<!-- The dots/circles -->
-<div class="dots">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-</div>
-
 <!-- slider -->
 
 
@@ -507,12 +509,17 @@ const photos = ["P1010159", "P1010161", "P1010169", "P1010174", "P1010176", "P10
 photos.forEach((element,index) => {
   const photosEl = document.createElement("div")
   photosEl.className = "mySlides fade"
-  photosEl.innerHTML = `<div class="numbertext">${index + 1} / ${photos.length} </div>
-    <img src="./assets/static/pictures/gisday2019_photos/${element}.JPG" class="imgsld${index + 1}" style="width:100%">`
+  photosEl.innerHTML = `<div class="numbertext">${index + 1} / ${photos.length} </div> 
+  <img src="./assets/static/pictures/gisday2019_photos/${element}.JPG" class="imgsld${index + 1}" style="width:100%">`
   emptyFragment.appendChild(photosEl)
 });
 
+
 sliderContainer.appendChild(emptyFragment)
+
+
+
+
 
 
 
