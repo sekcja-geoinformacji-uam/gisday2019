@@ -1,437 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-      @font-face {
-        font-family: 'Avenir Next Regular';
-        src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Avenir Next Regular';
+      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+    }
 
-      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-      body {
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        height: 100%;
-        overflow: scroll;
-        overflow-x: hidden;
-      }
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      height: 100%;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
 
-      li {
-        display: inline-block;
-      }
+    li {
+      display: inline-block;
+    }
 
-      li a {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: lighter;
-        font-size: 20px;
-        padding: 0 20px;
-      }
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
+      font-size: 20px;
+      padding: 0 20px;
+    }
 
-      .cool-link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    .cool-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-      .cool-link:hover::after {
-        width: 100%;
-        transition: width .3s;
-      }
+    .cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
 
-      #navbar {
-        overflow: hidden;
-        background-color: #ffffffdc;
-        display: flex;
-        justify-content: space-evenly;
-        z-index: 2;
-        width: 100vw;
-        position: sticky;
-        top: 0;
-        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-      }
+    #navbar {
+      overflow: hidden;
+      background-color: #ffffffdc;
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 2;
+      width: 100vw;
+      position: sticky;
+      top: 0;
+      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+    }
 
-      .navbar--invisible {
-        opacity: 0;
-        /* margin-left: 5000px; */
-        transition: 100ms;
-      }
+    .navbar--invisible {
+      opacity: 0;
+      /* margin-left: 5000px; */
+      transition: 100ms;
+    }
 
-      .navbar--visible {
-        opacity: 1;
-        /* margin-left: 0; */
-        transition: 100ms;
-        justify-content: space-evenly;
-        width: 100%;
-      }
+    .navbar--visible {
+      opacity: 1;
+      /* margin-left: 0; */
+      transition: 100ms;
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
-      #navbar a {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-      }
+    #navbar a {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+    }
 
-      .workshops__button {
-        display: flex;
-        justify-content: center;
-        padding-top: 20px;
-      }
+    .workshops__button {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+    }
 
-      .workshops__link {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-        padding-left: 75px !important;
-      }
+    .workshops__link {
+      float: left;
+      display: block;
+      color: #444444;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: calc(0.7rem + 0.5vw);
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+      padding-left: 75px !important;
+    }
 
-      .workshops__link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    .workshops__link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
-      .workshops__link:hover::after {
-        width: 100%;
-        transition: width .3s;
-      }
+    .workshops__link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
 
-      #navbar a.active {
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-      }
+    #navbar a.active {
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+    }
 
-      #navbar a.active::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width .3s;
-      }
+    #navbar a.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
 
 
-      #navbar span {
+    #navbar span {
+      display: none;
+    }
+
+    .schedule {
+      display: flex;
+      height: calc(100% - 50px);
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .schedule__box {
+      text-align: center;
+    }
+
+    @media (min-width: 630px) {
+      #navbar i {
         display: none;
       }
 
-      .schedule {
-        display: flex;
-        height: calc(100% - 50px);
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-      }
-
-      .schedule__box {
-        text-align: center;
-      }
-
-      @media (min-width: 630px) {
-        #navbar i {
-          display: none;
-        }
-
-        #navbar span {
-          display: block;
-        }
-      }
-
-      @media (max-width: 630px) {
-        blockquote {
-          width: 100vw;
-        }
-
-        #logo {
-          display: none;
-        }
-      }
-
-      table body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        min-height: 100vh;
-        padding: 4rem 0;
-        font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      }
-
-      table {
-        width: 80vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      tr:nth-child(even) th {
-        color: #ccc;
-        font-weight: normal;
-      }
-
-      th,
-      td {
-        padding: 0.6rem 1rem;
-      }
-
-      th {
-        font-weight: normal;
-        border-top: thin dotted #ccc;
-      }
-
-      td {
-        font-size: 0.9rem;
-        font-weight: bold;
-        line-height: 1.4;
-        border-radius: 0.2rem;
-        transition: opacity 0.3s ease;
-      }
-
-      td span {
-        font-size: 1em;
-        font-weight: normal;
+      #navbar span {
         display: block;
-        width: 100%;
+      }
+    }
+
+    @media (max-width: 630px) {
+      blockquote {
+        width: 100vw;
       }
 
-      .one {
-        background-color: #7491A4;
+      #logo {
+        display: none;
       }
- .two {
- background-color: #98AFBD;
- }
+    }
 
-      .three {
-        background-color: #dde8ef;
-      }
+    table body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 4rem 0;
+      font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-      /* width */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
+    table {
+      width: 80vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      /* Track */
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
+    tr:nth-child(even) th {
+      color: #ccc;
+      font-weight: normal;
+    }
 
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #888;
-      }
+    th,
+    td {
+      padding: 0.6rem 1rem;
+    }
 
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-      .schedule__table {
-        padding-bottom: 25px;
-      }
-    </style>
-  </head>
+    th {
+      font-weight: normal;
+      border-top: thin dotted #ccc;
+    }
 
-  <body>
-    <div id="navbar">
-      <li>
-        <a href="./index.html" class="cool-link">
-          <i class="material-icons">
-            home
-          </i>
-          <span>GIS DAY</span>
-        </a>
-      </li>
-      <li>
-        <a href="./schedule.html" class="cool-link">
-          <i class="material-icons">
-            schedule
-          </i>
-          <span>
-            WARSZTATY
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="active" href="#" class="cool-link">
-          <i class="material-icons">
-            assignment
-          </i>
-          <span>
-            Prelekcje
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./archive.html" class="cool-link">
-          <i class="material-icons">
-            photo_library
-          </i>
-          <span>
-            Galeria
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="./contact.html" class="cool-link">
-          <i class="material-icons">
-            contact_support
-          </i>
-          <span>
-            Kontakt
-          </span>
-        </a>
-      </li>
-    </div>
-    <div class="schedule">
-      <div class="schedule__box">
-        <div class="workshops__button">
-          <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram prelekcji</title>
-        </div>
-        <div class="schedule__table">
+    td {
+      font-size: 0.9rem;
+      font-weight: bold;
+      line-height: 1.4;
+      border-radius: 0.2rem;
+      transition: opacity 0.3s ease;
+    }
+
+    td span {
+      font-size: 1em;
+      font-weight: normal;
+      display: block;
+      width: 100%;
+    }
+
+    .one {
+      background-color: #7491A4;
+    }
+
+    .two {
+      background-color: #98AFBD;
+    }
+
+    .three {
+      background-color: #dde8ef;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .schedule__table {
+      /* padding-bottom: 25px; */
+    }
+
+    .lectures__text {
+      padding-top: 50%;
+      font-size: 1.5em;
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      color: #444444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar">
+    <li>
+      <a href="./index.html" class="cool-link">
+        <i class="material-icons">
+          home
+        </i>
+        <span>GIS DAY</span>
+      </a>
+    </li>
+    <li>
+      <a href="./schedule.html" class="cool-link">
+        <i class="material-icons">
+          schedule
+        </i>
+        <span>
+          WARSZTATY
+        </span>
+      </a>
+    </li>
+    <li>
+      <a class="active" href="#" class="cool-link">
+        <i class="material-icons">
+          assignment
+        </i>
+        <span>
+          Prelekcje
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./archive.html" class="cool-link">
+        <i class="material-icons">
+          photo_library
+        </i>
+        <span>
+          Galeria
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="./contact.html" class="cool-link">
+        <i class="material-icons">
+          contact_support
+        </i>
+        <span>
+          Kontakt
+        </span>
+      </a>
+    </li>
+  </div>
+  <div class="schedule">
+    <div class="schedule__box">
+      <span class="lectures__text">Harmonogram prelekcji dostępny będzie wkrótce.</span>
+      <!-- <div class="workshops__button">
+        <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram prelekcji</title>
+      </div> -->
+      <!-- <div class="schedule__table">
           <table class="">
             <tbody class="schedule__body">
 
             </tbody>
           </table>
-        </div>
-      </div>
+        </div> -->
     </div>
-    <script>
-      const scheduleArray = [{
-          start: '9:00',
-          unit: '',
-          person: '',
-          title: 'Otwarcie GIS Day 2019'
-        },
-        {
-          start: '9:10',
-          unit: 'WNGIG',
-          person: 'dr inż. Patrycja Przewoźna',
-          title: 'Geoinformacja - geografia na miarę XXI wieku'
-        },
-        {
-          start: '9:30',
-          unit: 'ESRI',
-          person: 'Anna Pierzchała',
-          title: 'Jak wykorzystać dane zebrane przez drony?'
-        },
-        {
-          start: '9:50',
-          unit: 'OSM Polska',
-          person: 'Przemysław Szydlik, Olga Barańczyk',
-          title: 'Projekt OpenStreetMap - narzędzia, społeczność, odbiorcy danych'
-        },
-        {
-          start: '10:20',
-          unit: 'DRON.edu.pl',
-          person: 'Wojciech Peter',
-          title: 'SmoGIS - Zastosowania GIS i UAV w walce z zanieczyszczeniami powietrza na obszarze Polski'
-        },
-        {
-          start: '10:40',
-          unit: 'Sekcja Geomatyczna Koła Leśników UP',
-          person: 'Karolina Duńska, Rafał Borkowski',
-          title: 'Różne metody skanowania, czyli las w 3D'
-        },
-        {
-          start: '11:00',
-          unit: 'WNGIG',
-          person: 'dr Michał Rzeszewski',
-          title: 'Wirtualna, Rozszerzona i Mieszana Rzeczywistość – nowe przestrzenie współczesnych miast'
-        },
-        {
-          start: '11:20',
-          unit: 'Sweco Consulting',
-          person: 'Patryk Pszczółkowski, Kamil Jawgiel',
-          title: 'Przegląd zastosowań GIS w projektach Sweco Consulting'
-        },
-        {
-          start: '11:40',
-          unit: '',
-          person: '',
-          title: 'PRZERWA'
-        },
-        {
-          start: '12:00',
-          unit: 'GIS Support ',
-          person: 'Michał Drożdż',
-          title: 'Relacja z konferencji Free and Open Source for Geospatial (FOSS4G) - Bukareszt 2019'
-        },
-        {
-          start: '12:20',
-          unit: 'Zarząd Geodezji i Katastru Miejskiego GEOPOZ',
-          person: 'Artur Radziemski, Krzysztof Drygalski',
-          title: 'Model 3D miasta Poznania – aktualizacja z wykorzystaniem fotogrametrii lotniczej,  tworzenie brył budynków i zasilanie modelu 3D'
-        },
-        {
-          start: '13:00',
-          unit: 'HERE Technologies',
-          person: 'Szczepan Żurek',
-          title: 'Skąd się biorą współczesne mapy?'
-        },
-        {
-          start: '13:20',
-          unit: 'WNGIG',
-          person: 'dr Jakub Nowosad',
-          title: 'Powtarzalna analiza danych przestrzennych: możliwości i perspektywy'
-        },
-        {
-          start: '13:40',
-          unit: 'WNGIG',
-          person: 'prof. UAM dr hab. Jarosław Jasiewicz',
-          title: 'Czy należy się obawiać sztucznej inteligencji? Jasne, ale to nie tak jak myślisz'
-        },
-        {
-          start: '14:00',
-          unit: 'Neptis',
-          person: 'Jan Semmler',
-          title: 'Profil Kierowcy, czyli co łączy pogodę, jakość dróg, wypadki, styl jazdy i aplikację Yanosik'
-        },
-        {
-          start: '14:20',
-          unit: 'Sustainable Innovation',
-          person: 'Michal Wyczałek',
-          title: 'Wykorzystanie spektralnych danych Sentinel 2 w quasi-ciągłym monitoringu upraw rolnych na przykładzie aplikacji AgroAssistant'
-        },
-        {
-          start: '14:40',
-          unit: '',
-          person: '',
-          title: 'Zakończenie GIS Day 2019'
-        },
-      ]
-      const fragment = document.createDocumentFragment();
-      scheduleArray.forEach(function (element, index) {
-        let html = document.createElement('tr');
-        let className = (index + 1) % 2 ? 'two' : 'three';
-        html.innerHTML = `
+  </div>
+  <script>
+    const scheduleArray = [{
+      start: '9:00',
+      unit: '',
+      person: '',
+      title: 'Otwarcie GIS Day 2019'
+    },
+    {
+      start: '9:10',
+      unit: 'WNGIG',
+      person: 'dr inż. Patrycja Przewoźna',
+      title: 'Geoinformacja - geografia na miarę XXI wieku'
+    },
+    {
+      start: '9:30',
+      unit: 'ESRI',
+      person: 'Anna Pierzchała',
+      title: 'Jak wykorzystać dane zebrane przez drony?'
+    },
+    {
+      start: '9:50',
+      unit: 'OSM Polska',
+      person: 'Przemysław Szydlik, Olga Barańczyk',
+      title: 'Projekt OpenStreetMap - narzędzia, społeczność, odbiorcy danych'
+    },
+    {
+      start: '10:20',
+      unit: 'DRON.edu.pl',
+      person: 'Wojciech Peter',
+      title: 'SmoGIS - Zastosowania GIS i UAV w walce z zanieczyszczeniami powietrza na obszarze Polski'
+    },
+    {
+      start: '10:40',
+      unit: 'Sekcja Geomatyczna Koła Leśników UP',
+      person: 'Karolina Duńska, Rafał Borkowski',
+      title: 'Różne metody skanowania, czyli las w 3D'
+    },
+    {
+      start: '11:00',
+      unit: 'WNGIG',
+      person: 'dr Michał Rzeszewski',
+      title: 'Wirtualna, Rozszerzona i Mieszana Rzeczywistość – nowe przestrzenie współczesnych miast'
+    },
+    {
+      start: '11:20',
+      unit: 'Sweco Consulting',
+      person: 'Patryk Pszczółkowski, Kamil Jawgiel',
+      title: 'Przegląd zastosowań GIS w projektach Sweco Consulting'
+    },
+    {
+      start: '11:40',
+      unit: '',
+      person: '',
+      title: 'PRZERWA'
+    },
+    {
+      start: '12:00',
+      unit: 'GIS Support ',
+      person: 'Michał Drożdż',
+      title: 'Relacja z konferencji Free and Open Source for Geospatial (FOSS4G) - Bukareszt 2019'
+    },
+    {
+      start: '12:20',
+      unit: 'Zarząd Geodezji i Katastru Miejskiego GEOPOZ',
+      person: 'Artur Radziemski, Krzysztof Drygalski',
+      title: 'Model 3D miasta Poznania – aktualizacja z wykorzystaniem fotogrametrii lotniczej,  tworzenie brył budynków i zasilanie modelu 3D'
+    },
+    {
+      start: '13:00',
+      unit: 'HERE Technologies',
+      person: 'Szczepan Żurek',
+      title: 'Skąd się biorą współczesne mapy?'
+    },
+    {
+      start: '13:20',
+      unit: 'WNGIG',
+      person: 'dr Jakub Nowosad',
+      title: 'Powtarzalna analiza danych przestrzennych: możliwości i perspektywy'
+    },
+    {
+      start: '13:40',
+      unit: 'WNGIG',
+      person: 'prof. UAM dr hab. Jarosław Jasiewicz',
+      title: 'Czy należy się obawiać sztucznej inteligencji? Jasne, ale to nie tak jak myślisz'
+    },
+    {
+      start: '14:00',
+      unit: 'Neptis',
+      person: 'Jan Semmler',
+      title: 'Profil Kierowcy, czyli co łączy pogodę, jakość dróg, wypadki, styl jazdy i aplikację Yanosik'
+    },
+    {
+      start: '14:20',
+      unit: 'Sustainable Innovation',
+      person: 'Michal Wyczałek',
+      title: 'Wykorzystanie spektralnych danych Sentinel 2 w quasi-ciągłym monitoringu upraw rolnych na przykładzie aplikacji AgroAssistant'
+    },
+    {
+      start: '14:40',
+      unit: '',
+      person: '',
+      title: 'Zakończenie GIS Day 2019'
+    },
+    ]
+    const fragment = document.createDocumentFragment();
+    scheduleArray.forEach(function (element, index) {
+      let html = document.createElement('tr');
+      let className = (index + 1) % 2 ? 'two' : 'three';
+      html.innerHTML = `
           <th>${element.start}</th>
           <td class="${className}">
            ${element.title}
@@ -442,10 +456,10 @@
             </span>
           </td>
         `
-        fragment.append(html)
-      })
-      document.querySelector('.schedule__body').append(fragment)
-    </script>
-  </body>
+      fragment.append(html)
+    })
+    document.querySelector('.schedule__body').append(fragment)
+  </script>
+</body>
 
 </html>

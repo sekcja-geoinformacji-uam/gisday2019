@@ -197,6 +197,7 @@
       padding: 3em;
       position: relative;
       box-sizing: border-box;
+      font-family: "Avenir Next Demi";
       display: flex;
       align-items: center;
     }
@@ -224,7 +225,7 @@
         left: 1vw;
         top: 3vh; */
       width: 100%;
-      font-family: "Rajdhani", sans-serif;
+      font-family: "Avenir Next Demi";
       font-weight: 600;
       font-size: 2.2em;
       margin: 20px 0;
@@ -259,8 +260,6 @@
       border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
       border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
 
-
-
     }
 
     .about2__box h1 {
@@ -268,7 +267,7 @@
         left: 1vw;
         top: 3vh; */
       width: 100%;
-      font-family: "Rajdhani", sans-serif;
+      font-family: "Avenir Next Demi";
       font-weight: 600;
       font-size: 2.2em;
       margin: 20px 0;
@@ -315,7 +314,7 @@
         left: 1vw;
         top: 3vh; */
       width: 100%;
-      font-family: "Rajdhani", sans-serif;
+      font-family: "Avenir Next Demi";
       font-weight: 600;
       font-size: 2.2em;
       margin: 20px 0;
@@ -392,7 +391,7 @@
       /* margin-top: 0; */
       /* position: relative; */
       width: 100%;
-      font-family: "Rajdhani", sans-serif;
+      font-family: "Avenir Next Demi";
       font-weight: 600;
       font-size: 1.7em;
       text-align: center;
@@ -416,11 +415,10 @@
 
     .welcome__text {
       text-align: justify;
-      font-family: "Rajdhani", sans-serif;
+      font-family: "Avenir Next Regular";
       font-weight: 700;
       font-size: 2em;
       text-align: center;
-      text-shadow: 3px 3px #4d4d4d42;
       color: #121420;
       top: -10vh;
       position: relative;
@@ -532,7 +530,8 @@
       }
 
       .poznan {
-        font-size: 80px;
+        font-size: 60px;
+        padding-bottom: 3%;
       }
 
       .date {
@@ -655,6 +654,20 @@
       transform: skew(0deg, -30deg);
     }
 
+    .welcome__text::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
+
+    .welcome__text:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+
     @keyframes move {
       25% {
         opacity: 1;
@@ -691,8 +704,8 @@
     <h1>
       <div class="header">
         <div class="gisday">GIS DAY </div>
-        <div class="poznan"> POZNAŃ</div>
-        <div class="date"> 2019</div>
+        <div class="poznan"> EDYCJA ONLINE</div>
+        <div class="date"> 2020</div>
       </div>
     </h1>
     <div class="arrows__wrapper">
@@ -725,16 +738,16 @@
 
       </a>
     </li>
-     <li>
-       <a href="./lectures.html" class="cool-link">
-         <i class="material-icons">
-           assignment
-         </i>
-         <span>
-           Prelekcje
-         </span>
-       </a>
-     </li>
+    <li>
+      <a href="./lectures.html" class="cool-link">
+        <i class="material-icons">
+          assignment
+        </i>
+        <span>
+          Prelekcje
+        </span>
+      </a>
+    </li>
     <li>
       <a href="./archive.html" class="cool-link">
         <i class="material-icons">
@@ -759,11 +772,11 @@
 
   <div class="about">
     <div class="about__box">
-      <h1>GIS Day 2019</h1>
+      <h1>GIS Day 2020</h1>
       <blockquote>Interesuje Cię GIS? Rozważasz naukę geoinformacji? Chciałbyś dowiedzieć się jak wykorzystuje się ją
         w
         praktyce? A może jesteś zainteresowany podniesieniem własnych kompetencji?
-        Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2019!
+        Nie może Cię zabraknąć 13 listopada na WNGiG podczas GIS Day 2020!
         <span class="line__about"></span></blockquote>
     </div>
     <img id="globe" src="assets/static/pictures/funart.png" class="section__img">
@@ -785,9 +798,12 @@
   <div class="where">
     <div class="where__box">
       <h1>Gdzie i kiedy?</h1>
-      <blockquote>Poznański GIS Day 2019 odbędzie się 13 listopada w budynku Collegium Geographicum należącym do
-        Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy ulicy Bogumiła
-        Krygowskiego 10.
+      <blockquote>Poznański GIS Day 2020 odbędzie się 18 listopada. Co roku wydarzenie to odbywa się w budynku Collegium
+        Geographicum należącym do Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im. Adama Mickiewicza, przy
+        ulicy Bogumiła Krygowskiego 10..
+        Tegoroczna edycja odbędzie się jednak online. Przez cały dzień będziemy świętować publikując nagrania
+        prelegentów na naszym kanale YouTube oraz dodając posty na Facebookowym wydarzeniu. Link można znaleźć w
+        zakładce kontakty.
         <span class="line__where"></span>
       </blockquote>
     </div>
@@ -805,7 +821,7 @@
     </div>
   </div>
   <div class="welcome">
-    <blockquote class="welcome__text"> DO ZOBACZENIA NA GIS Day!</blockquote>
+    <blockquote class="welcome__text"> Do zobaczenia GIS Day!</blockquote>
   </div>
 
 
