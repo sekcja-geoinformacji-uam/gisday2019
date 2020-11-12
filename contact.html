@@ -27,7 +27,6 @@
     h1 {
       font-size: 2em;
       text-align: center;
-      margin-top: 30%;
     }
 
 
@@ -44,7 +43,6 @@
     blockquote {
       font-size: 1.5em;
       width: 60vw;
-      margin-top: 17%;
       position: absolute;
       margin: 0;
       padding: 20px;
@@ -237,6 +235,35 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
+
+    .h1__container {
+      display: flex;
+    }
+
+    .contact__h1 {
+      font-family: "Avenir Next Regular";
+      color: #444444;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+      float: left;
+      text-align: center;
+    }
+
+    .contact__h1:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    .contact__h1::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
   </style>
 </head>
 
@@ -299,7 +326,11 @@
 
 
   <section class="sticky">
+
     <blockquote>
+      <div class="h1__container">
+        <h1 class="contact__h1">Kontakt</h1>
+      </div>
       <div>
 
         Studenckie Koło Naukowe Geografów

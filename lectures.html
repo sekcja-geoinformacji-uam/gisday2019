@@ -145,14 +145,23 @@
 
     .schedule {
       display: flex;
-      height: calc(100% - 50px);
-      justify-content: center;
+      height: calc(100vh - 48.38px);
+      /* justify-content: center;  */
       align-items: center;
-      margin-top: 50px;
+      flex-direction: column;
     }
 
-    .schedule__box {
-      text-align: center;
+
+    .schedule__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3%;
+      transition: transform 1s;
+    }
+
+    .schedule__image:hover {
+      transform: scale(1.04);
     }
 
     @media (min-width: 630px) {
@@ -175,7 +184,7 @@
       }
     }
 
-    table body {
+    /* table body {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -232,7 +241,7 @@
 
     .three {
       background-color: #dde8ef;
-    }
+    } */
 
     /* width */
     ::-webkit-scrollbar {
@@ -258,6 +267,7 @@
       /* padding-bottom: 25px; */
     }
 
+    /* 
     .lectures__text {
       padding-top: 50%;
       font-size: 1.5em;
@@ -267,6 +277,42 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    } */
+
+    .lectures__h1 {
+      font-family: "Avenir Next Regular";
+      color: #444444;
+      display: block;
+      font-size: 2em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08334rem;
+      float: left;
+      text-align: center;
+      margin-top: 22%;
+    }
+
+    .lectures__h1:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+
+    .lectures__h1::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: rgba(44, 44, 44, 0.616);
+      transition: width .3s;
+    }
+
+    .schedule__box {
+      position: relative;
+    }
+
+    .h1__container {
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
@@ -323,8 +369,11 @@
     </li>
   </div>
   <div class="schedule">
+    <div class="h1__container">
+      <h1 class="lectures__h1">Harmonogram</h1>
+    </div>
     <div class="schedule__box">
-      <span class="lectures__text">Harmonogram prelekcji dostępny będzie wkrótce.</span>
+      <img src="./assets/static/pictures/harmonogram.png" class="schedule__image">
       <!-- <div class="workshops__button">
         <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram prelekcji</title>
       </div> -->
