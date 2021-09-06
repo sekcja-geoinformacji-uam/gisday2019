@@ -1,584 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      href="assets/static/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>GIS Day Poznań</title>
+    <style>
+      @font-face {
+        font-family: "Avenir Next Regular";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf");
+      }
+      @font-face {
+        font-family: "Avenir Next Demi";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf");
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>GIS Day Poznań</title>
-  <style>
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-    }
+      body {
+        margin: 0;
+        font-family: "Avenir Next Regular";
+        overflow: scroll;
+        overflow-x: hidden;
+      }
 
-    body {
-      margin: 0;
-      font-family: "Avenir Next Regular";
-      overflow: scroll;
-      overflow-x: hidden;
-    }
+      li {
+        display: inline-block;
+      }
 
-    li {
-      display: inline-block;
-    }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
 
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
 
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100vw;
-      position: sticky;
-      top: 0;
-      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-    }
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
 
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
 
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
 
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .content {
+        padding: 16px;
+      }
 
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+      }
 
-    .content {
-      padding: 16px;
-    }
+      .sticky + .content {
+        padding-top: 60px;
+      }
 
-    .sticky {
-      position: sticky !important;
-      top: 0;
-      width: 100%;
-    }
+      .parallax {
+        /* The image used */
+        background-image: url("assets/static/pictures/tlo.jpg");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .sticky+.content {
-      padding-top: 60px;
-    }
+      .parallax h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 3px #000000;
+      }
 
-    body {
-      background: #ffffff;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+      .gisday {
+        font-size: 14vw;
+        font-family: "Avenir Next Demi";
+        /* padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh; */
+        text-align: center;
+        font-weight: 600;
+      }
 
+      .poznan {
+        font-size: 8vw;
+        font-weight: 600;
+      }
 
-    .container .button-year {
-      position: relative;
-      box-sizing: border-box;
-      /* padding: 80px; */
-      transition: transform 1s;
-      color: black;
-      width: 143px;
-      height: 50px;
-      overflow: hidden;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: white;
-      border: 2px solid rgba(44, 44, 44, 0.616);
-      box-shadow: 3px 3px 3px #0000009e;
-    }
+      .date {
+        font-size: 6vw;
+        font-weight: 500;
+      }
 
-    .container .button-year:hover {
-      transform: scale(1.1);
-    }
+      .header {
+        text-align: center;
+      }
 
+      .container .button-year {
+        position: relative;
+        box-sizing: border-box;
+        /* padding: 80px; */
+        transition: transform 1s;
+        color: black;
+        width: 143px;
+        height: 50px;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid rgba(44, 44, 44, 0.616);
+        box-shadow: 3px 3px 3px #0000009e;
+      }
 
-    .container {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      grid-template-rows: repeat(2, 1fr);
-      margin: auto;
-      width: 60vw;
-      margin-bottom: 50px;
-    }
+      .container .button-year:hover {
+        transform: scale(1.1);
+      }
 
-    .date {
-      position: relative;
-      font-size: 31px;
-      font-family: "Avenir Next Regular";
-      margin: auto;
-      color: #2b2b2b;
-      font-weight: 600;
-      /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.57); */
-      width: fit-content;
-      text-align: center;
-      top: 3px;
-    }
+      .container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+        margin: auto;
+        width: 60vw;
+        margin-bottom: 50px;
+      }
 
+      .button__date {
+        position: relative;
+        font-size: 31px;
+        font-family: "Avenir Next Regular";
+        margin: auto;
+        color: #2b2b2b;
+        font-weight: 600;
+        /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.57); */
+        width: fit-content;
+        text-align: center;
+        top: 3px;
+      }
 
-    a {
-      display: block;
-      max-width: 100%;
-      height: 100%;
-      width: 100%;
-      position: relative;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-    }
-
-    #navbar span {
-      display: none;
-    }
-
-    @media (min-width: 630px) {
-      #navbar i {
-        display: none;
+      a {
+        display: block;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
       }
 
       #navbar span {
-        display: block;
+        display: none;
       }
-    }
 
-    @media (max-width: 630px) {
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+      }
+
+      .sticky + .content {
+        padding-top: 60px;
+      }
+
+      .header__scroll {
+        position: absolute;
+        bottom: 10px;
+        color: white;
+      }
+
+      .arrows {
+        /* position: absolute; */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
+
+      .arrows__wrapper {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
+
+      .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
+
+      .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
+
+      .chevron:before,
+      .chevron:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
+
+      .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
+
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
+        }
+
+        #navbar span {
+          display: block;
+        }
+      }
+
+      @media (max-width: 630px) {
+        .gisday2019__button {
+          font-size: 0.7em;
+        }
+
+        .gisday2019 {
+          margin-top: 10%;
+        }
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      /* slider */
+      .slider-container {
+        height: fit-content;
+        position: relative;
+        margin: auto;
+        width: 50vw;
+        margin-bottom: 6%;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        width: 30px;
+        height: 40px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .prev {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 13px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 16px;
+        font-family: "Avenir Next Regular";
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 0.5s;
+      }
+
       .gisday2019__button {
-        font-size: 0.7em;
+        display: flex;
+        justify-content: center;
+        margin-top: 4%;
       }
 
       .gisday2019 {
-        margin-top: 10%;
+        font-family: "Avenir Next Regular";
+        color: #444444;
+        display: block;
+        font-size: 3.5em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+        float: left;
+        text-align: center;
+        margin-bottom: 2%;
       }
 
-    }
-
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    .mySlides {
-      display: none
-    }
-
-    img {
-      vertical-align: middle;
-    }
-
-
-
-    /* slider */
-    .slider-container {
-      height: fit-content;
-      position: relative;
-      margin: auto;
-      width: 50vw;
-      margin-bottom: 6%;
-    }
-
-    .mySlides {
-      display: none;
-
-    }
-
-
-
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 45%;
-      width: 30px;
-      height: 40px;
-      color: white;
-      font-weight: bold;
-      font-size: 24px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-
-    .prev {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 13px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 16px;
-      font-family: "Avenir Next Regular";
-    }
-
-    /* Fading animation */
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: .5s;
-    }
-
-    .gisday2019__button {
-      display: flex;
-      justify-content: center;
-      margin-top: 4%;
-    }
-
-    .gisday2019 {
-      font-family: "Avenir Next Regular";
-      color: #444444;
-      display: block;
-      font-size: 3.5em;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-      float: left;
-      text-align: center;
-      margin-bottom: 2%;
-    }
-
-    .gisday2019:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
-
-    .gisday2019::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-
-    @-webkit-keyframes fade {
-      from {
-        opacity: .4
+      .gisday2019:hover::after {
+        width: 100%;
+        transition: width 0.3s;
       }
 
-      to {
-        opacity: 1
+      .gisday2019::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
       }
-    }
 
-    @keyframes fade {
-      from {
-        opacity: .4
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
 
-      to {
-        opacity: 1
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
+
+      @keyframes move {
+        25% {
+          opacity: 1;
+        }
+
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
+        }
+
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+      }
+
+      @keyframes pulse {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parallax">
+      <h1>
+        <div class="header">
+          <div class="gisday">GIS DAY</div>
+          <div class="poznan">POZNAŃ</div>
+          <div class="date">2021</div>
+        </div>
+      </h1>
+      <div class="arrows__wrapper">
+        <div class="arrows">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
+      </div>
+    </div>
+    <div id="navbar">
+      <li>
+        <a href="./index.html" class="cool-link">
+          <i class="material-icons"> home </i>
+          <span>GIS DAY</span>
+        </a>
+      </li>
+      <li>
+        <a href="./schedule.html" class="cool-link">
+          <i class="material-icons"> schedule </i>
+          <span> WARSZTATY </span>
+        </a>
+      </li>
+      <li>
+        <a href="./lectures.html" class="cool-link">
+          <i class="material-icons"> assignment </i>
+          <span> Prelekcje </span>
+        </a>
+      </li>
+      <li>
+        <a class="active" href="#" class="cool-link">
+          <i class="material-icons"> photo_library </i>
+          <span> Galeria </span>
+        </a>
+      </li>
+      <li>
+        <a href="./contact.html" class="cool-link">
+          <i class="material-icons"> contact_support </i>
+          <span> Kontakt </span>
+        </a>
+      </li>
+    </div>
+
+    <div class="gisday2019__button">
+      <span class="gisday2019">GIS Day 2019</span>
+    </div>
+
+    <!-- slider -->
+    <div class="slider-container">
+      <!-- Next and previous buttons -->
+      <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+      <div class="next" onclick="plusSlides(1)">&#10095;</div>
+
+      <br />
+    </div>
+    <!-- slider -->
+
+    <div class="container">
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/782DniD3qBwDu3QZA" target="_blank">
+          <div class="button__date">2018</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/WE1xzht5cKVsyY7F6" target="_blank">
+          <div class="button__date">2017</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/TxCmToiS63PZSBbR9" target="_blank">
+          <div class="button__date">2016</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/ANfWzPYCbw64wJUWA" target="_blank">
+          <div class="button__date">2015</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A" target="_blank">
+          <div class="button__date">2013</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8" target="_blank">
+          <div class="button__date">2012</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516" target="_blank">
+          <div class="button__date">2011</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8" target="_blank">
+          <div class="button__date">2010</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8" target="_blank">
+          <div class="button__date">2009</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27" target="_blank">
+          <div class="button__date">2008</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9" target="_blank">
+          <div class="button__date">2007</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A" target="_blank">
+          <div class="button__date">2006</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A" target="_blank">
+          <div class="button__date">2005</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/7hhtnr7iuuJUB6UWA" target="_blank">
+          <div class="button__date">2004</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/4TGn99X9ZCVFhrWw8" target="_blank">
+          <div class="button__date">2003</div>
+        </a>
+      </button>
+      <button class="button-year">
+        <a href="https://photos.app.goo.gl/RV7fn9mMgWpLA2rb9" target="_blank">
+          <div class="button__date">2002</div>
+        </a>
+      </button>
+    </div>
+  </body>
+  <script>
+    const sliderContainer =
+      document.getElementsByClassName("slider-container")[0];
+    const emptyFragment = document.createDocumentFragment();
+    const photos = [
+      "P1010159",
+      "P1010161",
+      "P1010169",
+      "P1010174",
+      "P1010176",
+      "P1010179",
+      "P1010181",
+      "P1010183",
+      "P1010184",
+      "P1010201",
+      "P1010203",
+      "P1010204",
+      "P1010206",
+      "P1010214",
+      "P1010223",
+      "P1010224",
+      "P1010225",
+      "P1010230",
+      "P1010231",
+      "P1010237",
+      "P1010259",
+      "P1010269",
+      "P1010273",
+      "P1010286",
+      "P1010288",
+      "P1010289",
+    ];
+
+    photos.forEach((element, index) => {
+      const photosEl = document.createElement("div");
+      photosEl.className = "mySlides fade";
+      photosEl.innerHTML = `<div class="numbertext">${index + 1} / ${
+        photos.length
+      } </div> 
+  <img src="./assets/static/pictures/gisday2019_photos/${element}.JPG" class="imgsld${
+        index + 1
+      }" style="width:100%">`;
+      emptyFragment.appendChild(photosEl);
+    });
+
+    sliderContainer.appendChild(emptyFragment);
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(".dot:active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += ".dot:active";
     }
-  </style>
-</head>
 
-<body>
-  <div id="navbar">
-    <li>
-      <a href="./index.html" class="cool-link">
-        <i class="material-icons">
-          home
-        </i>
-        <span>GIS DAY</span>
-      </a>
-    </li>
-    <li>
-      <a href="./schedule.html" class="cool-link">
-        <i class="material-icons">
-          schedule
-        </i>
-        <span>
-          WARSZTATY
-        </span>
-
-      </a>
-    </li>
-    <li>
-      <a href="./lectures.html" class="cool-link">
-        <i class="material-icons">
-          assignment
-        </i>
-        <span>
-          Prelekcje
-        </span>
-      </a>
-    </li>
-    <li>
-      <a class="active" href="#" class="cool-link">
-        <i class="material-icons">
-          photo_library
-        </i>
-        <span>
-          Galeria
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="./contact.html" class="cool-link">
-        <i class="material-icons">
-          contact_support
-        </i>
-        <span>
-          Kontakt
-        </span>
-      </a>
-    </li>
-  </div>
-
-  <div class="gisday2019__button">
-    <span class="gisday2019">GIS Day 2019</span>
-  </div>
-
-  <!-- slider -->
-  <div class="slider-container">
-
-    <!-- Next and previous buttons -->
-    <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
-    <div class="next" onclick="plusSlides(1)">&#10095;</div>
-
-    <br>
-
-  </div>
-  <!-- slider -->
-
-
-  <div class="container">
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/782DniD3qBwDu3QZA" target="_blank">
-        <div class="date">2018</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/WE1xzht5cKVsyY7F6" target="_blank">
-        <div class="date">2017</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/TxCmToiS63PZSBbR9" target="_blank">
-        <div class="date">2016</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/ANfWzPYCbw64wJUWA" target="_blank">
-        <div class="date">2015</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/QZkogP32kmbSDzq9A" target="_blank">
-        <div class="date">2013</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/rPujez92feQfeyFg8" target="_blank">
-        <div class="date">2012</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/ABWRJXYHq5ZeiB516" target="_blank">
-        <div class="date">2011</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/rRBv5c3ZALLNGYUb8" target="_blank">
-        <div class="date">2010</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/3gKENzL5mDjSUy4z8" target="_blank">
-        <div class="date">2009</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/k19hVfy6e528QeB27" target="_blank">
-        <div class="date">2008</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/PUryFxAKuGUZGyVp9" target="_blank">
-        <div class="date">2007</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/dFvLJHJvJvLYeVQ2A" target="_blank">
-        <div class="date">2006</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/G3DRziGhmxcPyWE5A" target="_blank">
-        <div class="date">2005</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/7hhtnr7iuuJUB6UWA" target="_blank">
-        <div class="date">2004</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/4TGn99X9ZCVFhrWw8" target="_blank">
-        <div class="date">2003</div>
-      </a>
-    </button>
-    <button class="button-year">
-      <a href="https://photos.app.goo.gl/RV7fn9mMgWpLA2rb9" target="_blank">
-        <div class="date">2002</div>
-      </a>
-    </button>
-  </div>
-
-
-
-</body>
-<script>
-
-  const sliderContainer = document.getElementsByClassName("slider-container")[0]
-  const emptyFragment = document.createDocumentFragment()
-  const photos = ["P1010159", "P1010161", "P1010169", "P1010174", "P1010176", "P1010179",
-    "P1010181", "P1010183", "P1010184", "P1010201", "P1010203", "P1010204", "P1010206",
-    "P1010214", "P1010223", "P1010224", "P1010225", "P1010230", "P1010231", "P1010237",
-    "P1010259", "P1010269", "P1010273", "P1010286", "P1010288", "P1010289"]
-
-
-  photos.forEach((element, index) => {
-    const photosEl = document.createElement("div")
-    photosEl.className = "mySlides fade"
-    photosEl.innerHTML = `<div class="numbertext">${index + 1} / ${photos.length} </div> 
-  <img src="./assets/static/pictures/gisday2019_photos/${element}.JPG" class="imgsld${index + 1}" style="width:100%">`
-    emptyFragment.appendChild(photosEl)
-  });
-
-
-  sliderContainer.appendChild(emptyFragment)
-
-
-
-
-
-
-
-
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(".dot:active", "");
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
     }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += ".dot:active";
-  }
 
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
+    let headerTM = new TimelineMax({});
 
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
+    headerTM.to(".header", 0.5, {
+      transform: "scale(0.7, 0.7)",
+    });
 
-
-</script>
-
+    let headerScene = new ScrollMagic.Scene({
+      triggerElement: ".about",
+      triggerHook: 1,
+      duration: "50%",
+    })
+      .setTween(headerTM)
+      .addTo(controller);
+  </script>
 </html>

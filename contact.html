@@ -1,397 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GIS Day Poznań</title>
+    <link
+      rel="shortcut icon"
+      href="assets/static/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GIS Day Poznań</title>
-  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-    }
-
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      font-size: 2em;
-      text-align: center;
-    }
-
-
-    section {
-      /* padding: 3em; */
-      height: 100vh;
-      position: relative;
-      box-sizing: border-box;
-      display: flex;
-      /* justify-content: center; */
-      align-items: center;
-    }
-
-    blockquote {
-      font-size: 1.5em;
-      width: 60vw;
-      position: absolute;
-      margin: 0;
-      padding: 20px;
-      margin-left: 35px;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-    }
-
-    blockquote span {
-      width: 60vw;
-      background: rgb(219, 219, 219);
-      display: block;
-      height: 5px;
-      margin-top: 20px;
-    }
-
-
-    img {
-      position: absolute;
-    }
-
-    #logo {
-      right: 10%;
-      top: 22%;
-      width: 18%
-    }
-
-
-
-    section:nth-child(odd) {
-      background: #f1f1f1;
-    }
-
-    .sticky {
-      background: white !important;
-    }
-
-    .percentage {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-    }
-
-
-    li {
-      display: inline-block;
-    }
-
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
-
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
-
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100vw;
-      position: sticky;
-      top: 0;
-      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-    }
-
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
-
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
-
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
-
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
-
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-
-    #navbar span {
-      display: none;
-    }
-
-
-
-
-    @media (min-width: 630px) {
-      #navbar i {
-        display: none;
+      @font-face {
+        font-family: "Avenir Next Regular";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf");
+      }
+      @font-face {
+        font-family: "Avenir Next Demi";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf");
       }
 
-      #navbar span {
-        display: block;
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
       }
-    }
 
-    @media (max-width: 630px) {
+      .parallax {
+        /* The image used */
+        background-image: url("assets/static/pictures/tlo.jpg");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .parallax h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 3px #000000;
+      }
+
+      .gisday {
+        font-size: 14vw;
+        font-family: "Avenir Next Demi";
+        /* padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh; */
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .poznan {
+        font-size: 8vw;
+        font-weight: 600;
+      }
+
+      .date {
+        font-size: 6vw;
+        font-weight: 500;
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2em;
+        text-align: center;
+      }
+
+      section {
+        /* padding: 3em; */
+        height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+      }
+
       blockquote {
-        width: 85vw;
-        font-size: 1.1em;
+        font-size: 1.5em;
+        width: 60vw;
+        position: absolute;
+        margin: 0;
+        padding: 20px;
+        margin-left: 35px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+      }
+
+      blockquote span {
+        width: 60vw;
+        background: rgb(219, 219, 219);
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
+
+      img {
+        position: absolute;
       }
 
       #logo {
-        top: 40px;
-        right: 20px;
-        width: 30%;
+        right: 10%;
+        top: 22%;
+        width: 18%;
       }
-    }
 
+      section:nth-child(odd) {
+        background: #f1f1f1;
+      }
 
-    .web1 {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+        background: white !important;
+      }
 
-    .mail {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
+      .sticky + .content {
+        padding-top: 60px;
+      }
 
-    .facebook {
-      height: 30px;
-      width: 30px;
-      position: relative
-    }
+      .header__scroll {
+        position: absolute;
+        bottom: 10px;
+        color: white;
+      }
 
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
+      .arrows {
+        /* position: absolute; */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
 
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+      .arrows__wrapper {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-    }
+      .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+      .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
 
-    .h1__container {
-      display: flex;
-    }
+      .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
 
-    .contact__h1 {
-      font-family: "Avenir Next Regular";
-      color: #444444;
-      font-size: 1.5em;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-      float: left;
-      text-align: center;
-    }
+      .chevron:before,
+      .chevron:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
 
-    .contact__h1:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
 
-    .contact__h1::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
-  </style>
-</head>
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
 
+      .percentage {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
 
-<body>
+      li {
+        display: inline-block;
+      }
 
-  <div id="navbar">
-    <li>
-      <a href="./index.html" class="cool-link">
-        <i class="material-icons">
-          home
-        </i>
-        <span>GIS DAY</span>
-      </a>
-    </li>
-    <li>
-      <a href="./schedule.html" class="cool-link">
-        <i class="material-icons">
-          schedule
-        </i>
-        <span>
-          WARSZTATY
-        </span>
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-      </a>
-    </li>
-    <li>
-      <!-- <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
+
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
+
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
+
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
+
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      #navbar span {
+        display: none;
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
+        }
+
+        #navbar span {
+          display: block;
+        }
+      }
+
+      @media (max-width: 630px) {
+        blockquote {
+          width: 85vw;
+          font-size: 1.1em;
+        }
+
+        #logo {
+          top: 40px;
+          right: 20px;
+          width: 30%;
+        }
+      }
+
+      .web1 {
+        height: 30px;
+        width: 30px;
+        position: relative;
+      }
+
+      .mail {
+        height: 30px;
+        width: 30px;
+        position: relative;
+      }
+
+      .facebook {
+        height: 30px;
+        width: 30px;
+        position: relative;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .h1__container {
+        display: flex;
+      }
+
+      .contact__h1 {
+        font-family: "Avenir Next Regular";
+        color: #444444;
+        font-size: 1.5em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+        float: left;
+        text-align: center;
+      }
+
+      .contact__h1:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
+      .contact__h1::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      @keyframes move {
+        25% {
+          opacity: 1;
+        }
+
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
+        }
+
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+      }
+
+      @keyframes pulse {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parallax">
+      <h1>
+        <div class="header">
+          <div class="gisday">GIS DAY</div>
+          <div class="poznan">POZNAŃ</div>
+          <div class="date">2021</div>
+        </div>
+      </h1>
+      <div class="arrows__wrapper">
+        <div class="arrows">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
+      </div>
+    </div>
+    <div id="navbar">
+      <li>
+        <a href="./index.html" class="cool-link">
+          <i class="material-icons"> home </i>
+          <span>GIS DAY</span>
+        </a>
+      </li>
+      <li>
+        <a href="./schedule.html" class="cool-link">
+          <i class="material-icons"> schedule </i>
+          <span> WARSZTATY </span>
+        </a>
+      </li>
+      <li>
+        <!-- <a href="https://docs.google.com/forms/d/1oqh46nLCj8bQMpPPy8OTWCndWoQxX_rOK9K2ueBZCew/viewform" target="_blank"
           class="cool-link"> -->
-      <a href="./lectures.html" class="cool-link">
-        <i class="material-icons">
-          assignment
-        </i>
-        <span>
-          Prelekcje
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="./archive.html" class="cool-link">
-        <i class="material-icons">
-          photo_library
-        </i>
-        <span>
-          Galeria
-        </span>
-      </a>
-    </li>
-    <li>
-      <a class="active" href="#" class="cool-link">
-        <i class="material-icons">
-          contact_support
-        </i>
-        <span>
-          Kontakt
-        </span>
-      </a>
-    </li>
-  </div>
+        <a href="./lectures.html" class="cool-link">
+          <i class="material-icons"> assignment </i>
+          <span> Prelekcje </span>
+        </a>
+      </li>
+      <li>
+        <a href="./archive.html" class="cool-link">
+          <i class="material-icons"> photo_library </i>
+          <span> Galeria </span>
+        </a>
+      </li>
+      <li>
+        <a class="active" href="#" class="cool-link">
+          <i class="material-icons"> contact_support </i>
+          <span> Kontakt </span>
+        </a>
+      </li>
+    </div>
+
+    <section class="sticky">
+      <blockquote>
+        <div class="h1__container">
+          <h1 class="contact__h1">Kontakt</h1>
+        </div>
+        <div>Studenckie Koło Naukowe Geografów</div>
+        <div>Uniwersytet im. Adama Mickiewicza w Poznaniu</div>
+        <div>Wydział Nauk Geograficznych i Geologicznych</div>
+        ul. Krygowskiego 10
+        <br />60-101 Poznań
+        <div id="icons">
+          <br /><a href="https://gi.amu.edu.pl" target="_blank"
+            ><img class="web1" src="assets/static/icons/globe-solid.svg"
+          /></a>
+          <a href="mailto:gisday.uam@gmail.com" target="_top"
+            ><img class="mail" src="assets/static/icons/envelope-solid.svg"
+          /></a>
+          <a
+            href="https://www.facebook.com/events/1237160989985193"
+            target="_blank"
+            ><img
+              class="facebook"
+              src="assets/static/icons/facebook-square-brands.svg"
+          /></a>
+        </div>
+        <span class="animated__span"> </span>
+      </blockquote>
+      <img id="logo" src="assets/static/pictures/logo_skng.png" />
+    </section>
+
+    <script src="assets/lib/TweenMax.min.js"></script>
+    <script src="assets/lib/TimelineMax.min.js"></script>
+    <script src="assets/lib/ScrollMagic.min.js"></script>
+    <script src="assets/lib/debug.addIndicators.min.js"></script>
+  </body>
+  <script>
+    var tl = new TimelineMax({
+      onUpdate: updatePercentage
+    });
+    var tl2 = new TimelineMax();
+
+    tl.from('blockquote', .5, {
+      x: 200,
+      opacity: 0
+    });
+    tl.from('.animated__span', 1, {
+      width: 0
+    }, "=-.5");
+    tl.from('#logo', 1, {
+      x: -100,
+      opacity: 0,
+      ease: Power4.easeInOut
+    }, "=-1");
 
 
-  <section class="sticky">
 
-    <blockquote>
-      <div class="h1__container">
-        <h1 class="contact__h1">Kontakt</h1>
-      </div>
-      <div>
+    function updatePercentage() {
+      //percent.innerHTML = (tl.progress() *100 ).toFixed();
+      tl.progress();
+    }
 
-        Studenckie Koło Naukowe Geografów
-      </div>
-      <div>
-        Uniwersytet im. Adama Mickiewicza w Poznaniu
-      </div>
-      <div>
-        Wydział Nauk Geograficznych i Geologicznych
-      </div>
-      ul. Krygowskiego 10
-      <br>60-101 Poznań
-      <div id="icons"><br><a href="https://gi.amu.edu.pl" target="_blank"><img class="web1"
-            src="assets/static/icons/globe-solid.svg"></a>
-        <a href="mailto:gisday.uam@gmail.com" target="_top"><img class="mail"
-            src="assets/static/icons/envelope-solid.svg"></a>
-        <a href="https://www.facebook.com/events/1237160989985193" target="_blank"><img class="facebook"
-            src="assets/static/icons/facebook-square-brands.svg"></a> </div>
-      <span class="animated__span">
-      </span>
-    </blockquote>
-    <img id="logo" src="assets/static/pictures/logo_skng.png">
+    document.addEventListener("DOMContentLoaded", () => {
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        let controller = new ScrollMagic.Controller();
 
-  </section>
+        function scrollHandler() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        // animacja header
 
-  <script src="assets/lib/TweenMax.min.js"></script>
-  <script src="assets/lib/TimelineMax.min.js"></script>
-  <script src="assets/lib/ScrollMagic.min.js"></script>
-  <script src="assets/lib/debug.addIndicators.min.js">
+        let headerTM = new TimelineMax({});
+
+        headerTM.to(".header", 0.5, {
+          transform: "scale(0.7, 0.7)",
+        });
+
+        let headerScene = new ScrollMagic.Scene({
+          triggerElement: ".about",
+          triggerHook: 1,
+          duration: "50%",
+        })
+          .setTween(headerTM)
+          .addTo(controller);
   </script>
-</body>
-<script>
-  var tl = new TimelineMax({
-    onUpdate: updatePercentage
-  });
-  var tl2 = new TimelineMax();
-
-  tl.from('blockquote', .5, {
-    x: 200,
-    opacity: 0
-  });
-  tl.from('.animated__span', 1, {
-    width: 0
-  }, "=-.5");
-  tl.from('#logo', 1, {
-    x: -100,
-    opacity: 0,
-    ease: Power4.easeInOut
-  }, "=-1");
-
-
-
-  function updatePercentage() {
-    //percent.innerHTML = (tl.progress() *100 ).toFixed();
-    tl.progress();
-  }
-</script>
-
-
-
-
-</script>
-
 </html>

@@ -1,315 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      href="assets/static/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Avenir Next Regular";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf");
+      }
+      @font-face {
+        font-family: "Avenir Next Demi";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf");
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="assets/static/icons/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'Avenir Next Regular';
-      src: url('assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
-    }
+      @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+      }
 
-    body {
-      margin: 0;
-      font-family: "Roboto", sans-serif;
-      height: 100%;
-      overflow: scroll;
-      overflow-x: hidden;
-    }
+      .parallax {
+        /* The image used */
+        background-image: url("assets/static/pictures/tlo.jpg");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    li {
-      display: inline-block;
-    }
+      .parallax h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 3px #000000;
+      }
 
-    li a {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 20px;
-      padding: 0 20px;
-    }
+      .gisday {
+        font-size: 14vw;
+        font-family: "Avenir Next Demi";
+        /* padding-right: 6vh;
+        padding-left: 6vh;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh; */
+        text-align: center;
+        font-weight: 600;
+      }
 
-    .cool-link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .poznan {
+        font-size: 8vw;
+        font-weight: 600;
+      }
 
-    .cool-link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      .date {
+        font-size: 6vw;
+        font-weight: 500;
+      }
 
-    #navbar {
-      overflow: hidden;
-      background-color: #ffffffdc;
-      display: flex;
-      justify-content: space-evenly;
-      z-index: 2;
-      width: 100vw;
-      position: sticky;
-      top: 0;
-      border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-    }
+      .header {
+        text-align: center;
+      }
 
-    .navbar--invisible {
-      opacity: 0;
-      /* margin-left: 5000px; */
-      transition: 100ms;
-    }
+      li {
+        display: inline-block;
+      }
 
-    .navbar--visible {
-      opacity: 1;
-      /* margin-left: 0; */
-      transition: 100ms;
-      justify-content: space-evenly;
-      width: 100%;
-    }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-    #navbar a {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-    .workshops__button {
-      display: flex;
-      justify-content: center;
-      padding-top: 20px;
-    }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
 
-    .workshops__link {
-      float: left;
-      display: block;
-      color: #444444;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: calc(0.7rem + 0.5vw);
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08334rem;
-    }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
 
-    .workshops__link::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
 
-    .workshops__link:hover::after {
-      width: 100%;
-      transition: width .3s;
-    }
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
 
-    #navbar a.active {
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-    }
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-    #navbar a.active::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background: rgba(44, 44, 44, 0.616);
-      transition: width .3s;
-    }
+      .workshops__button {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+      }
 
+      .workshops__link {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-    #navbar span {
-      display: none;
-    }
+      .workshops__link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-    .schedule {
-      display: flex;
-      height: calc(100% - 50px);
-      justify-content: center;
-      align-items: center;
-      margin-top: 50px;
-    }
+      .workshops__link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
 
-    .schedule__box {
-      text-align: center;
-    }
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
 
-    @media (min-width: 630px) {
-      #navbar i {
-        display: none;
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
       }
 
       #navbar span {
-        display: block;
-      }
-    }
-
-    @media (max-width: 630px) {
-      blockquote {
-        width: 100vw;
-      }
-
-      #logo {
         display: none;
       }
-    }
 
-    table body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 4rem 0;
-      font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+      .schedule {
+        display: flex;
+        height: calc(100% - 50px);
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 20%;
+      }
 
-    table {
-      width: 80vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+      }
 
-    tr:nth-child(even) th {
-      color: #ccc;
-      font-weight: normal;
-    }
+      .sticky + .content {
+        padding-top: 60px;
+      }
 
-    th,
-    td {
-      padding: 0.6rem 1rem;
-    }
+      .header__scroll {
+        position: absolute;
+        bottom: 10px;
+        color: white;
+      }
 
-    th {
-      font-weight: normal;
-      border-top: thin dotted #ccc;
-    }
+      .arrows {
+        /* position: absolute; */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
 
-    td {
-      font-size: 0.9rem;
-      font-weight: bold;
-      line-height: 1.4;
-      border-radius: 0.2rem;
-      transition: opacity 0.3s ease;
-    }
+      .arrows__wrapper {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
 
-    td span {
-      font-size: 1em;
-      font-weight: normal;
-      display: block;
-      width: 100%;
-    }
+      .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
 
-    .one {
-      background-color: #7491A4;
-    }
+      .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
 
-    .two {
-      background-color: #98AFBD;
-    }
+      .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
 
-    .three {
-      background-color: #dde8ef;
-    }
+      .chevron:before,
+      .chevron:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
 
-    .schedule__box {
-      /* width: 100%;
-      height: 100%; */
-    }
+      .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
 
-    .schedule__text {
-      padding-top: 50%;
-      font-size: 1.5em;
-      font-family: "Avenir Next Regular";
-      font-weight: 600;
-      color: #444444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-</head>
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
 
-<body>
-  <div id="navbar">
-    <li>
-      <a href="./index.html" class="cool-link">
-        <i class="material-icons">
-          home
-        </i>
-        <span>GIS DAY</span>
-      </a>
-    </li>
-    <li>
-      <a class="active" href="#" class="cool-link">
-        <i class="material-icons">
-          schedule
-        </i>
-        <span>
-          WARSZTATY
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="./lectures.html" class="cool-link">
-        <i class="material-icons">
-          assignment
-        </i>
-        <span>
-          Prelekcje
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="./archive.html" class="cool-link">
-        <i class="material-icons">
-          photo_library
-        </i>
-        <span>
-          Galeria
-        </span>
-      </a>
-    </li>
-    <li>
-      <a href="./contact.html" class="cool-link">
-        <i class="material-icons">
-          contact_support
-        </i>
-        <span>
-          Kontakt
-        </span>
-      </a>
-    </li>
-  </div>
-  <div class="schedule">
-    <div class="schedule__box">
-      <span class="schedule__text">Podczas edycji 2020 nie odbędą się warsztaty.</span>
-      <!-- <div class="workshops__button">
+      .schedule__box {
+        text-align: center;
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
+          display: none;
+        }
+
+        #navbar span {
+          display: block;
+        }
+      }
+
+      @media (max-width: 630px) {
+        blockquote {
+          width: 100vw;
+        }
+
+        #logo {
+          display: none;
+        }
+      }
+
+      table body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 4rem 0;
+        font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      table {
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      tr:nth-child(even) th {
+        color: #ccc;
+        font-weight: normal;
+      }
+
+      th,
+      td {
+        padding: 0.6rem 1rem;
+      }
+
+      th {
+        font-weight: normal;
+        border-top: thin dotted #ccc;
+      }
+
+      td {
+        font-size: 0.9rem;
+        font-weight: bold;
+        line-height: 1.4;
+        border-radius: 0.2rem;
+        transition: opacity 0.3s ease;
+      }
+
+      td span {
+        font-size: 1em;
+        font-weight: normal;
+        display: block;
+        width: 100%;
+      }
+
+      .one {
+        background-color: #7491a4;
+      }
+
+      .two {
+        background-color: #98afbd;
+      }
+
+      .three {
+        background-color: #dde8ef;
+      }
+
+      .schedule__text {
+        padding-top: 50%;
+        font-size: 1.5em;
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        color: #444444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes move {
+        25% {
+          opacity: 1;
+        }
+
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
+        }
+
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+      }
+
+      @keyframes pulse {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parallax">
+      <h1>
+        <div class="header">
+          <div class="gisday">GIS DAY</div>
+          <div class="poznan">POZNAŃ</div>
+          <div class="date">2021</div>
+        </div>
+      </h1>
+      <div class="arrows__wrapper">
+        <div class="arrows">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+        </div>
+      </div>
+    </div>
+    <div id="navbar">
+      <li>
+        <a href="./index.html" class="cool-link">
+          <i class="material-icons"> home </i>
+          <span>GIS DAY</span>
+        </a>
+      </li>
+      <li>
+        <a class="active" href="#" class="cool-link">
+          <i class="material-icons"> schedule </i>
+          <span> WARSZTATY </span>
+        </a>
+      </li>
+      <li>
+        <a href="./lectures.html" class="cool-link">
+          <i class="material-icons"> assignment </i>
+          <span> Prelekcje </span>
+        </a>
+      </li>
+      <li>
+        <a href="./archive.html" class="cool-link">
+          <i class="material-icons"> photo_library </i>
+          <span> Galeria </span>
+        </a>
+      </li>
+      <li>
+        <a href="./contact.html" class="cool-link">
+          <i class="material-icons"> contact_support </i>
+          <span> Kontakt </span>
+        </a>
+      </li>
+    </div>
+    <div class="schedule">
+      <div class="schedule__box">
+        <span class="schedule__text"
+          >Harmonogram warsztatów pojawi się wkrótce.</span
+        >
+        <!-- <div class="workshops__button">
         <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram warsztatów</title>
 
       </div> -->
-      <!-- <div class="schedule__table">
+        <!-- <div class="schedule__table">
           <table>
 
             <body>
@@ -373,8 +529,36 @@
           <a class="workshops__link"
             href="https://docs.google.com/forms/d/e/1FAIpQLScjgT8eyFMIs8xcCdvjyA39BDjMmeXdsL4nHNa1e9Ck5nJ6qw/viewform?fbclid=IwAR2paemLHXtDIMrSPj6Am7qWdaLynawwuW8RdTj08Hl75DZMFbOmRQ0ujmU" target="_blank">ZAPISY</a>
         </div> -->
+      </div>
     </div>
-  </div>
-</body>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      let controller = new ScrollMagic.Controller();
 
+      function scrollHandler() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      // animacja header
+
+      let headerTM = new TimelineMax({});
+
+      headerTM.to(".header", 0.5, {
+        transform: "scale(0.7, 0.7)",
+      });
+
+      let headerScene = new ScrollMagic.Scene({
+        triggerElement: ".about",
+        triggerHook: 1,
+        duration: "50%",
+      })
+        .setTween(headerTM)
+        .addTo(controller);
+  </script>
 </html>
