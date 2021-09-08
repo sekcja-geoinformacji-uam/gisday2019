@@ -8,7 +8,7 @@
 
     <link
       rel="shortcut icon"
-      href="assets/static/icons/favicon1.ico"
+      href="assets/static/icons/favicon.ico"
       type="image/x-icon"
     />
     <link
@@ -173,40 +173,6 @@
         letter-spacing: 0.08334rem;
       }
 
-      .workshops__button {
-        display: flex;
-        justify-content: center;
-        padding-top: 20px;
-      }
-
-      .workshops__link {
-        float: left;
-        display: block;
-        color: #444444;
-        text-align: center;
-        padding: 12px;
-        text-decoration: none;
-        font-size: calc(0.7rem + 0.5vw);
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08334rem;
-      }
-
-      .workshops__link::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 2px;
-        background: rgba(44, 44, 44, 0.616);
-        transition: width 0.3s;
-      }
-
-      .workshops__link:hover::after {
-        width: 100%;
-        transition: width 0.3s;
-      }
-
       #navbar a.active {
         font-family: "Avenir Next Regular";
         font-weight: 600;
@@ -223,15 +189,6 @@
 
       #navbar span {
         display: none;
-      }
-
-      .schedule {
-        display: flex;
-        height: calc(100% - 50px);
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        margin-bottom: 20%;
       }
 
       .sticky {
@@ -306,10 +263,6 @@
         transform: skew(0deg, -30deg);
       }
 
-      .schedule__box {
-        text-align: center;
-      }
-
       @media (min-width: 630px) {
         #navbar i {
           display: none;
@@ -320,7 +273,7 @@
         }
       }
 
-      @media (max-width: 630px) {
+      /* @media (max-width: 630px) {
         blockquote {
           width: 100vw;
         }
@@ -328,76 +281,102 @@
         #logo {
           display: none;
         }
+
+        .schedule__image {
+          margin-top: 35%;
+          margin-left: 2.5%;
+          width: 95%;
+          align-items: center;
+        }
+      } */
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
       }
 
-      table body {
-        display: flex;
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* 
+    .lectures__text {
+      padding-top: 50%;
+      font-size: 1.5em;
+      font-family: "Avenir Next Regular";
+      font-weight: 600;
+      color: #444444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+      .organizers__box {
+        /* height: fi; */
+        padding: 4em;
+        position: relative;
+        box-sizing: border-box;
+        font-family: "Avenir Next Demi";
+        display: grid;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        min-height: 100vh;
-        padding: 4rem 0;
-        font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        width: 88%;
       }
 
-      table {
-        width: 80vw;
+      .organizers {
         display: flex;
-        align-items: center;
+        align-content: center;
         justify-content: center;
       }
 
-      tr:nth-child(even) th {
-        color: #ccc;
-        font-weight: normal;
+      .name {
+        padding-right: 20%;
       }
 
-      th,
-      td {
-        padding: 0.6rem 1rem;
+      .organizer {
+        border-top: 1.5px solid rgba(126, 126, 126, 0.555);
+        /* border-bottom: 1px solid rgba(126, 126, 126, 0.555); */
+        padding: 40px 20px 40px 20px;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #202124;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
       }
 
-      th {
-        font-weight: normal;
-        border-top: thin dotted #ccc;
+      .organizer:hover {
+        background-color: rgba(0, 0, 0, 0.03);
       }
 
-      td {
-        font-size: 0.9rem;
-        font-weight: bold;
-        line-height: 1.4;
-        border-radius: 0.2rem;
-        transition: opacity 0.3s ease;
+      .last {
+        border-bottom: 1.5px solid rgba(126, 126, 126, 0.555);
+        border-top: 1.5px solid rgba(126, 126, 126, 0.555);
+        /* border-bottom: 1px solid rgba(126, 126, 126, 0.555); */
+        padding: 40px 10px 40px 10px;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #202124;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
       }
 
-      td span {
-        font-size: 1em;
-        font-weight: normal;
-        display: block;
-        width: 100%;
-      }
-
-      .one {
-        background-color: #7491a4;
-      }
-
-      .two {
-        background-color: #98afbd;
-      }
-
-      .three {
-        background-color: #dde8ef;
-      }
-
-      .schedule__text {
-        padding-top: 50%;
-        font-size: 1.5em;
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        color: #444444;
+      .h1__container {
         display: flex;
         justify-content: center;
-        align-items: center;
       }
 
       @keyframes move {
@@ -454,7 +433,7 @@
         </a>
       </li>
       <li>
-        <a class="active" href="#" class="cool-link">
+        <a href="./schedule.html" class="cool-link">
           <i class="material-icons"> schedule </i>
           <span> WARSZTATY </span>
         </a>
@@ -466,7 +445,7 @@
         </a>
       </li>
       <li>
-        <a href="./organizers.html" class="cool-link">
+        <a class="active" href="#" class="cool-link">
           <i class="material-icons"> groups </i>
           <span> Organizatorzy </span>
         </a>
@@ -485,112 +464,92 @@
         </a>
       </li>
     </div>
-    <div class="schedule">
-      <div class="schedule__box">
-        <span class="schedule__text"
-          >Harmonogram warsztatów pojawi się wkrótce.</span
-        >
-        <!-- <div class="workshops__button">
-        <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram warsztatów</title>
-
-      </div> -->
-        <!-- <div class="schedule__table">
-          <table>
-
-            <body>
-              <tr>
-                <th>12:00</th>
-                <td rowspan="6" class="three">Wizualizacja 3D starego miasta w Poznaniu <span>Agata Borkowska, Asia
-                    Didyk <br> s. 17 <br> dla szkół</span></td>
-                <td rowspan="6" class="two">Darmowe dane publiczne i co można z nimi zrobić<span>Aniela Rząsa <br> s.
-                    20 <br> dla szkół </span></td>
-                <td rowspan="6" class="one">Wprowadzenie do programu QGIS - stwórz swoją mapę<span>Kamil Wojtkowiak <br>
-                    s.
-                    22 <br> dla szkół</span></td>
-                <td colspan="3" rowspan="10" class="three">WebGIS - twoja mapa w sieci<span> Natalia
-                    Chojnacka, Patryk Jezierski<br> s. 23 <br> dla szkół i studentów</span></td>
-                <td colspan="2" rowspan="6" class="two">Infografika jako narzędzie wizualizacji informacji geograficznej
-                  -
-                  czyli
-                  jak przedstawić złożone dane w prosty sposób <span>Katarzyna Bartosz, Barbara Bronżkiewicz <br> s. 24
-                    <br> dla
-                    szkół</span></td>
-              </tr>
-              <tr>
-                <th>12:30</th>
-              </tr>
-              <tr>
-                <th>13:00</th>
-              </tr>
-              <tr>
-                <th>13:30</th>
-
-              </tr>
-              <tr>
-                <th>14:00</th>
-              </tr>
-              <tr>
-                <th>14:10</th>
-              </tr>
-              <tr>
-                <th>14:20</th>
-                <td colspan="1" rowspan="4" class="two">Gra geograficzna <span>Jakub Skoworński<br> s. 20 <br> dla
-                    szkół</span>
-                </td>
-                <td colspan="1" rowspan="4" class="three">Wprowadzenie do edycji danych OSM <span>Olga Barańczyk,
-                    Przemysław Szydlik (OSM Polska)<br> s. 22<br> dla studentów</span></td>
-                <td colspan="1" rowspan="4" class="two">Analizy przestrzenne w poszukiwaniu potencjału solarnego
-                  <span>Kamil Jawgiel, Patryk Nowicki (Sweco Consulting)<br> s. 24 <br> dla studentów</span></td>
-              </tr>
-              <tr>
-                <th>14:30</th>
-              </tr>
-              <tr>
-                <th>15:00</th>
-              </tr>
-              <tr>
-                <th>15:20</th>
-              </tr>
-            </body>
-          </table>
+    <div class="organizers">
+      <div class="organizers__box">
+        <div class="organizer">
+          <span class="name"
+            >Bartłomiej Tyrcha - kierownik komitetu organizacyjnego GIS Day 2021
+            Poznań</span
+          >
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
         </div>
-        <div class="workshops__button">
-          <a class="workshops__link"
-            href="https://docs.google.com/forms/d/e/1FAIpQLScjgT8eyFMIs8xcCdvjyA39BDjMmeXdsL4nHNa1e9Ck5nJ6qw/viewform?fbclid=IwAR2paemLHXtDIMrSPj6Am7qWdaLynawwuW8RdTj08Hl75DZMFbOmRQ0ujmU" target="_blank">ZAPISY</a>
-        </div> -->
+        <div class="organizer">
+          <span class="name">prof. dr hab. Zbigniew Zwoliński</span>
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+        </div>
+        <div class="organizer">
+          <span class="name">dr Maciej Nowak</span>
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+        </div>
+        <div class="organizer">
+          <span class="name">Adrian Nowacki</span>
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+        </div>
+        <div class="organizer">
+          <span class="name">Agnieszka Witkowska</span>
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+        </div>
+        <div class="organizer">
+          <span class="name">Izabela Śmiech</span>
+          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+        </div>
+        <div class="organizer">
+          <span class="name">dr hab. inż. Adam Zydroń</span>
+          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
+        </div>
+        <div class="organizer">
+          <span class="name">Anna Zięba</span>
+          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
+        </div>
+        <div class="organizer">
+          <span class="name">dr inż. Paweł Strzeliński</span>
+          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
+        </div>
+        <div class="organizer">
+          <span class="name">Błażej Wojtyra</span>
+          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
+        </div>
+        <div class="organizer">
+          <span class="name">dr hab. Tomasz Klimanek, prof. UEP</span>
+          <span class="university">Uniwersytet Ekonomiczny w Poznaniu</span>
+        </div>
+        <div class="organizer, last">
+          <span class="name">dr hab. Marcin Szymkowiak, prof. UEP</span>
+          <span class="university">Uniwersytet Ekonomiczny w Poznaniu</span>
+        </div>
       </div>
     </div>
-  </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-      let controller = new ScrollMagic.Controller();
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        let controller = new ScrollMagic.Controller();
 
-      function scrollHandler() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
+        function scrollHandler() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
         }
-      }
 
-      // animacja header
+        // animacja header
 
-      let headerTM = new TimelineMax({});
+        let headerTM = new TimelineMax({});
 
-      headerTM.to(".header", 0.5, {
-        transform: "scale(0.7, 0.7)",
+        headerTM.to(".header", 0.5, {
+          transform: "scale(0.7, 0.7)",
+        });
+
+        let headerScene = new ScrollMagic.Scene({
+          triggerElement: ".schedule__box",
+          triggerHook: 1,
+          duration: "50%",
+        })
+          .setTween(headerTM)
+          .addTo(controller);
+        window.addEventListener("scroll", scrollHandler);
       });
-
-      let headerScene = new ScrollMagic.Scene({
-        triggerElement: ".schedule__box",
-        triggerHook: 1,
-        duration: "50%",
-      })
-        .setTween(headerTM)
-        .addTo(controller);
-      window.addEventListener("scroll", scrollHandler);
-    });
-  </script>
+    </script>
+  </body>
 </html>

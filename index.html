@@ -6,7 +6,7 @@
     <title>GIS Day Poznań</title>
     <link
       rel="shortcut icon"
-      href="assets/static/icons/favicon.ico"
+      href="assets/static/icons/favicon1.ico"
       type="image/x-icon"
     />
 
@@ -35,495 +35,505 @@
       defer
     ></script>
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Arapey");
-        @import url("https://fonts.googleapis.com/css?family=Raleway");
-        @import url("https://fonts.googleapis.com/css?family=Quicksand");
+      @import url("https://fonts.googleapis.com/css?family=Arapey");
+      @import url("https://fonts.googleapis.com/css?family=Raleway");
+      @import url("https://fonts.googleapis.com/css?family=Quicksand");
 
-        @import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap");
-        @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Roboto:300,400,500&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-        @font-face {
-          font-family: "Avenir Next Regular";
-          src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf");
-        }
+      @font-face {
+        font-family: "Avenir Next Regular";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Regular.otf");
+      }
 
-        @font-face {
-          font-family: "Avenir Next Bold";
-          src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf");
-        }
+      @font-face {
+        font-family: "Avenir Next Bold";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Bold.otf");
+      }
 
-        @font-face {
-          font-family: "Avenir Next Demi";
-          src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf");
-        }
+      @font-face {
+        font-family: "Avenir Next Demi";
+        src: url("assets/static/fonts/Avenir-Next-Font/AvenirNextLTPro-Demi.otf");
+      }
 
-        body {
-          overflow-x: hidden;
-          margin: 0;
-          font-family: "Roboto", sans-serif;
-          font-weight: 400;
-          font-size: 1em;
-        }
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+      }
 
-        .parallax {
-          /* The image used */
-          background-image: url("assets/static/pictures/tlo.jpg");
-          opacity: 1;
-          /* Set a specific height */
-          min-height: 100vh;
-          /* Create the parallax scrolling effect */
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+      .parallax {
+        /* The image used */
+        background-image: url("assets/static/pictures/tlo.jpg");
+        opacity: 1;
+        /* Set a specific height */
+        min-height: 100vh;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        .parallax h1 {
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          font-family: "Avenir Next Demi";
-          letter-spacing: 3px;
-          text-shadow: 3px 3px 3px #000000;
-        }
+      .parallax h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Avenir Next Demi";
+        letter-spacing: 3px;
+        text-shadow: 3px 3px 3px #000000;
+      }
 
-        .gisday {
-          font-size: 14vw;
-          font-family: "Avenir Next Demi";
-          /* padding-right: 6vh;
+      .gisday {
+        font-size: 14vw;
+        font-family: "Avenir Next Demi";
+        /* padding-right: 6vh;
           padding-left: 6vh;
           padding-top: 2.5vh;
           padding-bottom: 2.5vh; */
-          text-align: center;
-          font-weight: 600;
-        }
+        text-align: center;
+        font-weight: 600;
+      }
 
-        .poznan {
-          font-size: 8vw;
-          font-weight: 600;
-        }
+      .poznan {
+        font-size: 8vw;
+        font-weight: 600;
+      }
 
-        .date {
-          font-size: 6vw;
-          font-weight: 500;
-        }
+      .date {
+        font-size: 6vw;
+        font-weight: 500;
+      }
 
-        .header {
-          text-align: center;
-        }
+      .header {
+        text-align: center;
+      }
 
-        #navbar {
-          overflow: hidden;
-          background-color: #ffffffdc;
-          display: flex;
-          justify-content: space-evenly;
-          z-index: 2;
-          width: 100vw;
-          position: relative;
-          border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
-        }
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: relative;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
 
-        li {
-          display: inline-block;
-        }
+      li {
+        display: inline-block;
+      }
 
-        li a {
-          display: inline-block;
-          text-decoration: none;
-          font-weight: lighter;
-          font-size: 20px;
-          padding: 0 20px;
-        }
+      li a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: lighter;
+        font-size: 20px;
+        padding: 0 20px;
+      }
 
-        .cool-link::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background: rgba(44, 44, 44, 0.616);
-          transition: width 0.3s;
-        }
+      .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-        .cool-link:hover::after {
-          width: 100%;
-          transition: width 0.3s;
-        }
+      .cool-link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
 
-        .navbar--invisible {
-          opacity: 0;
-          /* margin-left: 5000px; */
-          transition: 100ms;
-        }
+      .navbar--invisible {
+        opacity: 0;
+        /* margin-left: 5000px; */
+        transition: 100ms;
+      }
 
-        .navbar--visible {
-          opacity: 1;
-          /* margin-left: 0; */
-          transition: 100ms;
-          justify-content: space-evenly;
-          width: 100%;
-        }
+      .navbar--visible {
+        opacity: 1;
+        /* margin-left: 0; */
+        transition: 100ms;
+        justify-content: space-evenly;
+        width: 100%;
+      }
 
-        #navbar a {
-          float: left;
-          display: block;
-          color: #444444;
-          text-align: center;
-          padding: 12px;
-          text-decoration: none;
-          font-size: calc(0.7rem + 0.5vw);
-          font-family: "Avenir Next Regular";
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.08334rem;
-        }
+      #navbar a {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+      }
 
-        #navbar a.active {
-          font-family: "Avenir Next Regular";
-          font-weight: 600;
-        }
+      #navbar a.active {
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+      }
 
-        #navbar a.active::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background: rgba(44, 44, 44, 0.616);
-          transition: width 0.3s;
-        }
+      #navbar a.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
 
-        .content {
-          padding: 16px;
-        }
+      .content {
+        padding: 16px;
+      }
 
-        .sticky {
-          position: sticky !important;
-          top: 0;
-          width: 100%;
-        }
+      .sticky {
+        position: sticky !important;
+        top: 0;
+        width: 100%;
+      }
 
-        .sticky + .content {
-          padding-top: 60px;
-        }
+      .sticky + .content {
+        padding-top: 60px;
+      }
 
-        .about {
-          height: 100vh;
-          padding: 3em;
-          position: relative;
-          box-sizing: border-box;
-          font-family: "Avenir Next Demi";
-          display: flex;
-          align-items: center;
-        }
+      .about {
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+        font-family: "Avenir Next Demi";
+        display: flex;
+        align-items: center;
+      }
 
-        .about__box {
-          background: none;
-          top: 30vh;
-          height: auto;
-          /* display: flex;
+      .about__box {
+        background: none;
+        top: 30vh;
+        height: auto;
+        /* display: flex;
           align-items: center;
           justify-content: center; */
-          font-size: 1em;
-          width: 100%;
-          max-width: 800px;
-          /* position: absolute; */
-          /* left: 8%; */
-          border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-          border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-        }
+        font-size: 1em;
+        width: 100%;
+        max-width: 800px;
+        /* position: absolute; */
+        /* left: 8%; */
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
 
-        .about__box h1 {
-          /* position: absolute;
+      .about__box h1 {
+        /* position: absolute;
           left: 1vw;
           top: 3vh; */
-          width: 100%;
-          font-family: "Avenir Next Demi";
-          font-weight: 600;
-          font-size: 2.2em;
-          margin: 20px 0;
-        }
+        width: 100%;
+        font-family: "Avenir Next Demi";
+        font-weight: 600;
+        font-size: 2.2em;
+        margin: 20px 0;
+      }
 
-        .about__box blockquote {
-          /* position: absolute;
+      .about__box blockquote {
+        /* position: absolute;
           top: 16vh; */
-          text-align: left;
-          font-family: "Roboto", sans-serif;
-          font-weight: 400;
-          font-size: 1.4em;
-          width: 100%;
-          margin: 0;
-        }
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+      }
 
-        .about2 {
-          height: 100vh;
-          padding: 3em;
-          position: relative;
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
+      .about2 {
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-        .about2__box {
-          background: none;
-          height: auto;
-          width: 100%;
+      .about2__box {
+        background: none;
+        height: auto;
+        width: 100%;
 
-          border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-          border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-        }
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
 
-        .about2__box h1 {
-          /* position: absolute;
+      .about2__box h1 {
+        /* position: absolute;
           left: 1vw;
           top: 3vh; */
-          width: 100%;
-          font-family: "Avenir Next Demi";
-          font-weight: 600;
-          font-size: 2.2em;
-          margin: 20px 0;
-        }
+        width: 100%;
+        font-family: "Avenir Next Demi";
+        font-weight: 600;
+        font-size: 2.2em;
+        margin: 20px 0;
+      }
 
-        .about2__box blockquote {
-          /* position: absolute;
+      .about2__box blockquote {
+        /* position: absolute;
          top: 16vh; */
-          text-align: left;
-          font-family: "Roboto", sans-serif;
-          font-weight: 400;
-          font-size: 1.4em;
-          width: 100%;
-          margin: 0;
-        }
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+      }
 
-        .where {
-          height: 100vh;
-          padding: 3em;
-          position: relative;
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-        }
+      .where {
+        height: 100vh;
+        padding: 3em;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+      }
 
-        .where__box {
-          background: none;
-          top: 30vh;
-          height: auto;
-          /* display: flex;
+      .where__box {
+        background: none;
+        top: 30vh;
+        height: auto;
+        /* display: flex;
         align-items: center;
         justify-content: center; */
-          font-size: 1em;
-          width: 100%;
-          max-width: 800px;
-          /* position: absolute; */
-          /* left: 8%; */
-          border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-          border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-        }
+        font-size: 1em;
+        width: 100%;
+        max-width: 800px;
+        /* position: absolute; */
+        /* left: 8%; */
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+      }
 
-        .where__box h1 {
-          /* position: absolute;
+      .where__box h1 {
+        /* position: absolute;
           left: 1vw;
           top: 3vh; */
-          width: 100%;
-          font-family: "Avenir Next Demi";
-          font-weight: 600;
-          font-size: 2.2em;
-          margin: 20px 0;
-        }
+        width: 100%;
+        font-family: "Avenir Next Demi";
+        font-weight: 600;
+        font-size: 2.2em;
+        margin: 20px 0;
+      }
 
-        .where__box blockquote {
-          /* position: absolute;
+      .where__box blockquote {
+        /* position: absolute;
         top: 16vh; */
-          text-align: left;
-          font-family: "Roboto", sans-serif;
-          font-weight: 400;
-          font-size: 1.4em;
-          width: 100%;
-          margin: 0;
-        }
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+      }
 
-        #img__where {
-          width: 33%;
-          right: 3vw;
-          top: 22%;
-          -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-          -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-          box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        }
+      #img__where {
+        width: 33%;
+        right: 3vw;
+        top: 22%;
+        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+      }
 
-        .organizers {
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          box-sizing: border-box;
-        }
+      .organizers {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+      }
 
-        .organizers__box {
-          position: relative;
-          background: none;
-          /* height: 60vh; */
-          /* display: flex; */
-          /* align-items: center; */
-          /* top: 20vh; */
-          font-size: 1.3em;
-          width: 60%;
-          /* position: absolute; */
-          border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
-          border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
-          opacity: 0;
-          -webkit-transform: scale(0.9);
-          -moz-transform: scale(0.9);
-          -ms-transform: scale(0.9);
-          -o-transform: scale(0.9);
-          transform: scale(0.9);
-          -webkit-transition: all 1s ease-in-out;
-          -moz-transition: all 1s ease-in-out;
-          -ms-transition: all 1s ease-in-out;
-          -o-transition: all 1s ease-in-out;
-          transition: all 1s ease-in-out;
-          padding-bottom: 2%;
-        }
+      .organizers__box {
+        position: relative;
+        background: none;
+        /* height: 60vh; */
+        /* display: flex; */
+        /* align-items: center; */
+        /* top: 20vh; */
+        font-size: 1.3em;
+        width: 70%;
+        /* position: absolute; */
+        border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
+        border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
+        opacity: 0;
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        transform: scale(0.9);
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        padding-bottom: 2%;
+      }
 
-        .organizers__box.visible {
-          opacity: 1;
-          -webkit-transform: none;
-          -moz-transform: none;
-          -ms-transform: none;
-          -o-transform: none;
-          transform: none;
-        }
+      .organizers__box.visible {
+        opacity: 1;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+      }
 
-        .organizers__box h1 {
-          /* top: 10vh; */
-          /* margin-top: 0; */
-          /* position: relative; */
-          width: 100%;
-          font-family: "Avenir Next Demi";
-          font-weight: 600;
-          font-size: 1.7em;
-          text-align: center;
-        }
+      .organizers__box h1 {
+        /* top: 10vh; */
+        /* margin-top: 0; */
+        /* position: relative; */
+        width: 100%;
+        font-family: "Avenir Next Demi";
+        font-weight: 600;
+        font-size: 1.7em;
+        text-align: center;
+      }
 
-        .organizers__box blockquote {
-          /* margin-top: 25vh; */
-          text-align: inherit;
-        }
+      .organizers__box blockquote {
+        /* margin-top: 25vh; */
+        text-align: inherit;
+      }
 
-        .welcome {
-          height: 70vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          /* position: relative; */
-          box-sizing: border-box;
-          /* top: 90vh; */
-          width: 100%;
-        }
+      .welcome {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* position: relative; */
+        box-sizing: border-box;
+        /* top: 90vh; */
+        width: 100%;
+      }
 
-        .welcome__text {
-          text-align: justify;
-          font-family: "Avenir Next Regular";
-          font-weight: 700;
-          font-size: 2em;
-          text-align: center;
-          color: #121420;
-          top: -10vh;
-          position: relative;
-        }
+      .welcome__text {
+        text-align: justify;
+        font-family: "Avenir Next Regular";
+        font-weight: 700;
+        font-size: 2em;
+        text-align: center;
+        color: #121420;
+        top: -10vh;
+        position: relative;
+      }
 
-        .line__about {
-          width: 0%;
-          display: block;
-          height: 5px;
-          margin-top: 20px;
-        }
+      .line__about {
+        width: 0%;
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
 
-        .line__where {
-          display: block;
-          height: 5px;
-          margin-top: 20px;
-        }
+      .line__where {
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
 
-        .line__about2 {
-          display: block;
-          height: 5px;
-          margin-top: 20px;
-        }
+      .line__about2 {
+        display: block;
+        height: 5px;
+        margin-top: 20px;
+      }
 
-        .section__img {
-          position: absolute;
-        }
+      .section__img {
+        position: absolute;
+      }
 
-        #globe {
-          width: 20%;
-          right: 10vw;
-          bottom: 30vh;
-        }
+      #globe {
+        width: 20%;
+        right: 10vw;
+        bottom: 30vh;
+      }
 
-        #img__about2 {
-          position: relative;
-          width: 25%;
-          bottom: 0vh;
-        }
+      #img__about2 {
+        position: relative;
+        width: 25%;
+        bottom: 0vh;
+      }
 
-        #logo_org {
-          width: 24%;
-          padding: 5px;
-        }
+      #logo_org {
+        width: 23%;
+        padding: 5px;
+      }
 
-        .percentage {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
-        }
+      .percentage {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
 
-        .material-icons {
+      .material-icons {
+        display: none;
+      }
+
+      @media (min-width: 630px) {
+        #navbar i {
           display: none;
         }
 
-        @media (max-width: 630px) {
-          .organizers {
-            margin-top: 20%;
-            width: 90%;
-          }
+        #navbar span {
+          display: block;
+        }
+      }
 
-          .section__img {
-            display: none;
-          }
+      @media (max-width: 630px) {
+        .organizers {
+          margin-top: 20%;
+          width: 90%;
+        }
 
-          #logo_org {
-            display: none;
-          }
+        .section__img {
+          display: none;
+        }
 
-          #logo__ #navbar span {
-            display: none;
-          }
+        #logo__ #navbar span {
+          display: none;
+        }
 
-          .organizers__box blockquote {
-            padding: 0px;
-            width: 90%;
-          }
+        .organizers__box blockquote {
+          padding: 0px;
+          width: 90%;
+        }
 
-          .organizers__box {
-            margin-left: 6%;
-            width: 90%;
-            display: flex;
-            justify-items: center;
-            align-items: center;
-          }
+        .organizers__box {
+          margin-left: 6%;
+          width: 90%;
+          display: flex;
+          justify-items: center;
+          align-items: center;
+        }
 
-          .material-icons {
-            display: block;
-          }
+        #navbar span {
+          display: none;
+        }
 
+        .material-icons {
+          display: block;
+        }
+      }
 
-        /*
+      /*
 
       @media (min-width: 320px) {
         .gisday {
@@ -624,141 +634,140 @@
         .about2__box {
           position: relative;
           /* right: 8%; */
-        /* width: 60%;
+      /* width: 60%;
         }
       } */
 
-        /* width */
-        ::-webkit-scrollbar {
-          width: 10px;
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .header__scroll {
+        position: absolute;
+        bottom: 10px;
+        color: white;
+      }
+
+      .arrows {
+        /* position: absolute; */
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
+
+      .arrows__wrapper {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
+
+      .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
+
+      .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
+
+      .chevron:before,
+      .chevron:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
+
+      .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
+
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
+
+      .welcome__text::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .welcome__text:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
+      .logo__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes move {
+        25% {
+          opacity: 1;
         }
 
-        /* Track */
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1;
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
         }
 
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-          background: #888;
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
         }
 
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-          background: #555;
-        }
-
-        .header__scroll {
-          position: absolute;
-          bottom: 10px;
-          color: white;
-        }
-
-        .arrows {
-          /* position: absolute; */
-          width: 50px;
-          height: 50px;
-          bottom: 20px;
-          color: white;
-          display: flex;
-          justify-content: center;
-        }
-
-        .arrows__wrapper {
-          position: absolute;
-          bottom: 20px;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-
-        .chevron {
-          position: absolute;
-          width: 28px;
-          height: 8px;
+        100% {
           opacity: 0;
-          transform: scale3d(0.5, 0.5, 0.5);
-          animation: move 3s ease-out infinite;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
         }
+      }
 
-        .chevron:first-child {
-          animation: move 3s ease-out 1s infinite;
+      @keyframes pulse {
+        to {
+          opacity: 1;
         }
-
-        .chevron:nth-child(2) {
-          animation: move 3s ease-out 2s infinite;
-        }
-
-        .chevron:before,
-        .chevron:after {
-          content: " ";
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: 51%;
-          background: #fff;
-        }
-
-        .chevron:before {
-          left: 0;
-          transform: skew(0deg, 30deg);
-        }
-
-        .chevron:after {
-          right: 0;
-          width: 50%;
-          transform: skew(0deg, -30deg);
-        }
-
-        .welcome__text::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background: rgba(44, 44, 44, 0.616);
-          transition: width 0.3s;
-        }
-
-        .welcome__text:hover::after {
-          width: 100%;
-          transition: width 0.3s;
-        }
-
-        .logo__container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        @keyframes move {
-          25% {
-            opacity: 1;
-          }
-
-          33% {
-            opacity: 1;
-            transform: translateY(30px);
-          }
-
-          67% {
-            opacity: 1;
-            transform: translateY(40px);
-          }
-
-          100% {
-            opacity: 0;
-            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-          }
-        }
-
-        @keyframes pulse {
-          to {
-            opacity: 1;
-          }
-        }
+      }
     </style>
   </head>
-
   <body>
     <div class="parallax">
       <h1>
@@ -797,11 +806,18 @@
         </a>
       </li>
       <li>
+        <a href="./organizers.html" class="cool-link">
+          <i class="material-icons"> groups </i>
+          <span> Organizatorzy </span>
+        </a>
+      </li>
+      <li>
         <a href="./archive.html" class="cool-link">
           <i class="material-icons"> photo_library </i>
           <span> Galeria </span>
         </a>
       </li>
+
       <li>
         <a href="./contact.html" class="cool-link">
           <i class="material-icons"> contact_support </i>
