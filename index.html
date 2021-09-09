@@ -93,7 +93,7 @@
       }
 
       .gisday {
-        font-size: 14vw;
+        font-size: 12vw;
         font-family: "Avenir Next Demi";
         /* padding-right: 6vh;
           padding-left: 6vh;
@@ -104,12 +104,12 @@
       }
 
       .poznan {
-        font-size: 8vw;
+        font-size: 7vw;
         font-weight: 600;
       }
 
       .date {
-        font-size: 6vw;
+        font-size: 5vw;
         font-weight: 500;
       }
 
@@ -229,7 +229,7 @@
           justify-content: center; */
         font-size: 1em;
         width: 100%;
-        max-width: 800px;
+        max-width: 650px;
         /* position: absolute; */
         /* left: 8%; */
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
@@ -272,7 +272,7 @@
         background: none;
         height: auto;
         width: 100%;
-
+        max-width: 650px;
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
         border-bottom: 0.15vw solid rgba(126, 126, 126, 0.555);
       }
@@ -317,7 +317,7 @@
         justify-content: center; */
         font-size: 1em;
         width: 100%;
-        max-width: 800px;
+        max-width: 650px;
         /* position: absolute; */
         /* left: 8%; */
         border-top: 0.15vw solid rgba(126, 126, 126, 0.555);
@@ -347,12 +347,12 @@
       }
 
       #img__where {
-        width: 33%;
-        right: 3vw;
-        top: 22%;
-        -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        width: 30%;
+        right: 5vw;
+        /* top: 22%; */
+        /* -webkit-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
         -moz-box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
-        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7);
+        box-shadow: 2px 7px 30px 2px rgba(148, 148, 148, 0.7); */
       }
 
       .organizers {
@@ -388,6 +388,9 @@
         -o-transition: all 1s ease-in-out;
         transition: all 1s ease-in-out;
         padding-bottom: 2%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
       }
 
       .organizers__box.visible {
@@ -397,17 +400,21 @@
         -ms-transform: none;
         -o-transform: none;
         transform: none;
+        display: grid;
+        align-items: center;
+        justify-content: center;
       }
 
-      .organizers__box h1 {
+      .patrons {
         /* top: 10vh; */
         /* margin-top: 0; */
         /* position: relative; */
-        width: 100%;
+        /* width: 100%; */
         font-family: "Avenir Next Demi";
         font-weight: 600;
         font-size: 1.7em;
         text-align: center;
+        padding: 4% 0% 2% 0%;
       }
 
       .organizers__box blockquote {
@@ -876,14 +883,14 @@
       </div>
       <img
         id="img__where"
-        src="assets/static/pictures/wngig.png"
+        src="assets/static/pictures/platforms.png"
         class="section__img"
       />
     </div>
 
     <div class="organizers">
       <div class="organizers__box">
-        <h1>Patroni</h1>
+        <div class="patrons">Patroni</div>
         <div class="logo__container">
           <img
             id="logo_org"
