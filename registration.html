@@ -8,7 +8,7 @@
 
     <link
       rel="shortcut icon"
-      href="assets/static/icons/favicon.ico"
+      href="assets/static/icons/favicon1.ico"
       type="image/x-icon"
     />
     <link
@@ -173,6 +173,41 @@
         letter-spacing: 0.08334rem;
       }
 
+      .workshops__button {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+      }
+
+      .workshops__link {
+        float: left;
+        display: block;
+        color: #444444;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: calc(0.7rem + 0.5vw);
+        font-family: "Avenir Next Regular";
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+        padding-left: 75px !important;
+      }
+
+      .workshops__link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .workshops__link:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
       #navbar a.active {
         font-family: "Avenir Next Regular";
         font-weight: 600;
@@ -263,6 +298,27 @@
         transform: skew(0deg, -30deg);
       }
 
+      .registration {
+        display: flex;
+        height: calc(100% - 50px);
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 10%;
+      }
+
+      .schedule__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        transition: transform 1s;
+      }
+
+      .schedule__image:hover {
+        transform: scale(1.04);
+      }
+
       @media (min-width: 630px) {
         #navbar i {
           display: none;
@@ -273,7 +329,7 @@
         }
       }
 
-      /* @media (max-width: 630px) {
+      @media (max-width: 630px) {
         blockquote {
           width: 100vw;
         }
@@ -288,7 +344,66 @@
           width: 95%;
           align-items: center;
         }
-      } */
+      }
+
+      /* table body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 4rem 0;
+      font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    table {
+      width: 80vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    tr:nth-child(even) th {
+      color: #ccc;
+      font-weight: normal;
+    }
+
+    th,
+    td {
+      padding: 0.6rem 1rem;
+    }
+
+    th {
+      font-weight: normal;
+      border-top: thin dotted #ccc;
+    }
+
+    td {
+      font-size: 0.9rem;
+      font-weight: bold;
+      line-height: 1.4;
+      border-radius: 0.2rem;
+      transition: opacity 0.3s ease;
+    }
+
+    td span {
+      font-size: 1em;
+      font-weight: normal;
+      display: block;
+      width: 100%;
+    }
+
+    .one {
+      background-color: #7491A4;
+    }
+
+    .two {
+      background-color: #98AFBD;
+    }
+
+    .three {
+      background-color: #dde8ef;
+    } */
 
       /* width */
       ::-webkit-scrollbar {
@@ -322,56 +437,70 @@
       align-items: center;
     } */
 
-      .organizers__box {
-        /* height: fi; */
-        padding: 4em;
-        position: relative;
-        font-family: "Avenir Next Demi";
-        display: grid;
-        align-items: center;
-        width: 88%;
+      .lectures__h1 {
+        font-family: "Avenir Next Regular";
+        color: #444444;
+        display: block;
+        font-size: 2em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08334rem;
+        float: left;
+        text-align: center;
+        margin-top: 22%;
       }
 
-      .organizers {
+      .lectures__h1:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
+      .lectures__h1::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .registration__box {
+        text-align: center;
+        width: 70%;
+        padding-top: 8%;
         display: flex;
-        align-content: center;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
 
-      .name {
-        padding-right: 20%;
-      }
-
-      .organizer {
-        border-top: 1.5px solid rgba(126, 126, 126, 0.555);
-        /* border-bottom: 1px solid rgba(126, 126, 126, 0.555); */
-        padding: 40px 20px 40px 20px;
-        font-size: 18px;
+      .registration__text {
+        font-size: 21px;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        color: #202124;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        justify-content: center;
         align-items: center;
+        color: #444444;
+        line-height: 150%;
+        padding-top: 3%;
       }
 
-      .organizer:hover,
-      .last:hover {
-        background-color: rgba(0, 0, 0, 0.03);
+      .registration__link {
+        padding: 1%;
       }
 
-      .last {
-        border-bottom: 1.5px solid rgba(126, 126, 126, 0.555);
-        border-top: 1.5px solid rgba(126, 126, 126, 0.555);
-        /* border-bottom: 1px solid rgba(126, 126, 126, 0.555); */
-        padding: 40px 10px 40px 10px;
-        font-size: 18px;
+      .registration__text1 {
+        font-size: 24px;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        color: #202124;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+        justify-content: center;
         align-items: center;
+        color: #444444;
+        line-height: 150%;
+      }
+
+      .registration__link1 {
+        font-size: 22px;
       }
 
       .h1__container {
@@ -433,7 +562,7 @@
         </a>
       </li>
       <li>
-        <a href="./registration.html" class="cool-link">
+        <a class="active" href="#" class="cool-link">
           <i class="material-icons"> assignment_turned_in </i>
           <span> REJESTRACJA </span>
         </a>
@@ -451,7 +580,7 @@
         </a>
       </li>
       <li>
-        <a class="active" href="#" class="cool-link">
+        <a href="./organizers.html" class="cool-link">
           <i class="material-icons"> groups </i>
           <span> Organizatorzy </span>
         </a>
@@ -470,62 +599,176 @@
         </a>
       </li>
     </div>
-    <div class="organizers">
-      <div class="organizers__box">
-        <div class="organizer">
-          <span class="name"
-            >Bartłomiej Tyrcha - kierownik komitetu organizacyjnego GIS Day 2021
-            Poznań</span
-          >
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
+    <div class="registration">
+      <div class="registration__box">
+        <div class="registration__text1">
+          Celem zgłoszenia uczestnictwa wraz z referatem w Konferencji Naukowej
+          GIS DAY 2021 należy wypełnić odpowiedni formularz na stronie:
         </div>
-        <div class="organizer">
-          <span class="name">prof. dr hab. Zbigniew Zwoliński</span>
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
-        </div>
-        <div class="organizer">
-          <span class="name">dr Maciej Nowak</span>
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
-        </div>
-        <div class="organizer">
-          <span class="name">Adrian Nowacki</span>
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
-        </div>
-        <div class="organizer">
-          <span class="name">Agnieszka Witkowska</span>
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
-        </div>
-        <div class="organizer">
-          <span class="name">Izabela Śmiech</span>
-          <span class="university">Uniwersytet im. Adama Mickiewicza</span>
-        </div>
-        <div class="organizer">
-          <span class="name">dr hab. inż. Adam Zydroń</span>
-          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
-        </div>
-        <div class="organizer">
-          <span class="name">Anna Zięba</span>
-          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
-        </div>
-        <div class="organizer">
-          <span class="name">dr inż. Paweł Strzeliński</span>
-          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
-        </div>
-        <div class="organizer">
-          <span class="name">Błażej Wojtyra</span>
-          <span class="university">Uniwersytet Przyrodniczy w Poznaniu</span>
-        </div>
-        <div class="organizer">
-          <span class="name">dr hab. Tomasz Klimanek, prof. UEP</span>
-          <span class="university">Uniwersytet Ekonomiczny w Poznaniu</span>
-        </div>
-        <div class="organizer, last">
-          <span class="name">dr hab. Marcin Szymkowiak, prof. UEP</span>
-          <span class="university">Uniwersytet Ekonomiczny w Poznaniu</span>
+        <a
+          class="registration__link1"
+          href="https://easychair.org/account/signin?l=1b5VYZknR6UdFOPcS2Gtgr#"
+          target="_blank"
+          >https://easychair.org/account/signin?l=1b5VYZknR6UdFOPcS2Gtgr#
+        </a>
+        <div class="registration__text">
+          <p>
+            Wymaga to wcześniejszego założenia konta na stronie:
+            <a
+              class="registration__link"
+              href="https://easychair.org/"
+              target="_blank"
+              >https://easychair.org/</a
+            >. Do pobrania:
+            <a
+              class="registration__link"
+              href="./assets/static/instrukcja.pdf"
+              target="_blank"
+              >instrukcja</a
+            >
+            rejestracji. W przypadku osób, które chcą wziąć udział w konferencji
+            bez referatu prosimy w wymagane pola: <b>Title</b>,
+            <b>Abstract</b> oraz <b>Keywords</b> wpisać <b>"Bez referatu"</b>.
+            Formularz zgłoszeniowy należy wypełnić do dnia 31.10.2021 r. W razie
+            jakichkolwiek problemów ze zgłoszeniem uczestnictwa w konferencji
+            prosimy o kontakt mailowy z organizatorami.
+          </p>
         </div>
       </div>
     </div>
     <script>
+      // const scheduleArray = [
+      //   {
+      //     start: "9:00",
+      //     unit: "",
+      //     person: "",
+      //     title: "Otwarcie GIS Day 2019",
+      //   },
+      //   {
+      //     start: "9:10",
+      //     unit: "WNGIG",
+      //     person: "dr inż. Patrycja Przewoźna",
+      //     title: "Geoinformacja - geografia na miarę XXI wieku",
+      //   },
+      //   {
+      //     start: "9:30",
+      //     unit: "ESRI",
+      //     person: "Anna Pierzchała",
+      //     title: "Jak wykorzystać dane zebrane przez drony?",
+      //   },
+      //   {
+      //     start: "9:50",
+      //     unit: "OSM Polska",
+      //     person: "Przemysław Szydlik, Olga Barańczyk",
+      //     title:
+      //       "Projekt OpenStreetMap - narzędzia, społeczność, odbiorcy danych",
+      //   },
+      //   {
+      //     start: "10:20",
+      //     unit: "DRON.edu.pl",
+      //     person: "Wojciech Peter",
+      //     title:
+      //       "SmoGIS - Zastosowania GIS i UAV w walce z zanieczyszczeniami powietrza na obszarze Polski",
+      //   },
+      //   {
+      //     start: "10:40",
+      //     unit: "Sekcja Geomatyczna Koła Leśników UP",
+      //     person: "Karolina Duńska, Rafał Borkowski",
+      //     title: "Różne metody skanowania, czyli las w 3D",
+      //   },
+      //   {
+      //     start: "11:00",
+      //     unit: "WNGIG",
+      //     person: "dr Michał Rzeszewski",
+      //     title:
+      //       "Wirtualna, Rozszerzona i Mieszana Rzeczywistość – nowe przestrzenie współczesnych miast",
+      //   },
+      //   {
+      //     start: "11:20",
+      //     unit: "Sweco Consulting",
+      //     person: "Patryk Pszczółkowski, Kamil Jawgiel",
+      //     title: "Przegląd zastosowań GIS w projektach Sweco Consulting",
+      //   },
+      //   {
+      //     start: "11:40",
+      //     unit: "",
+      //     person: "",
+      //     title: "PRZERWA",
+      //   },
+      //   {
+      //     start: "12:00",
+      //     unit: "GIS Support ",
+      //     person: "Michał Drożdż",
+      //     title:
+      //       "Relacja z konferencji Free and Open Source for Geospatial (FOSS4G) - Bukareszt 2019",
+      //   },
+      //   {
+      //     start: "12:20",
+      //     unit: "Zarząd Geodezji i Katastru Miejskiego GEOPOZ",
+      //     person: "Artur Radziemski, Krzysztof Drygalski",
+      //     title:
+      //       "Model 3D miasta Poznania – aktualizacja z wykorzystaniem fotogrametrii lotniczej,  tworzenie brył budynków i zasilanie modelu 3D",
+      //   },
+      //   {
+      //     start: "13:00",
+      //     unit: "HERE Technologies",
+      //     person: "Szczepan Żurek",
+      //     title: "Skąd się biorą współczesne mapy?",
+      //   },
+      //   {
+      //     start: "13:20",
+      //     unit: "WNGIG",
+      //     person: "dr Jakub Nowosad",
+      //     title:
+      //       "Powtarzalna analiza danych przestrzennych: możliwości i perspektywy",
+      //   },
+      //   {
+      //     start: "13:40",
+      //     unit: "WNGIG",
+      //     person: "prof. UAM dr hab. Jarosław Jasiewicz",
+      //     title:
+      //       "Czy należy się obawiać sztucznej inteligencji? Jasne, ale to nie tak jak myślisz",
+      //   },
+      //   {
+      //     start: "14:00",
+      //     unit: "Neptis",
+      //     person: "Jan Semmler",
+      //     title:
+      //       "Profil Kierowcy, czyli co łączy pogodę, jakość dróg, wypadki, styl jazdy i aplikację Yanosik",
+      //   },
+      //   {
+      //     start: "14:20",
+      //     unit: "Sustainable Innovation",
+      //     person: "Michal Wyczałek",
+      //     title:
+      //       "Wykorzystanie spektralnych danych Sentinel 2 w quasi-ciągłym monitoringu upraw rolnych na przykładzie aplikacji AgroAssistant",
+      //   },
+      //   {
+      //     start: "14:40",
+      //     unit: "",
+      //     person: "",
+      //     title: "Zakończenie GIS Day 2019",
+      //   },
+      // ];
+      // const fragment = document.createDocumentFragment();
+      // scheduleArray.forEach(function (element, index) {
+      //   let html = document.createElement("tr");
+      //   let className = (index + 1) % 2 ? "two" : "three";
+      //   html.innerHTML = `
+      //       <th>${element.start}</th>
+      //       <td class="${className}">
+      //        ${element.title}
+      //         <span>
+      //           ${element.person}
+      //            <br>
+      //            ${element.unit}
+      //         </span>
+      //       </td>
+      //     `;
+      //   fragment.append(html);
+      // });
+      // document.querySelector(".schedule__body").append(fragment);
+
       document.addEventListener("DOMContentLoaded", () => {
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
@@ -548,7 +791,7 @@
         });
 
         let headerScene = new ScrollMagic.Scene({
-          triggerElement: ".schedule__box",
+          triggerElement: ".registration__box",
           triggerHook: 1,
           duration: "50%",
         })
