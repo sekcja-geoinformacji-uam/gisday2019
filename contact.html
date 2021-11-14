@@ -83,7 +83,7 @@
       }
 
       .gisday {
-        font-size: 12vw;
+        /* font-size: 12vw; */
         font-family: "Avenir Next Demi";
         /* padding-right: 6vh;
         padding-left: 6vh;
@@ -94,12 +94,12 @@
       }
 
       .poznan {
-        font-size: 6vw;
+        /* font-size: 6vw; */
         font-weight: 600;
       }
 
       .date {
-        font-size: 5vw;
+        /* font-size: 5vw; */
         font-weight: 500;
       }
 
@@ -107,10 +107,10 @@
         text-align: center;
       }
 
-      h1 {
+      /* h1 {
         font-size: 2em;
         text-align: center;
-      }
+      } */
 
       section {
         /* padding: 3em; */
@@ -326,6 +326,18 @@
         #navbar span {
           display: block;
         }
+
+        .gisday {
+          font-size: 12vw;
+        }
+
+        .poznan {
+          font-size: 7vw;
+        }
+
+        .date {
+          font-size: 5vw;
+        }
       }
 
       @media (max-width: 630px) {
@@ -336,6 +348,18 @@
 
         #logo {
           display: none;
+        }
+
+        .gisday {
+          font-size: 21vw;
+        }
+
+        .poznan {
+          font-size: 13vw;
+        }
+
+        .date {
+          font-size: 11vw;
         }
       }
 
@@ -531,39 +555,6 @@
     <script src="assets/lib/debug.addIndicators.min.js"></script>
   </body>
   <script>
-    var tl = new TimelineMax({
-      onUpdate: updatePercentage,
-    });
-    var tl2 = new TimelineMax();
-
-    tl.from("blockquote", 0.5, {
-      x: 200,
-      opacity: 0,
-    });
-    tl.from(
-      ".animated__span",
-      1,
-      {
-        width: 0,
-      },
-      "=-.5"
-    );
-    tl.from(
-      "#logo",
-      1,
-      {
-        x: -100,
-        opacity: 0,
-        ease: Power4.easeInOut,
-      },
-      "=-1"
-    );
-
-    function updatePercentage() {
-      //percent.innerHTML = (tl.progress() *100 ).toFixed();
-      tl.progress();
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
       var navbar = document.getElementById("navbar");
       var sticky = navbar.offsetTop;
