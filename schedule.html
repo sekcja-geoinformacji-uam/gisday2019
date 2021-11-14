@@ -230,8 +230,36 @@
         height: calc(100% - 50px);
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
-        margin-bottom: 20%;
+        /* margin-top: 70px; */
+        margin-bottom: 10%;
+        flex-direction: column;
+      }
+
+      .schedule__box {
+        text-align: center;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .schedule__text {
+        font-size: 21px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        justify-content: center;
+        align-items: center;
+        color: #444444;
+        /* line-height: 150%; */
+        padding-bottom: 50px;
+      }
+
+      .schedule__link {
+        padding: 1%;
+        font-size: 19px;
+        overflow-wrap: break-word;
+        width: 80%;
       }
 
       .sticky {
@@ -306,10 +334,6 @@
         transform: skew(0deg, -30deg);
       }
 
-      .schedule__box {
-        text-align: center;
-      }
-
       @media (min-width: 630px) {
         #navbar i {
           display: none;
@@ -317,6 +341,18 @@
 
         #navbar span {
           display: block;
+        }
+
+        .button__date {
+          font-size: 1.8vw;
+        }
+
+        .schedule__image {
+          width: 60%;
+        }
+
+        .schedule {
+          margin-top: 3%;
         }
       }
 
@@ -327,6 +363,22 @@
 
         #logo {
           display: none;
+        }
+
+        .schedule__box {
+          width: 80%;
+        }
+
+        .schedule__image {
+          width: 120%;
+        }
+
+        .button__date {
+          font-size: 5vw;
+        }
+
+        .schedule {
+          margin-top: 10%;
         }
       }
 
@@ -377,6 +429,10 @@
         width: 100%;
       }
 
+      a {
+        text-decoration: none;
+      }
+
       .one {
         background-color: #7491a4;
       }
@@ -389,15 +445,59 @@
         background-color: #dde8ef;
       }
 
-      .schedule__text {
-        padding-top: 50%;
-        font-size: 1.5em;
-        font-family: "Avenir Next Regular";
-        font-weight: 600;
-        color: #444444;
+      .schedule__image {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: transform 1s;
+        /* width: 60%; */
+      }
+
+      .schedule__image:hover {
+        transform: scale(1.04);
+      }
+
+      .registration {
+        width: 98%;
+        padding-top: 5%;
+      }
+
+      .button__date {
+        position: relative;
+        /* font-size: 1.8vw; */
+        font-family: "Avenir Next Regular";
+        margin: auto;
+        color: #2b2b2b;
+        font-weight: 600;
+        /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.57); */
+        width: fit-content;
+        text-align: center;
+        top: 3px;
+        padding: 7px 12px;
+      }
+
+      .button-year {
+        position: relative;
+        box-sizing: border-box;
+        /* padding: 80px; */
+        color: black;
+        width: 143px;
+        height: 50px;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid rgba(44, 44, 44, 0.24);
+        /* box-shadow: 3px 3px 3px #0000009e; */
+        width: fit-content;
+        border-radius: 4px;
+        height: fit-content;
+      }
+
+      .button-year:hover {
+        background-color: rgba(0, 0, 0, 0.04);
       }
 
       @keyframes move {
@@ -453,12 +553,7 @@
           <span>GIS DAY</span>
         </a>
       </li>
-      <li>
-        <a href="./registration.html" class="cool-link">
-          <i class="material-icons"> assignment_turned_in </i>
-          <span> REJESTRACJA </span>
-        </a>
-      </li>
+
       <li>
         <a class="active" href="#" class="cool-link">
           <i class="material-icons"> schedule </i>
@@ -493,77 +588,30 @@
     </div>
     <div class="schedule">
       <div class="schedule__box">
-        <span class="schedule__text"
-          >Harmonogram warsztatów pojawi się wkrótce.</span
-        >
-        <!-- <div class="workshops__button">
-        <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram warsztatów</title>
-
-      </div> -->
-        <!-- <div class="schedule__table">
-          <table>
-
-            <body>
-              <tr>
-                <th>12:00</th>
-                <td rowspan="6" class="three">Wizualizacja 3D starego miasta w Poznaniu <span>Agata Borkowska, Asia
-                    Didyk <br> s. 17 <br> dla szkół</span></td>
-                <td rowspan="6" class="two">Darmowe dane publiczne i co można z nimi zrobić<span>Aniela Rząsa <br> s.
-                    20 <br> dla szkół </span></td>
-                <td rowspan="6" class="one">Wprowadzenie do programu QGIS - stwórz swoją mapę<span>Kamil Wojtkowiak <br>
-                    s.
-                    22 <br> dla szkół</span></td>
-                <td colspan="3" rowspan="10" class="three">WebGIS - twoja mapa w sieci<span> Natalia
-                    Chojnacka, Patryk Jezierski<br> s. 23 <br> dla szkół i studentów</span></td>
-                <td colspan="2" rowspan="6" class="two">Infografika jako narzędzie wizualizacji informacji geograficznej
-                  -
-                  czyli
-                  jak przedstawić złożone dane w prosty sposób <span>Katarzyna Bartosz, Barbara Bronżkiewicz <br> s. 24
-                    <br> dla
-                    szkół</span></td>
-              </tr>
-              <tr>
-                <th>12:30</th>
-              </tr>
-              <tr>
-                <th>13:00</th>
-              </tr>
-              <tr>
-                <th>13:30</th>
-
-              </tr>
-              <tr>
-                <th>14:00</th>
-              </tr>
-              <tr>
-                <th>14:10</th>
-              </tr>
-              <tr>
-                <th>14:20</th>
-                <td colspan="1" rowspan="4" class="two">Gra geograficzna <span>Jakub Skoworński<br> s. 20 <br> dla
-                    szkół</span>
-                </td>
-                <td colspan="1" rowspan="4" class="three">Wprowadzenie do edycji danych OSM <span>Olga Barańczyk,
-                    Przemysław Szydlik (OSM Polska)<br> s. 22<br> dla studentów</span></td>
-                <td colspan="1" rowspan="4" class="two">Analizy przestrzenne w poszukiwaniu potencjału solarnego
-                  <span>Kamil Jawgiel, Patryk Nowicki (Sweco Consulting)<br> s. 24 <br> dla studentów</span></td>
-              </tr>
-              <tr>
-                <th>14:30</th>
-              </tr>
-              <tr>
-                <th>15:00</th>
-              </tr>
-              <tr>
-                <th>15:20</th>
-              </tr>
-            </body>
-          </table>
+        <img
+          src="./assets/static/pictures/warsztaty.png"
+          class="schedule__image"
+        />
+        <div class="registration">
+          <!-- <span class="schedule__text">
+            W celu rejestracji na warsztaty GIS Day Poznań 2021 należy wypełnić
+            Formularz Google:
+          </span> -->
+          <button class="button-year">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdw6JILF0_4PRieYk7L8x1jXzAdoUDkCXcJFvJlQY_L94WstQ/viewform"
+              target="_blank"
+            >
+              <div class="button__date">Rejestracja na warsztaty</div>
+            </a>
+          </button>
+          <!-- <a
+            class="schedule__link"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdw6JILF0_4PRieYk7L8x1jXzAdoUDkCXcJFvJlQY_L94WstQ/viewform"
+            target="_blank"
+            >https://docs.google.com/forms/d/e/1FAIpQLSdw6JILF0_4PRieYk7L8x1jXzAdoUDkCXcJFvJlQY_L94WstQ/viewform
+          </a> -->
         </div>
-        <div class="workshops__button">
-          <a class="workshops__link"
-            href="https://docs.google.com/forms/d/e/1FAIpQLScjgT8eyFMIs8xcCdvjyA39BDjMmeXdsL4nHNa1e9Ck5nJ6qw/viewform?fbclid=IwAR2paemLHXtDIMrSPj6Am7qWdaLynawwuW8RdTj08Hl75DZMFbOmRQ0ujmU" target="_blank">ZAPISY</a>
-        </div> -->
       </div>
     </div>
   </body>

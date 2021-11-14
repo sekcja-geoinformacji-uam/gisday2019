@@ -303,8 +303,8 @@
         height: calc(100% - 50px);
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
-        margin-bottom: 20%;
+        /* margin-top: 70px; */
+        margin-bottom: 10%;
       }
 
       .schedule__image {
@@ -313,6 +313,7 @@
         align-items: center;
         margin-top: 3%;
         transition: transform 1s;
+        /* width: 90%; */
       }
 
       .schedule__image:hover {
@@ -327,6 +328,18 @@
         #navbar span {
           display: block;
         }
+
+        .button__date {
+          font-size: 1.8vw;
+        }
+
+        .schedule__image {
+          width: 80%;
+        }
+
+        .schedule {
+          margin-top: 3%;
+        }
       }
 
       @media (max-width: 630px) {
@@ -337,12 +350,20 @@
         #logo {
           display: none;
         }
+        .schedule__box {
+          width: 80%;
+        }
 
         .schedule__image {
-          margin-top: 35%;
-          margin-left: 2.5%;
-          width: 95%;
-          align-items: center;
+          width: 120%;
+        }
+
+        .button__date {
+          font-size: 5vw;
+        }
+
+        .schedule {
+          margin-top: 10%;
         }
       }
 
@@ -465,7 +486,11 @@
       }
 
       .schedule__box {
+        display: flex;
         text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
       }
 
       .schedule__text {
@@ -482,6 +507,53 @@
       .h1__container {
         display: flex;
         justify-content: center;
+      }
+
+      .registration {
+        width: 98%;
+        padding-top: 5%;
+      }
+
+      .button__date {
+        position: relative;
+        /* font-size: 1.8vw; */
+        font-family: "Avenir Next Regular";
+        margin: auto;
+        color: #2b2b2b;
+        font-weight: 600;
+        /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.57); */
+        width: fit-content;
+        text-align: center;
+        top: 3px;
+        padding: 7px 12px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .button-year {
+        position: relative;
+        box-sizing: border-box;
+        /* padding: 80px; */
+        color: black;
+        width: 143px;
+        height: 50px;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 2px solid rgba(44, 44, 44, 0.24);
+        /* box-shadow: 3px 3px 3px #0000009e; */
+        width: fit-content;
+        border-radius: 4px;
+        height: fit-content;
+      }
+
+      .button-year:hover {
+        background-color: rgba(0, 0, 0, 0.04);
       }
 
       @keyframes move {
@@ -537,12 +609,7 @@
           <span>GIS DAY</span>
         </a>
       </li>
-      <li>
-        <a href="./registration.html" class="cool-link">
-          <i class="material-icons"> assignment_turned_in </i>
-          <span> REJESTRACJA </span>
-        </a>
-      </li>
+
       <li>
         <a href="./schedule.html" class="cool-link">
           <i class="material-icons"> schedule </i>
@@ -580,158 +647,26 @@
         <h1 class="lectures__h1">Harmonogram</h1>
       </div> -->
       <div class="schedule__box">
-        <span class="schedule__text"
+        <!-- <span class="schedule__text"
           >Harmonogram prelekcji pojawi się wkrótce.</span
-        >
-        <!-- <img
+        > -->
+        <img
           src="./assets/static/pictures/harmonogram.png"
           class="schedule__image"
-        /> -->
-        <!-- <div class="workshops__button">
-        <title class="workshops__link" style="font-size: calc(1rem + 1vw);">Harmonogram prelekcji</title>
-      </div> -->
-        <!-- <div class="schedule__table">
-          <table class="">
-            <tbody class="schedule__body">
-
-            </tbody>
-          </table>
-        </div> -->
+        />
+        <div class="registration">
+          <button class="button-year">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdxHVatT1Vj64zIGszth_-o2Omezue-hAkHusGo7BWJovdHsw/viewform"
+              target="_blank"
+            >
+              <div class="button__date">Rejestracja na prelekcje</div>
+            </a>
+          </button>
+        </div>
       </div>
     </div>
     <script>
-      // const scheduleArray = [
-      //   {
-      //     start: "9:00",
-      //     unit: "",
-      //     person: "",
-      //     title: "Otwarcie GIS Day 2019",
-      //   },
-      //   {
-      //     start: "9:10",
-      //     unit: "WNGIG",
-      //     person: "dr inż. Patrycja Przewoźna",
-      //     title: "Geoinformacja - geografia na miarę XXI wieku",
-      //   },
-      //   {
-      //     start: "9:30",
-      //     unit: "ESRI",
-      //     person: "Anna Pierzchała",
-      //     title: "Jak wykorzystać dane zebrane przez drony?",
-      //   },
-      //   {
-      //     start: "9:50",
-      //     unit: "OSM Polska",
-      //     person: "Przemysław Szydlik, Olga Barańczyk",
-      //     title:
-      //       "Projekt OpenStreetMap - narzędzia, społeczność, odbiorcy danych",
-      //   },
-      //   {
-      //     start: "10:20",
-      //     unit: "DRON.edu.pl",
-      //     person: "Wojciech Peter",
-      //     title:
-      //       "SmoGIS - Zastosowania GIS i UAV w walce z zanieczyszczeniami powietrza na obszarze Polski",
-      //   },
-      //   {
-      //     start: "10:40",
-      //     unit: "Sekcja Geomatyczna Koła Leśników UP",
-      //     person: "Karolina Duńska, Rafał Borkowski",
-      //     title: "Różne metody skanowania, czyli las w 3D",
-      //   },
-      //   {
-      //     start: "11:00",
-      //     unit: "WNGIG",
-      //     person: "dr Michał Rzeszewski",
-      //     title:
-      //       "Wirtualna, Rozszerzona i Mieszana Rzeczywistość – nowe przestrzenie współczesnych miast",
-      //   },
-      //   {
-      //     start: "11:20",
-      //     unit: "Sweco Consulting",
-      //     person: "Patryk Pszczółkowski, Kamil Jawgiel",
-      //     title: "Przegląd zastosowań GIS w projektach Sweco Consulting",
-      //   },
-      //   {
-      //     start: "11:40",
-      //     unit: "",
-      //     person: "",
-      //     title: "PRZERWA",
-      //   },
-      //   {
-      //     start: "12:00",
-      //     unit: "GIS Support ",
-      //     person: "Michał Drożdż",
-      //     title:
-      //       "Relacja z konferencji Free and Open Source for Geospatial (FOSS4G) - Bukareszt 2019",
-      //   },
-      //   {
-      //     start: "12:20",
-      //     unit: "Zarząd Geodezji i Katastru Miejskiego GEOPOZ",
-      //     person: "Artur Radziemski, Krzysztof Drygalski",
-      //     title:
-      //       "Model 3D miasta Poznania – aktualizacja z wykorzystaniem fotogrametrii lotniczej,  tworzenie brył budynków i zasilanie modelu 3D",
-      //   },
-      //   {
-      //     start: "13:00",
-      //     unit: "HERE Technologies",
-      //     person: "Szczepan Żurek",
-      //     title: "Skąd się biorą współczesne mapy?",
-      //   },
-      //   {
-      //     start: "13:20",
-      //     unit: "WNGIG",
-      //     person: "dr Jakub Nowosad",
-      //     title:
-      //       "Powtarzalna analiza danych przestrzennych: możliwości i perspektywy",
-      //   },
-      //   {
-      //     start: "13:40",
-      //     unit: "WNGIG",
-      //     person: "prof. UAM dr hab. Jarosław Jasiewicz",
-      //     title:
-      //       "Czy należy się obawiać sztucznej inteligencji? Jasne, ale to nie tak jak myślisz",
-      //   },
-      //   {
-      //     start: "14:00",
-      //     unit: "Neptis",
-      //     person: "Jan Semmler",
-      //     title:
-      //       "Profil Kierowcy, czyli co łączy pogodę, jakość dróg, wypadki, styl jazdy i aplikację Yanosik",
-      //   },
-      //   {
-      //     start: "14:20",
-      //     unit: "Sustainable Innovation",
-      //     person: "Michal Wyczałek",
-      //     title:
-      //       "Wykorzystanie spektralnych danych Sentinel 2 w quasi-ciągłym monitoringu upraw rolnych na przykładzie aplikacji AgroAssistant",
-      //   },
-      //   {
-      //     start: "14:40",
-      //     unit: "",
-      //     person: "",
-      //     title: "Zakończenie GIS Day 2019",
-      //   },
-      // ];
-      // const fragment = document.createDocumentFragment();
-      // scheduleArray.forEach(function (element, index) {
-      //   let html = document.createElement("tr");
-      //   let className = (index + 1) % 2 ? "two" : "three";
-      //   html.innerHTML = `
-      //       <th>${element.start}</th>
-      //       <td class="${className}">
-      //        ${element.title}
-      //         <span>
-      //           ${element.person}
-      //            <br>
-      //            ${element.unit}
-      //         </span>
-      //       </td>
-      //     `;
-      //   fragment.append(html);
-      // });
-      // document.querySelector(".schedule__body").append(fragment);
-
       document.addEventListener("DOMContentLoaded", () => {
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
