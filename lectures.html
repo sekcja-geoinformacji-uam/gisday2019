@@ -320,6 +320,54 @@
         transform: scale(1.04);
       }
 
+      .about__box blockquote {
+        /* position: absolute;
+          top: 16vh; */
+        text-align: left;
+        text-align: justify;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+      }
+
+      .welcome {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* position: relative; */
+        box-sizing: border-box;
+        /* top: 90vh; */
+        width: 100%;
+      }
+
+      .welcome__text {
+        text-align: justify;
+        font-family: "Avenir Next Regular";
+        font-weight: 700;
+        font-size: 2em;
+        text-align: center;
+        color: #121420;
+        top: -10vh;
+        position: relative;
+      }
+
+      .welcome__text::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .welcome__text:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
       @media (min-width: 630px) {
         #navbar i {
           display: none;
@@ -619,7 +667,7 @@
         <div class="header">
           <div class="gisday">GIS DAY</div>
           <div class="poznan">POZNAŃ</div>
-          <div class="date">2021</div>
+          <div class="date">2022</div>
         </div>
       </h1>
       <div class="arrows__wrapper">
@@ -650,12 +698,12 @@
           <span> Prelekcje </span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="./organizers.html" class="cool-link">
           <i class="material-icons"> groups </i>
           <span> Organizatorzy </span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="./archive.html" class="cool-link">
           <i class="material-icons"> photo_library </i>
@@ -671,13 +719,19 @@
       </li>
     </div>
     <div class="schedule">
+      <div class="schedule">
+        <div class="schedule__box">
+          <div class="welcome">
+            <blockquote class="welcome__text">Harmonogram prelekcji dostępny wkrótce!</blockquote>
+          </div>
       <!-- <div class="h1__container">
         <h1 class="lectures__h1">Harmonogram</h1>
       </div> -->
-      <div class="schedule__box">
-        <!-- <span class="schedule__text"
-          >Harmonogram prelekcji pojawi się wkrótce.</span
-        > -->
+      <!-- <div class="schedule__box">
+        <span class="schedule__text"
+          >Harmonogram prelekcji pojawi się wkrótce.</span>
+        </div> -->
+       <!-- 
         <img
           src="./assets/static/pictures/harmonogram.png"
           class="schedule__image"
@@ -693,7 +747,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         var navbar = document.getElementById("navbar");

@@ -268,6 +268,54 @@
         width: 100%;
       }
 
+      .about__box blockquote {
+        /* position: absolute;
+          top: 16vh; */
+        text-align: left;
+        text-align: justify;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+      }
+
+      .welcome {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* position: relative; */
+        box-sizing: border-box;
+        /* top: 90vh; */
+        width: 100%;
+      }
+
+      .welcome__text {
+        text-align: justify;
+        font-family: "Avenir Next Regular";
+        font-weight: 700;
+        font-size: 2em;
+        text-align: center;
+        color: #121420;
+        top: -10vh;
+        position: relative;
+      }
+
+      .welcome__text::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: rgba(44, 44, 44, 0.616);
+        transition: width 0.3s;
+      }
+
+      .welcome__text:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+
       .sticky + .content {
         padding-top: 60px;
       }
@@ -562,7 +610,7 @@
         <div class="header">
           <div class="gisday">GIS DAY</div>
           <div class="poznan">POZNAŃ</div>
-          <div class="date">2021</div>
+          <div class="date">2022</div>
         </div>
       </h1>
       <div class="arrows__wrapper">
@@ -593,12 +641,12 @@
           <span> Prelekcje </span>
         </a>
       </li>
-      <li>
+<!-- <li>
         <a href="./organizers.html" class="cool-link">
           <i class="material-icons"> groups </i>
           <span> Organizatorzy </span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="./archive.html" class="cool-link">
           <i class="material-icons"> photo_library </i>
@@ -615,24 +663,26 @@
     </div>
     <div class="schedule">
       <div class="schedule__box">
-        <img
+        <div class="welcome">
+          <blockquote class="welcome__text">Harmonogram i zapisy na warsztaty dostępne wkrótce!</blockquote>
+        </div>
+       <!-- <img
           src="./assets/static/pictures/warsztaty.png"
-          class="schedule__image"
-        />
-        <div class="registration">
-          <!-- <span class="schedule__text">
+          class="schedule__image" 
+        />  <div class="registration">
+          <span class="schedule__text">
             W celu rejestracji na warsztaty GIS Day Poznań 2021 należy wypełnić
             Formularz Google:
           </span> -->
-          <button class="button-year">
+          <!-- <button class="button-year">
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdw6JILF0_4PRieYk7L8x1jXzAdoUDkCXcJFvJlQY_L94WstQ/viewform"
               target="_blank"
             >
               <div class="button__date">Rejestracja na warsztaty</div>
             </a>
-          </button>
-          <!-- <a
+          </button> 
+           <a
             class="schedule__link"
             href="https://docs.google.com/forms/d/e/1FAIpQLSdw6JILF0_4PRieYk7L8x1jXzAdoUDkCXcJFvJlQY_L94WstQ/viewform"
             target="_blank"
