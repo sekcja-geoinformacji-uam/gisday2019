@@ -210,7 +210,7 @@
       }
 
       .about {
-        height: 100vh;
+        height: 70vh;
         padding: 3em;
         position: relative;
         box-sizing: border-box;
@@ -465,8 +465,19 @@
         margin-top: 20px;
       }
 
-      .section__img {
-        position: absolute;
+      .section__img_right {
+        position: inline-block;
+        margin-left: 400px;
+      }
+
+      .section__img_left {
+        position: inline-block;
+        margin-left: 100px;
+      }
+
+      #logo_gisday{
+        position:relative;
+        margin-left: 5%;
       }
 
       #globe {
@@ -488,7 +499,7 @@
 
       #logo_org_big{
         width: 10%;
-        padding: 5px;
+        padding: 15px;
       }
 
       .percentage {
@@ -814,9 +825,10 @@
     <div class="parallax">
       <h1>
         <div class="header">
-          <div class="gisday">GIS DAY</div>
-          <div class="poznan">POZNAŃ</div>
-          <div class="date">2022</div>
+          <img
+        id="logo_gisday"
+        src="assets/static/pictures/logo_bez_tla.png"
+      />
         </div>
       </h1>
       <div class="arrows__wrapper">
@@ -884,7 +896,7 @@
       <img
         id="globe"
         src="assets/static/pictures/funart.png"
-        class="section__img"
+        class="section__img_right"
       />
     </div>
 
@@ -892,7 +904,7 @@
       <img
         id="img__about2"
         src="assets/static/pictures/globe.png"
-        class="section__img"
+        class="section__img_left"
       />
 
       <div class="about2__box">
@@ -912,7 +924,7 @@
       <div class="where__box">
         <h1>Gdzie i kiedy?</h1>
         <blockquote>
-          Poznański GIS Day 2022 odbędzie się 16 listopada. W budynku 
+          Poznański GIS Day 2022 odbędzie się 16 listopada w budynku 
           Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im.
           Adama Mickiewicza w Poznaniu przy ulicy Bogumiła Krygowskiego 10. 
           <span class="line__where"></span>
@@ -921,7 +933,7 @@
       <img
         id="img__where"
         src="assets/static/pictures/wydzial_dark.png"
-        class="section__img"
+        class="section__img_right"
       />
     </div>
 
@@ -936,13 +948,17 @@
           <img id="logo_org" src="" /><img
             id="logo_org"
             src="assets/static/pictures/uniwersytet_przyrodniczy.png"
-          /><img
-            id="logo_org_big"
-            src="assets/static/pictures/ZU_logo_CMYK_druk.png"
           />
           <img
             id="logo_org"
             src="assets/static/pictures/LOGO_POZnan_patronat_RGB.jpg"
+          /><img
+            id="logo_org_big"
+            src="assets/static/pictures/PROJEKT_LOGO_DRUK.jpg"
+          />
+         <img
+            id="logo_org_big"
+            src="assets/static/pictures/ZU_logo_CMYK_druk.png"
           />
           <img id="logo_org" src="" /><img
             id="logo_org"
@@ -954,13 +970,11 @@
           <img id="logo_org" src="" /><img
             id="logo_org"
             src="assets/static/pictures/gisplay.png"
-          /><img
-            id="logo_org_big"
-            src="assets/static/pictures/PROJEKT_LOGO_DRUK.jpg"
           />
-        </div>
       </div>
     </div>
+    </div>
+    
     <div class="welcome">
       <blockquote class="welcome__text">Do zobaczenia na GIS Day!</blockquote>
     </div>

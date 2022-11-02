@@ -112,6 +112,17 @@
         text-align: center;
       } */
 
+      #navbar {
+        overflow: hidden;
+        background-color: #ffffffdc;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 2;
+        width: 100vw;
+        position: relative;
+        border-bottom: 0.1vw solid rgba(126, 126, 126, 0.555);
+      }
+
       section {
         /* padding: 3em; */
         height: 100vh;
@@ -141,8 +152,9 @@
         margin-top: 20px;
       }
 
-      img {
-        position: absolute;
+      .section__img_right {
+        position: absolute
+        
       }
 
       #logo {
@@ -463,9 +475,10 @@
     <div class="parallax">
       <h1>
         <div class="header">
-          <div class="gisday">GIS DAY</div>
-          <div class="poznan">POZNAŃ</div>
-          <div class="date">2022</div>
+          <img
+        id="logo_gisday"
+        src="assets/static/pictures/logo_bez_tla.png"
+      />
         </div>
       </h1>
       <div class="arrows__wrapper">
@@ -475,6 +488,7 @@
           <div class="chevron"></div>
         </div>
       </div>
+    </div>
     </div>
     <div id="navbar">
       <li>
@@ -524,7 +538,8 @@
         <div class="h1__container">
           <h1 class="contact__h1">Kontakt</h1>
         </div>
-        <div>Studenckie Koło Naukowe Geografów</div>
+        <div>Sekcja geoinofrmacji</div>
+        <div>Studenckiego Koła Naukowego Geografów</div>
         <div>Uniwersytet im. Adama Mickiewicza w Poznaniu</div>
         <div>Wydział Nauk Geograficznych i Geologicznych</div>
         ul. Krygowskiego 10
@@ -553,7 +568,8 @@
         </div>
         <span class="animated__span"> </span>
       </blockquote>
-      <img id="logo" src="assets/static/pictures/logo_skng.png" />
+      <img id="logo" src="assets/static/pictures/logo_skng.png"
+      class="section__img_right" />
     </section>
 
     <script src="assets/lib/TweenMax.min.js"></script>
