@@ -586,6 +586,18 @@
           font-size: 11vw;
           font-weight: 500;
         }
+        .about__box blockquote{
+          text-align:justify;
+          font-size: 14px;
+        }
+        .about2__box blockquote{
+          text-align:justify;
+          font-size: 14px;
+        }
+        .where__box blockquote{
+          text-align:justify;
+          font-size: 14px;
+        }
       }
 
       @media screen and (max-width: 900px) {
@@ -1053,9 +1065,9 @@
       // animacja about_box
 
       let aboutTM = new TimelineMax({});
-      aboutTM.from(".about__box", 8, {
+      aboutTM.from(".about__box", 50, {
         opacity: 0,
-        x: 200,
+        x: 50,
       });
       aboutTM.from(
         ".line__about",
@@ -1070,7 +1082,7 @@
         8,
         {
           opacity: 0,
-          x: -200,
+          x: 200,
         },
         +"1"
       );
@@ -1086,9 +1098,9 @@
       // animacja about2
 
       let about2TM = new TimelineMax({});
-      about2TM.from(".about2__box", 5, {
+      about2TM.from(".about2__box", 50, {
         opacity: 0,
-        x: -200,
+        x: -50,
       });
       about2TM.from(
         ".line__about2",
@@ -1119,9 +1131,9 @@
       // animacja .where
 
       let whereTM = new TimelineMax({});
-      whereTM.from(".where__box", 8, {
+      whereTM.from(".where__box", 50, {
         opacity: 0,
-        x: 200,
+        x: 50,
       });
       whereTM.from(
         ".line__where",
@@ -1136,7 +1148,7 @@
         2,
         {
           opacity: 0,
-          x: -200,
+          x: 50,
         },
         +"1"
       );
