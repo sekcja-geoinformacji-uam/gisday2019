@@ -57,7 +57,7 @@
 
       .parallax {
         /* The image used */
-        background-image: url("assets/static/pictures/tlo.jpg");
+        background-image: url("assets/static/pictures/tlo_strona.png");
         opacity: 1;
         /* Set a specific height */
         min-height: 100vh;
@@ -570,6 +570,18 @@
         border-radius: 4px;
         height: fit-content;
       }
+.harmonogram_link:hover{
+  color:#93bd8e !important;
+}
+.harmonogram_link:link{
+  color:#375d49;
+}
+.harmonogram_link:visited{
+  color:#375d49;
+}
+.harmonogram_link:active{
+  color:#73aad8;
+}
 
       .button-year:hover {
         background-color: rgba(0, 0, 0, 0.04);
@@ -594,6 +606,12 @@
           opacity: 0;
           transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
         }
+      }
+
+      @media screen and (max-width: 600px) {
+       #logo_gisday {
+        width: 90%;
+      }
       }
 
       @keyframes pulse {
@@ -665,7 +683,10 @@
     <div class="schedule">
       <div class="schedule__box">
         <div class="welcome">
-          <blockquote class="welcome__text">Harmonogram i zapisy na warsztaty dostępne wkrótce!</blockquote>
+          <blockquote class="welcome__text">Formularz zgłoszeniowy na warsztaty <div> będzie
+            dostępny na naszym <a class="harmonogram_link"  href="https://www.facebook.com/GISdayPoznan/" target="_blank" >facebooku</a>  
+            i <a class="harmonogram_link"  href="https://www.instagram.com/gis_day_poznan/" target="_blank" >instagramie.</a> </div>
+          </blockquote>
         </div>
        <!-- <img
           src="./assets/static/pictures/warsztaty.png"

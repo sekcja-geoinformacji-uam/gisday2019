@@ -67,7 +67,7 @@
 
       .parallax {
         /* The image used */
-        background-image: url("assets/static/pictures/tlo.jpg");
+        background-image: url("assets/static/pictures/tlo_strona.png");
         opacity: 1;
         /* Set a specific height */
         min-height: 100vh;
@@ -476,6 +476,7 @@
       }
 
       #logo_gisday{
+        
         position:relative;
         margin-left: 5%;
       }
@@ -539,7 +540,8 @@
       @media (max-width: 630px) {
         .organizers {
           margin-top: 20%;
-          width: 90%;
+          margin-left: 12%;
+          width: 65%;
         }
 
         .section__img {
@@ -556,7 +558,7 @@
         }
 
         .organizers__box {
-          margin-left: 6%;
+          margin-left: 20%;
           width: 90%;
           display: flex;
           justify-items: center;
@@ -584,6 +586,24 @@
           font-size: 11vw;
           font-weight: 500;
         }
+      }
+
+      @media screen and (max-width: 900px) {
+       #logo_gisday {
+        width: 90%;
+      }
+      }
+
+      @media screen and (max-width: 900px) {
+       .section__img_left {
+       display: none;
+      }
+      }   
+
+      @media screen and (max-width: 900px) {
+       .section__img_right {
+       display: none;
+      }
       }
 
       /*
@@ -793,6 +813,19 @@
         align-items: center;
       }
 
+      .harmonogram_link:hover{
+  color:#93bd8e !important;
+}
+.harmonogram_link:link{
+  color:#375d49;
+}
+.harmonogram_link:visited{
+  color:#375d49;
+}
+.harmonogram_link:active{
+  color:#73aad8;
+}
+
       @keyframes move {
         25% {
           opacity: 1;
@@ -887,9 +920,9 @@
         <blockquote>
           Interesuje Cię GIS? Rozważasz podjęcie studiów na kierunku geoinformacji? Chciałbyś
           dowiedzieć się jak wykorzystuje się ją w praktyce? A może jesteś
-          zainteresowany podniesieniem własnych kompetencji, poprzez wysłuchanie niebanalnych prelekcji
+          zainteresowany podniesieniem własnych kompetencji, poprzez wysłuchanie rozmaitych prelekcji
           i wzięcie  udziału w warsztatach? Nie może Cię
-          zabraknąć 16 listopada podczas GIS Day 2022!
+          zabraknąć 16 listopada podczas GIS Day 2022! 
           <span class="line__about"></span>
         </blockquote>
       </div>
@@ -910,23 +943,32 @@
       <div class="about2__box">
         <h1>Czym jest GIS Day?</h1>
         <blockquote>
-          GIS Day to coroczne święto geoinformacji, podczas którego na całym
-          świecie odbywają się różnego rodzaju konferencje i wydarzenia, mające
-          propagować nowoczesne rozwiązania w zakresie geografii. 
-          Zainicjowane przez światowego lidera analityki przestrzennej Esri, 
-          które po raz pierwszy odbyło się w 1999 roku. My obchodzimy już XXI 
-          edycję GIS Day w Poznaniu. <span class="line__about2"></span>
+          GIS Day to coroczne święto geoinformacji, zainicjowane przez światowego lidera analityki
+           przestrzennej Esri, które po raz pierwszy odbyło się w 1999 roku, mające na celu popularyzację
+           i rozszerzenie wiedzy z zakresu Systemów Informacji Geograficznej i 
+           najnowszych rozwiązań technologicznych w dziedzinie geografii wśród uczniów,
+            studentów, nauczycieli oraz wszystkich entuzjastów geoinformacji.
+             Wydarzenie przybliża działalność pracowników uczelni oraz przedsiębiorców
+              w obszarze zastosowań narzędzi GIS w aspektach przyrodniczych, geomatycznych,
+               analitycznych czy teledetekcyjnych. Podczas licznych warsztatów uczestnicy
+                rozwiną własne kompetencje w zakresie możliwości wykorzystywania danych przestrzennych.
+                
+                  <span class="line__about2"></span>
         </blockquote>
       </div>
     </div>
 
     <div class="where">
       <div class="where__box">
-        <h1>Gdzie i kiedy?</h1>
+        <h1>Kiedy i gdzie?</h1>
         <blockquote>
-          Poznański GIS Day 2022 odbędzie się 16 listopada w budynku 
-          Wydziału Nauk Geograficznych i Geologicznych Uniwersytetu im.
-          Adama Mickiewicza w Poznaniu przy ulicy Bogumiła Krygowskiego 10. 
+          Poznański GIS Day 2022
+           jest organizowany na Wydziale Nauk Geograficznych i Geologicznych Uniwersytetu im.
+           Adama Mickiewicza w Poznaniu przy ulicy Bogumiła Krygowskiego 10
+          przez Sekcję Geoinformacji SKNG oraz Sekcję Geomatyczną Koła Leśników
+           Uniwersytetu Przyrodniczego w Poznaniu. Wydarzenie rozpocznie się 16 listopada od godziny 9:30 oraz będzie
+          transmitowane na żywo na naszym <a class="harmonogram_link"  href="https://www.facebook.com/GISdayPoznan/" target="_blank" >facebooku GIS Day Poznań</a> .
+          
           <span class="line__where"></span>
         </blockquote>
       </div>

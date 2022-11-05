@@ -57,7 +57,7 @@
 
       .parallax {
         /* The image used */
-        background-image: url("assets/static/pictures/tlo.jpg");
+        background-image: url("assets/static/pictures/tlo_strona.png");
         opacity: 1;
         /* Set a specific height */
         min-height: 100vh;
@@ -653,6 +653,12 @@
         }
       }
 
+      @media screen and (max-width: 600px) {
+       #logo_gisday {
+        width: 90%;
+      }
+      }
+
       @keyframes pulse {
         to {
           opacity: 1;
@@ -722,21 +728,22 @@
     <div class="schedule">
       <div class="schedule">
         <div class="schedule__box">
-          <div class="welcome">
+         <!--  <div class="welcome">
             <blockquote class="welcome__text">Harmonogram prelekcji dostępny wkrótce!</blockquote>
-          </div>
-      <!-- <div class="h1__container">
+          </div> -->
+      <div class="h1__container">
         <h1 class="lectures__h1">Harmonogram</h1>
-      </div> -->
+      </div> 
       <!-- <div class="schedule__box">
         <span class="schedule__text"
           >Harmonogram prelekcji pojawi się wkrótce.</span>
         </div> -->
-       <!-- 
+       
         <img
-          src="./assets/static/pictures/harmonogram.png"
+          src="./assets/static/pictures/harmonogram_gisday.png"
           class="schedule__image"
         />
+        <!--
         <div class="registration">
           <button class="button-year">
             <a
@@ -747,8 +754,9 @@
             </a>
           </button>
         </div>
+        -->
       </div>
-    </div> -->
+    </div> 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         var navbar = document.getElementById("navbar");
